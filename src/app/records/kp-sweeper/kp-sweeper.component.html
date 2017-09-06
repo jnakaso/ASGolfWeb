@@ -1,0 +1,20 @@
+<section id="KpSweeper">
+  <as-sub-header [title]="'KP Sweeper'"></as-sub-header>
+  <p>One Tournament : Four KPs : One Golfer</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Date</th>
+        <th>Course</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of data">
+        <td>{{entry.name}}</td>
+        <td>{{entry.playDate}}</td>
+        <td>{{entry.course}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

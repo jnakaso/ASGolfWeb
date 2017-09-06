@@ -1,0 +1,7 @@
+<as-page-header [title]="'Tournaments'" [links]="sections"></as-page-header>
+<as-season-select [season]="season" (seasonChange)="seasonChange($event)"></as-season-select>
+<as-tournaments-summary [season]="season"></as-tournaments-summary>
+<as-tournaments-two-day [season]="season"></as-tournaments-two-day>
+<section *ngFor="let tour of tournaments">
+    <as-tournament [season]="season" [tournamentId]="tour.id"></as-tournament>
+</section>

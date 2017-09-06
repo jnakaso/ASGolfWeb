@@ -1,0 +1,7 @@
+<div class="page-header">
+  <button style="float: left; position: relative;" class="btn btn-link" (click)="slideOutMenu.toggleMenu()">
+      <span class="fa fa-lg fa-bars" ></span>
+  </button>
+  <h2>{{title}}</h2>
+</div>
+<as-slide-out-menu #slideOutMenu [links]="links"></as-slide-out-menu>

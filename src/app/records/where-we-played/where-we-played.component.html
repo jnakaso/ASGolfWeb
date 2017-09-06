@@ -1,0 +1,35 @@
+<section id="WhereWePlayed">
+  <as-sub-header [title]="'Where We Played'"></as-sub-header>
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th class="text-right">Played</th>
+          <th>
+            <a class="btn" role="button" (click)="goLeft()" [ngClass]="{'disabled':!showLeft()}">
+              <span class="fa fa-arrow-left"></span>
+            </a>
+          </th>
+          <th *ngFor="let year of seasonRange">{{year}}</th>
+          <th>
+            <a class="btn" role="button" (click)="goRight()" [ngClass]="{'disabled': !showRight()}">
+              <span class="fa fa-arrow-right"></span>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{course.name}}</td>
+          <td class="text-right">{{getCount(course)}}</td>
+          <td></td>
+          <td *ngFor="let year of seasonRange">
+            <a *ngIf="hasPlayed(course, year)" routerLink="/tournament/{{year}}/{{hasPlayed(course, year).tournamentId}}"><span class="fa fa-check"></span></a>
+          </td>
+          <th></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

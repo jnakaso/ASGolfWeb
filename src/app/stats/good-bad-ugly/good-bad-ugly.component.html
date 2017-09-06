@@ -1,0 +1,76 @@
+<section id="GoodBadUgly">
+  <as-sub-header [title]="'The Good, The Bad, and The Ugly'"></as-sub-header>
+  <p>
+    Low Gross, Low Net, High Gross, High Net, and just GROSS
+  </p>
+  <h3>The Good</h3>
+  <p>
+    Low scores, gross and net!
+  </p>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let entry of getRounds('LowGross')">
+            <td>{{data.LowGross.score}}: </td>
+            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let entry of getRounds('LowNet')">
+            <td>{{data.LowNet.score}}: </td>
+            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>The Bad</h3>
+  <p>
+    High scores, gross and net!
+  </p>
+  <div class="row">
+    <div class="col-md-6">
+
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let entry of getRounds('HighGross')">
+            <td>{{data.HighGross.score}}: </td>
+            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let entry of getRounds('HighNet')">
+            <td>{{data.HighNet.score}}: </td>
+            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h3>The Ugly</h3>
+  <p>
+    One sad looking hole!
+  </p>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <tbody>
+          <tr *ngFor="let entry of getRounds('UglyHole')">
+            <td>{{data.UglyHole.score}}: </td>
+            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

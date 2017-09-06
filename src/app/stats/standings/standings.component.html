@@ -1,0 +1,30 @@
+<section id="Standings">
+  <as-sub-header [title]="'Standings'"></as-sub-header>
+  <p>
+    Average net score for the season.
+  </p>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="text-xs-center"> Player</th>
+          <th class="text-right">HDCP</th>
+          <th class="text-right">Tournaments</th>
+          <th class="text-right">KPs</th>
+          <th class="text-right">Earnings</th>
+          <th class="text-right">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of data">
+          <td>{{entry.name}}</td>
+          <td class="text-right">{{entry.hdcp | number:'.1-1'}}</td>
+          <td class="text-right">{{entry.attendance}}</td>
+          <td class="text-right">{{entry.kps}}</td>
+          <td class="text-right">{{entry.earnings | currency:'USD':true:'1.2-2' }}</td>
+          <td class="text-right">{{entry.points | number:'.2-2'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

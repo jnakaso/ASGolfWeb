@@ -1,0 +1,22 @@
+<section id="HolesInOne">
+  <as-sub-header [title]="'Hole In Ones'"></as-sub-header>
+  <p>One Tournament : One Hole : One Swing</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Date</th>
+        <th>Course</th>
+        <th class="text-right">Hole</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of data">
+        <td>{{entry.player}}</td>
+        <td>{{entry.playDate}}</td>
+        <td>{{entry.course}}</td>
+        <td class="text-right">{{entry.hole}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

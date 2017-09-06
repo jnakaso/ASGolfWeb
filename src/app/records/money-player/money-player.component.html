@@ -1,0 +1,34 @@
+<section id="MoneyPlayer">
+  <as-sub-header [title]="'Money Player'"></as-sub-header>
+  <div>
+    <span>I never win? Prove it! Here are the two day tournament totals.</span>
+    <div class="pull-right">
+      <input type="checkbox" [(ngModel)]="activeOnly" />
+      <span>Active Only</span>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th class="text-right">No.</th>
+        <th class="text-right">Points</th>
+        <th class="text-right">Earnings</th>
+        <th class="text-right">First</th>
+        <th class="text-right">Second</th>
+        <th class="text-right">Third</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of filteredData()">
+        <td>{{entry.playerName}}</td>
+        <td class="text-right">{{entry.tournaments}}</td>
+        <td class="text-right">{{entry.points}}</td>
+        <td class="text-right">{{entry.earnings | currency:'USD':true:'1.2-2' }}</td>
+        <td class="text-right">{{entry.first}}</td>
+        <td class="text-right">{{entry.second}}</td>
+        <td class="text-right">{{entry.third}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

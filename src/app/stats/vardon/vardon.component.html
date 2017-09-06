@@ -1,0 +1,24 @@
+<section id="Vardon">
+  <as-sub-header [title]="'Vardon'"></as-sub-header>
+  <p>
+    Average net score for the season.
+  </p>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th class="text-right">Tournaments</th>
+          <th class="text-right">Net Average</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of data">
+          <td>{{entry.name}}</td>
+          <td class="text-right">{{entry.rounds}}</td>
+          <td class="text-right">{{entry.average}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

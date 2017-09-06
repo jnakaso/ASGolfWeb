@@ -1,0 +1,17 @@
+<section>
+  <h3 class="card-title">Power Rankings</h3>
+  <table class="table table-condensed">
+    <thead class="thead-default">
+      <tr>
+        <th>Player</th>
+        <th class="text-right">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of standings">
+        <td>{{s.name}}</td>
+        <td class="text-right">{{s.points | number: '1.2-2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

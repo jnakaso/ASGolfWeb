@@ -1,0 +1,7 @@
+<div [@slideInOut]="menuState" (click)="close()">
+  <ul>
+    <li *ngFor="let link of sections">
+      <a (click)="changeFolder(link.href, $event)">{{link.label}}</a>
+    </li>
+  </ul>
+</div>

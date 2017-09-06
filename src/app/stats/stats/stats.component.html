@@ -1,0 +1,10 @@
+<as-page-header [title]="'Statistics'" [links]="sections"></as-page-header>
+<as-season-select [season]="season" (seasonChange)="seasonChange($event)"></as-season-select>
+<as-standings [season]="season" [data]="getStats('standings')"></as-standings>
+<as-vardon [season]="season" [data]="getStats('vardon')"></as-vardon>
+<as-sandbagger [season]="season" [data]="getStats('sandbagger')"></as-sandbagger>
+<as-most-improved [season]="season" [data]="getStats('mostImproved')"></as-most-improved>
+<as-birdies [season]="season" [data]="getStats('birdies')"></as-birdies>
+<as-good-bad-ugly [season]="season" [data]="getStats('goodBadUgly', {})"></as-good-bad-ugly>
+<as-three-putt [season]="season" [bad]="getStats('threePutt')" [good]="getStats('goodPuttingKp')"></as-three-putt>
+<as-dr-jekyll [season]="season" [data]="getStats('drJekyll')"></as-dr-jekyll>

@@ -1,0 +1,7 @@
+<div [@slideInOut]="menuState" (click)="close()">
+  <ul>
+    <li *ngFor="let link of links">
+      <a pageScroll [href]="link.href">{{link.label}}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,11 @@
+<div #Minutes id="Minutes">
+  <as-sub-header [title]="'Minutes'"></as-sub-header>
+  <div *ngFor="let mm of minutes">
+    <p>From {{mm.$.date}}</p>
+    <ul *ngFor="let entry of mm.item">
+      <li>{{entry}}</li>
+    </ul>
+    <p>- {{mm.$.author}}</p>
+    <hr/>
+  </div>
+</div>

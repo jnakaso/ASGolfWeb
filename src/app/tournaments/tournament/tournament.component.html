@@ -1,0 +1,80 @@
+<div id="tour_{{tournamentId}}">
+	<as-sub-header [title]="getCourseName()" [hideTop]="hideTop"></as-sub-header>
+	<p><strong>Date:</strong> {{getTournamentDate(tournament)}} | <strong>Slope:</strong>  {{getTournamentSlope(tournament)}}  | <strong>Rating:</strong>  {{getTournamentRating(tournament)}} </p>
+        
+	<h3 *ngIf="showWinners(tournament)" >Winners</h3>
+	<div *ngIf="showWinners(tournament)" class="row">
+		<div class="col-md-6" *ngFor="let flt of flights">
+			<h4>{{flt}}-Flight</h4>
+			<table class="table table-sm  table-striped">
+				<thead>
+					<th>Place</th>
+					<th>Player</th>
+					<th class="text-right">Net</th>
+					<th class="text-right">Points</th>
+					<th class="text-right">Earnings</th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let winner of getWinners(flt)">
+						<td>{{winner.place}}</td>
+						<td>{{winner.player}}</td>
+						<td class="text-right">{{winner.net}}</td>
+						<td class="text-right">{{winner.points}}</td>
+						<td class="text-right">{{winner.earnings | currency:'USD':true:'1.2-2' }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<h3>KPs</h3>
+	<div class="row">
+		<div class="col-md-6" *ngFor="let flt of flights">
+			<h4>{{flt}}-Flight</h4>
+			<table class="table table-sm table-striped">
+				<thead>
+					<th>Player</th>
+					<th class="text-right">Hole</th>
+				</thead>
+				<tbody>
+					<tr *ngFor="let kp of getKps(flt)">
+						<td>{{kp.player}}</td>
+						<td class="text-right">{{kp.hole}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<h3>Scoreboard</h3>
+	<div class="table-responsive">
+		<table class="table table-sm table-striped">
+			<thead>
+				<th>FLT</th>
+				<th>Player</th>
+				<th class="text-right">HDCP</th>
+				<th class="text-right" *ngFor="let hole of front" >{{hole + 1}}</th>
+				<th class="text-right">FRT</th>
+				<th class="text-right" *ngFor="let hole of back" >{{hole + 1}}</th>
+				<th class="text-right">BCK</th>
+				<th class="text-right">Score</th>
+				<th class="text-right">FRT Net</th>
+				<th class="text-right">BCK Net</th>
+				<th class="text-right">Net</th>
+			</thead>
+			<tbody>
+				<tr *ngFor="let round of getRounds()">
+					<td>{{round.flight}}</td>
+					<td>{{round.player}}</td>
+					<td class="text-right">{{round.hdcp}}</td>
+          <td class="text-right" *ngFor="let hole of front" >{{round.holes[hole]}}</td>
+			    <td class="text-right">{{round.front}}</td>
+					<td class="text-right" *ngFor="let hole of back" >{{round.holes[hole]}}</td>
+					<td class="text-right">{{round.back}}</td>
+					<td class="text-right">{{round.total}}</td>
+					<td class="text-right">{{round.frontNet}}</td>
+					<td class="text-right">{{round.backNet}}</td>
+					<td class="text-right">{{round.totalNet}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+<div id="FullSchedule">
+  <as-sub-header [title]="season + ' Schedule'"></as-sub-header>
+  <as-season-select [season]="season" (seasonChange)="seasonChange($event);"></as-season-select>
+  <table class="table table-condensed">
+    <thead class="thead-default">
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Course</th>
+        <th>Green Fees</th>
+        <th>Slope/Rating</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ee of events" [ngClass]="{'alert-info': ee.isSaturday == 'true'}">
+        <td width="10%">{{ee.date}}</td>
+        <td width="15%">{{ee.time}}</td>
+        <td width="20%">{{ee.name}}</td>
+        <td width="10%">{{ee.greenFees}}</td>
+        <td width="10%">{{ee.slopeRating}}</td>
+        <td width="35%">{{ee.comments}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

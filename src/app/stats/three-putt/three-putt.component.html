@@ -1,0 +1,58 @@
+<section id="ThreePutt">
+  <as-sub-header [title]="'Three Putt Kps'"></as-sub-header>
+  <p>
+    Win the KP and three putt? More than three putt?!?!?!
+  </p>
+  <ngb-tabset>
+    <ngb-tab title="Return" id="Return">
+      <ng-template ngbTabContent>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th class="text-right">Date</th>
+              <th>Course</th>
+              <th class="text-right">Hole</th>
+              <th class="text-right">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of bad">
+              <td>{{entry.name}}</td>
+              <td class="text-right">{{entry.playDate}}</td>
+              <td>{{entry.course}}</td>
+              <td class="text-right">{{entry.hole}}</td>
+              <td class="text-right">{{entry.score}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Earn" id="Earn">
+      <ng-template ngbTabContent>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th class="text-right">Date</th>
+              <th>Course</th>
+              <th class="text-right">Hole</th>
+              <th class="text-right">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of good">
+              <td>{{entry.name}}</td>
+              <td class="text-right">{{entry.playDate}}</td>
+              <td>{{entry.course}}</td>
+              <td class="text-right">{{entry.hole}}</td>
+              <td class="text-right">{{entry.score}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+
+
+</section>

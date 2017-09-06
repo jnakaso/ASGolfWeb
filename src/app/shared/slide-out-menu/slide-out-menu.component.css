@@ -1,0 +1,25 @@
+div {
+  height:100%;
+  background: #292b2c;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  width: 20%;
+  min-width: 300px;
+  z-index: 9999;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+ 
+ul {
+  line-height: 3;
+  font-weight: 400;
+  padding-top: 25px;
+  list-style: none;
+}
+
+li {
+    cursor:pointer
+}

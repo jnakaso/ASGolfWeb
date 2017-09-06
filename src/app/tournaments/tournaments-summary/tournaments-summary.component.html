@@ -1,0 +1,79 @@
+<section id="Summary">
+	<div>
+		<as-sub-header [title]="season  + ' Season Summary'"></as-sub-header>
+		<ngb-tabset>
+			<ngb-tab title="Points" id="SummaryPoints">
+				<ng-template ngbTabContent>
+					<table class="table table-sm table-striped">
+						<thead>
+							<tr>
+								<th width="10%">Player</th>
+								<th class="text-right" width="5%">Points</th>
+								<th class="text-right" width="5%"*ngFor="let tour of tournaments; let ii = index">
+									<a class="any-link" role="button" pageScroll [href]="'#tour_' + tour.id" title="{{tour.courseName}}">{{ii + 1}}</a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let entry of getStandings()">
+								<td>{{entry.name}}</td>
+								<td class="text-right">{{entry.kps}}</td>
+								<td class="text-right" *ngFor="let pts of entry.pointsByTour">
+									<span *ngIf="pts != 0">{{ pts }}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</ng-template>
+			</ngb-tab>
+			<ngb-tab title="Earnings" id="SummaryEarnings">
+				<ng-template ngbTabContent>
+					<table class="table table-sm table-striped">
+						<thead>
+							<tr>
+								<th width="10%">Player</th>
+								<th class="text-right" width="5%">Points</th>
+								<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
+									<a role="button" pageScroll href="#tour_{{tour.id}}" title="{{tour.courseName}}">{{ii + 1}}</a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let entry of getStandings()">
+								<td>{{entry.name}}</td>
+								<td class="text-right" >{{entry.kps}}</td>
+								<td class="text-right" *ngFor="let pts of entry.earningsByTour">
+									<span *ngIf="pts != 0">{{ pts | currency:'USD':true:'1.2-2' }}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</ng-template>
+			</ngb-tab>
+			<ngb-tab title="Kps" id="SummaryKps">
+				<ng-template ngbTabContent>
+					<table class="table  table-sm  table-striped">
+						<thead>
+							<tr>
+								<th width="10%">Player</th>
+								<th class="text-right" width="5%">Points</th>
+								<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
+									<a role="button" pageScroll href="#tour_{{tour.id}}" title="{{tour.courseName}}">{{ii + 1}}</a>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let entry of getStandings()">
+								<td>{{entry.name}}</td>
+								<td class="text-right" >{{entry.kps}}</td>
+								<td class="text-right" *ngFor="let pts of entry.kpsByTour">
+									<span *ngIf="pts != 0">{{ pts }}</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</ng-template>
+			</ngb-tab>
+		</ngb-tabset>
+	</div>
+</section>

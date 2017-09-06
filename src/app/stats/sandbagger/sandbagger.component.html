@@ -1,0 +1,28 @@
+<section id="Sandbagger">
+  <as-sub-header [title]="'Sandbagger'"></as-sub-header>
+  <p>
+    How do you explain such a large split between high net and low net?
+  </p>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th class="text-right">Tournaments</th>
+          <th class="text-right">Low Net</th>
+          <th class="text-right">High Net</th>
+          <th class="text-right">SAND DIFF</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of data">
+          <td>{{entry.name}}</td>
+          <td class="text-right">{{entry.rounds}}</td>
+          <td class="text-right">{{entry.lo}}</td>
+          <td class="text-right">{{entry.hi}}</td>
+          <td class="text-right">{{entry.range}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

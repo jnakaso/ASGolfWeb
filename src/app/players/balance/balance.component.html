@@ -1,0 +1,34 @@
+<section id="Balance">
+  <as-sub-header [title]="'Balance Sheet'"></as-sub-header>
+  <p class="card-text">Last Updated: {{balances.lastUpdated}}</p>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th rowspan="3">Player</th>
+          <th rowspan="3">Paid</th>
+          <th rowspan="2">Dues</th>
+          <th *ngFor="let tour of balances.tournaments">{{tour.date}}</th>
+          <th rowspan="2">Balance</th>
+        </tr>
+        <tr>
+          <th *ngFor="let tour of balances.tournaments">{{tour.course}}</th>
+        </tr>
+        <tr>
+          <th class="text-right">{{balances.dues }}</th>
+          <th class="text-right" *ngFor="let tour of balances.tournaments">{{tour.cost}}</th>
+          <th class="text-right">{{balances.total }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of balances.players">
+          <td>{{player.name}}</td>
+          <td class="text-right">{{player.amountPaid | currency:'USD':true:'1.0-0' }}</td>
+          <td class="text-right">{{player.dues | currency:'USD':true:'1.0-0' }}</td>
+          <td class="text-right" *ngFor="let cost of player.costs">{{cost | currency:'USD':true:'1.0-0'}}</td>
+          <td class="text-right">{{player.total | currency:'USD':true:'1.0-0' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

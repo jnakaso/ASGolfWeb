@@ -1,0 +1,27 @@
+<section id="MostImproved">
+		<as-sub-header [title]="'Most Improved'"></as-sub-header>
+		<p>
+			From the start of the season, by percentage. Bruce improving by one stroke is better is far more impressive than Ken improving
+			by one stroke.
+		</p>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Player</th>
+						<th class="text-right">Tournaments</th>
+						<th class="text-right">Change</th>
+						<th class="text-right">Percent Change</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let entry of data">
+						<td>{{entry.name}}</td>
+						<td class="text-right">{{entry.count}}</td>
+						<td class="text-right">{{entry.change}}</td>
+						<td class="text-right">{{entry.percentChange }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</section>

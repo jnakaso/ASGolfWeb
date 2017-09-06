@@ -1,0 +1,10 @@
+<section>
+  <h3 class="card-title">Funnies
+    <span role="button" class="fa fa-refresh" style="font-size:75%" (click)="changeFunny()"></span>
+  </h3>
+  <div style="text-align:center; margin:5px">
+    <img id="fun_daily" *ngIf="isImage()" src="http://ppcc.com/asgolf-assets/funnies/{{funny}}" title="{{funny}}" alt="funnies"
+      align="center" />
+    <span *ngIf="isText()">{{funnyText}}</span>
+  </div>
+</section>

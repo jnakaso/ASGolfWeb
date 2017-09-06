@@ -1,0 +1,52 @@
+<section id="Officers">
+  <as-sub-header [title]="'Officers'"></as-sub-header>
+  <div class="col-md-12">
+    <div>
+      <fieldset>
+        <legend>
+          Legend
+        </legend>
+        <ul>
+          <li>TC - Tournament Chairman</li>
+          <li>P - President</li>
+          <li>V - Vice President</li>
+          <li>A - Awards Chairman</li>
+          <li>T/S - Treasurer/Secretary</li>
+          <li>H - Handicap Chairman</li>
+          <li>W - Webmaster</li>
+          </ul>
+      </fieldset>
+    </div>
+    <div>
+      <input type="checkbox" [(ngModel)]="activeOnly" />
+      <span>Active Only</span>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>
+            <a class="btn" role="button" (click)="goLeft()" [ngClass]="{'disabled':!showLeft()}">
+              <span class="fa fa-arrow-left"></span>
+            </a>
+          </th>
+          <th *ngFor="let year of seasonRange">{{year}}</th>
+          <th>
+            <a class="btn" role="button" (click)="goRight()" [ngClass]="{'disabled': !showRight()}">
+              <span class="fa fa-arrow-right"></span>
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of filteredPlayers()">
+          <td>{{player.firstName}} {{player.lastName}}</td>
+          <td>&nbsp;</td>
+          <td *ngFor="let year of seasonRange">{{getPosition(player, year)}}</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

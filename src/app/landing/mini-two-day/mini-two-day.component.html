@@ -1,0 +1,30 @@
+<section *ngIf="showTwoday == true">
+  <h3 class="card-title">Two Day Result</h3>
+  <div><p>
+    <strong>Day One:</strong> {{twoday.dayoneCourseName}} | <strong>Day Two:</strong> {{twoday.daytwoCourseName}}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-md-6 table-responsive" *ngFor="let flt of getFlights()">
+      <h5>{{flt}}-Flight</h5>
+      <table class="table table-striped">
+        <thead>
+          <th>Player</th>
+          <th class="text-right">HDCP</th>
+          <th class="text-right">Day 1</th>
+          <th class="text-right">Day 2</th>
+          <th class="text-right">Total</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let score of getScores(flt)">
+            <td>{{score.player}}</td>
+            <td class="text-right">{{score.handicap}}</td>
+            <td class="text-right">{{score.dayone}}</td>
+            <td class="text-right">{{score.daytwo}}</td>
+            <td class="text-right">{{score.totalNet}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

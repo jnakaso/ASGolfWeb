@@ -1,0 +1,28 @@
+<section id="DrJekyll">
+  <as-sub-header [title]="'Dr. Jekyll and Mr. Hyde'"></as-sub-header>
+  <p>
+    The biggest splits between front and back.
+  </p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th class="text-right">Date</th>
+        <th>Course</th>
+        <th class="text-right">Front</th>
+        <th class="text-right">Back</th>
+        <th class="text-right">Split</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of data">
+        <td>{{entry.name}}</td>
+        <td class="text-right">{{entry.playDate}}</td>
+        <td>{{entry.course}}</td>
+        <td class="text-right">{{entry.front}}</td>
+        <td class="text-right">{{entry.back}}</td>
+        <td class="text-right">{{entry.split}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
