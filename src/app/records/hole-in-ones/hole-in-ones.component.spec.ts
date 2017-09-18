@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
+import { GolfModule } from '../../golf/golf.module';
 import { HoleInOnesComponent } from './hole-in-ones.component';
 
 describe('HoleInOnesComponent', () => {
@@ -8,9 +10,10 @@ describe('HoleInOnesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HoleInOnesComponent ]
+      imports: [SharedModule, GolfModule],
+      declarations: [HoleInOnesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

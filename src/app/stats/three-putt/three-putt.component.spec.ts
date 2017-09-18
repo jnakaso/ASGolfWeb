@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { SharedModule } from '../../shared/shared.module';
 import { ThreePuttComponent } from './three-putt.component';
 
 describe('ThreePuttComponent', () => {
@@ -8,9 +10,10 @@ describe('ThreePuttComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThreePuttComponent ]
+      imports: [NgbModule, SharedModule],
+      declarations: [ThreePuttComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

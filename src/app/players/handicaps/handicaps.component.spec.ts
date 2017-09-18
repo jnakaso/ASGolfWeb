@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HandicapsComponent } from './handicaps.component';
+import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component';
+import { ASSlopeAdjustedPipe } from '../../golf/asslope-adjusted.pipe';
+import { PlayersService } from '../../golf/players.service';
+import { CoursesService } from '../../golf/courses.service';
 
 describe('HandicapsComponent', () => {
   let component: HandicapsComponent;
@@ -8,9 +14,20 @@ describe('HandicapsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HandicapsComponent ]
+      imports: [
+        FormsModule,
+        HttpModule,
+        NgbModule.forRoot()
+      ],
+      declarations: [
+        HandicapsComponent,
+        SubHeaderComponent,
+        ASSlopeAdjustedPipe],
+      providers: [
+        PlayersService,
+        CoursesService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

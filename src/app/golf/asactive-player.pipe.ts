@@ -6,6 +6,9 @@ import { ASPlayer } from './asplayer';
 })
 export class ASActivePlayerPipe implements PipeTransform {
   transform(players: ASPlayer[], isActive: boolean): ASPlayer[] {
+    if (isActive == null) {
+      return players;
+    }
     return players.filter(player => player.active == isActive);
   }
 }

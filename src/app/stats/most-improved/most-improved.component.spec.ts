@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { MostImprovedComponent } from './most-improved.component';
 
 describe('MostImprovedComponent', () => {
@@ -8,9 +9,10 @@ describe('MostImprovedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MostImprovedComponent ]
+      imports: [SharedModule],
+      declarations: [MostImprovedComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

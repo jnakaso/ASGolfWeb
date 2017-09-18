@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { AnnouncementsComponent } from './announcements.component';
+import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
+import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component';
+import { InformationService } from '../../golf/information.service';
 
 describe('AnnouncementsComponent', () => {
   let component: AnnouncementsComponent;
@@ -8,9 +12,14 @@ describe('AnnouncementsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnnouncementsComponent ]
+      imports: [HttpModule],
+      declarations: [
+        AnnouncementsComponent,
+        SlideOutMenuComponent,
+        SubHeaderComponent],
+      providers: [InformationService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

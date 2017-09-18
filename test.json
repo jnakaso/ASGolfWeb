@@ -1,0 +1,387 @@
+{
+    "lastUpdated": "8/7/2017",
+    "dues": "$140",
+    "total": "$661",
+    "tournaments": [
+        {
+            "date": "3/26/17",
+            "course": "Brookdale",
+            "cost": "$34"
+        },
+        {
+            "date": "4/2/17",
+            "course": "Camaloch",
+            "cost": "$34"
+        },
+        {
+            "date": "4/23/17",
+            "course": "Allenmore",
+            "cost": "$38"
+        },
+        {
+            "date": "5/20/17",
+            "course": "High Cedars (CANCELLED)",
+            "cost": ""
+        },
+        {
+            "date": "6/4/17",
+            "course": "Madrona Links",
+            "cost": "$39"
+        },
+        {
+            "date": "6/25/17",
+            "course": "Kayak Point",
+            "cost": "$65"
+        },
+        {
+            "date": "7/16/17",
+            "course": "Battle Creek",
+            "cost": "$42"
+        },
+        {
+            "date": "7/30/17",
+            "course": "Snohomish",
+            "cost": "$46"
+        },
+        {
+            "date": "8/6/17",
+            "course": "Eaglemont",
+            "cost": "$77"
+        },
+        {
+            "date": "8/20/17",
+            "course": "North Shore",
+            "cost": "$48"
+        },
+        {
+            "date": "9/23/17",
+            "course": "Maplewood",
+            "cost": "$52"
+        }
+    ],
+    "players": [
+        {
+            "name": "Mel A.",
+            "amountPaid": "590",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                0,
+                51,
+                0
+            ],
+            "total": 129
+        },
+        {
+            "name": "Don C.",
+            "amountPaid": "627",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 95
+        },
+        {
+            "name": "Jin C.",
+            "amountPaid": "750",
+            "dues": 140,
+            "costs": [
+                0,
+                31,
+                28,
+                0,
+                0,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 286
+        },
+        {
+            "name": "Allan F.",
+            "amountPaid": "571",
+            "dues": 140,
+            "costs": [
+                0,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 71
+        },
+        {
+            "name": "Howard H.",
+            "amountPaid": "661",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                0,
+                41,
+                71,
+                0,
+                0
+            ],
+            "total": 222
+        },
+        {
+            "name": "Bruce K.",
+            "amountPaid": "661",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 129
+        },
+        {
+            "name": "Rich K.",
+            "amountPaid": "675",
+            "dues": 140,
+            "costs": [
+                0,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 175
+        },
+        {
+            "name": "Jeff K.",
+            "amountPaid": "590",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                0,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 94
+        },
+        {
+            "name": "Jeff N.",
+            "amountPaid": "661",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 129
+        },
+        {
+            "name": "Harry N.",
+            "amountPaid": "600",
+            "dues": 140,
+            "costs": [
+                0,
+                31,
+                28,
+                0,
+                0,
+                0,
+                0,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 238
+        },
+        {
+            "name": "Nate N.",
+            "amountPaid": "550",
+            "dues": 140,
+            "costs": [
+                0,
+                0,
+                0,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 109
+        },
+        {
+            "name": "Nate O.",
+            "amountPaid": "588",
+            "dues": 140,
+            "costs": [
+                0,
+                31,
+                28,
+                0,
+                0,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 124
+        },
+        {
+            "name": "Kiyo S.",
+            "amountPaid": "661",
+            "dues": 140,
+            "costs": [
+                32,
+                0,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 160
+        },
+        {
+            "name": "Mun T.",
+            "amountPaid": "500",
+            "dues": 140,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": -32
+        },
+        {
+            "name": "Dan T.",
+            "amountPaid": "525",
+            "dues": 0,
+            "costs": [
+                32,
+                31,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 133
+        },
+        {
+            "name": "George T.",
+            "amountPaid": "500",
+            "dues": 140,
+            "costs": [
+                0,
+                0,
+                0,
+                0,
+                36,
+                60,
+                0,
+                41,
+                71,
+                51,
+                0
+            ],
+            "total": 101
+        },
+        {
+            "name": "Takashi T.",
+            "amountPaid": "500",
+            "dues": 140,
+            "costs": [
+                0,
+                0,
+                28,
+                0,
+                36,
+                60,
+                42,
+                41,
+                71,
+                0,
+                0
+            ],
+            "total": 82
+        }
+    ]
+}

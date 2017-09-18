@@ -10,5 +10,4 @@ export class ASSlopeAdjustedPipe implements PipeTransform {
     return hdcp * adj / 113;
   }
 
-
 }

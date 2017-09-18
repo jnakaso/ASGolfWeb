@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
+import { SharedModule } from '../../shared/shared.module';
+import { GolfModule } from '../../golf/golf.module';
 import { TournamentsTwoDayComponent } from './tournaments-two-day.component';
 
 describe('TournamentsTwoDayComponent', () => {
@@ -8,9 +11,13 @@ describe('TournamentsTwoDayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TournamentsTwoDayComponent ]
+      imports: [
+        HttpModule,
+        SharedModule,
+        GolfModule],
+      declarations: [TournamentsTwoDayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -42,6 +42,7 @@ export class SlideOutMenuComponent implements OnInit {
   }
 
   toggleMenu() {
+    console.log
     // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }

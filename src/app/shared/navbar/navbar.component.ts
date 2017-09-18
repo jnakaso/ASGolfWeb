@@ -8,9 +8,9 @@ import { NavbarItem } from '../navbar-item';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() brand: NavbarItem;
-  @Input() sponsor: NavbarItem;
-  @Input() sections: NavbarItem[];
+  @Input() brand: NavbarItem = new NavbarItem('', '');
+  @Input() sponsor: NavbarItem = new NavbarItem('', '');
+  @Input() sections: NavbarItem[] = [];
 
   public hideSections = true;
 

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { DrJekyllComponent } from './dr-jekyll.component';
 
 describe('DrJekyllComponent', () => {
@@ -8,9 +9,10 @@ describe('DrJekyllComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DrJekyllComponent ]
+      imports: [SharedModule],
+      declarations: [DrJekyllComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

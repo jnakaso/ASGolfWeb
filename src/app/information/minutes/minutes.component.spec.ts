@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { MinutesComponent } from './minutes.component';
+import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
+import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component';
+import { InformationService } from '../../golf/information.service';
 
 describe('MinutesComponent', () => {
   let component: MinutesComponent;
@@ -8,9 +12,14 @@ describe('MinutesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MinutesComponent ]
+      imports: [HttpModule],
+      declarations: [
+        MinutesComponent,
+        SlideOutMenuComponent,
+        SubHeaderComponent],
+      providers: [InformationService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

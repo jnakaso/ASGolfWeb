@@ -9,7 +9,6 @@ const ASGOLF_ASSET_ROOT = environment.dataRoot;
 export class StatsService {
 
   constructor(private http: Http) {
-
   }
 
   getStats(season: number): Observable<any> {
@@ -21,6 +20,5 @@ export class StatsService {
     return this.http.get(ASGOLF_ASSET_ROOT + `/data/records.js`)
       .map(r => r.json());
   }
-
 
 }

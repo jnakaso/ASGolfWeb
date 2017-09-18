@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { AsStandingsComponent } from './as-standings.component';
+import { GolfService } from '../../golf/golf.service';
+import { StatsService } from '../../golf/stats.service';
 
 describe('AsStandingsComponent', () => {
   let component: AsStandingsComponent;
@@ -8,9 +11,11 @@ describe('AsStandingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AsStandingsComponent ]
+      imports: [HttpModule],
+      declarations: [AsStandingsComponent],
+      providers: [GolfService, StatsService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

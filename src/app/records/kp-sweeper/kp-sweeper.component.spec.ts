@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
+import { GolfModule } from '../../golf/golf.module';
 import { KpSweeperComponent } from './kp-sweeper.component';
 
 describe('KpSweeperComponent', () => {
@@ -8,9 +10,10 @@ describe('KpSweeperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ KpSweeperComponent ]
+      imports: [SharedModule, GolfModule],
+      declarations: [KpSweeperComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

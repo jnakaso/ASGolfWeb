@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class GoodBadUglyComponent {
 
   @Input() season: number;
-  @Input() data: any;
+  @Input() data: any = {};
 
   getRounds(section: string) {
     return this.data[section] ? this.data[section].rounds : [];

@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Routes, RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
+import { SharedModule } from '../../shared/shared.module';
+import { GolfModule } from '../../golf/golf.module';
 import { WhereWePlayedComponent } from './where-we-played.component';
 
 describe('WhereWePlayedComponent', () => {
@@ -8,9 +13,16 @@ describe('WhereWePlayedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhereWePlayedComponent ]
+      imports: [
+        SharedModule,
+        GolfModule,
+        RouterModule.forRoot([]),
+        HttpModule
+      ],
+      declarations: [WhereWePlayedComponent],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

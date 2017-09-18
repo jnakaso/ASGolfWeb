@@ -1,10 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { EventsService } from './events.service';
 
 describe('EventsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpModule],
       providers: [EventsService]
     });
   });

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { StandingsComponent } from './standings.component';
 
 describe('StandingsComponent', () => {
@@ -8,9 +9,10 @@ describe('StandingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StandingsComponent ]
+      imports: [SharedModule],
+      declarations: [StandingsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

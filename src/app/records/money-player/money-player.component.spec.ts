@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
+import { GolfModule } from '../../golf/golf.module';
 import { MoneyPlayerComponent } from './money-player.component';
 
 describe('MoneyPlayerComponent', () => {
@@ -8,9 +10,10 @@ describe('MoneyPlayerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoneyPlayerComponent ]
+      imports: [FormsModule, SharedModule, GolfModule],
+      declarations: [MoneyPlayerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

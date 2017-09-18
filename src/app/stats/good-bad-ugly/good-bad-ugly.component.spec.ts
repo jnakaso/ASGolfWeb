@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { GoodBadUglyComponent } from './good-bad-ugly.component';
 
 describe('GoodBadUglyComponent', () => {
@@ -8,9 +9,10 @@ describe('GoodBadUglyComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GoodBadUglyComponent ]
+      imports: [SharedModule],
+      declarations: [GoodBadUglyComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

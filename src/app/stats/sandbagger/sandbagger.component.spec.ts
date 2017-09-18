@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { SandbaggerComponent } from './sandbagger.component';
 
 describe('SandbaggerComponent', () => {
@@ -8,9 +9,10 @@ describe('SandbaggerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SandbaggerComponent ]
+      imports: [SharedModule],
+      declarations: [SandbaggerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

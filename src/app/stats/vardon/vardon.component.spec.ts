@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SharedModule } from '../../shared/shared.module';
 import { VardonComponent } from './vardon.component';
 
 describe('VardonComponent', () => {
@@ -8,9 +9,10 @@ describe('VardonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VardonComponent ]
+      imports: [SharedModule],
+      declarations: [VardonComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

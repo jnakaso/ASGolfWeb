@@ -1,6 +1,6 @@
 import { Component, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Ng2PageScrollModule, PageScrollService, PageScrollInstance } from 'ng2-page-scroll/ng2-page-scroll';
+import { PageScrollService, PageScrollInstance } from 'ng2-page-scroll/ng2-page-scroll';
 
 @Component({
   selector: 'as-information',

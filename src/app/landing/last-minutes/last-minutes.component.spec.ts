@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { LastMinutesComponent } from './last-minutes.component';
+import { InformationService } from '../../golf/information.service';
 
 describe('LastMinutesComponent', () => {
   let component: LastMinutesComponent;
@@ -8,9 +10,11 @@ describe('LastMinutesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LastMinutesComponent ]
+      imports: [HttpModule],
+      declarations: [LastMinutesComponent],
+      providers: [InformationService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

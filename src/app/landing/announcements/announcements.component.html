@@ -1,11 +1,6 @@
 <section>
   <div>
     <h3>Announcements</h3>
-    <div *ngIf="announcement">
-      <p>Updated: {{announcement.date}}</p>
-      <ul *ngFor="let entry of announcement.Item">
-        <li>{{entry}}</li>
-      </ul>
-    </div>
+    <markdown [path]="latest"></markdown>
   </div>
 </section>

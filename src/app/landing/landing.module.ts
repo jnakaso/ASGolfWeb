@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { MarkdownModule } from 'angular2-markdown';
 
 import { AsStandingsComponent } from './as-standings/as-standings.component';
 import { LandingComponent } from './landing.component';
@@ -20,7 +21,8 @@ import { LastMinutesComponent } from './last-minutes/last-minutes.component';
         path: 'landing',
         component: LandingComponent
       }
-    ])
+    ]),
+    MarkdownModule
   ],
   declarations: [
     AsStandingsComponent,

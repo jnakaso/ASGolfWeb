@@ -10,6 +10,7 @@ import { InformationService } from '../../golf/information.service';
 export class AnnouncementsComponent implements OnInit {
 
   announcement: ASAnnouncement;
+  latest: string = './asgolf-assets/announcements/current.md'
 
   constructor(
     private informationService: InformationService) {
@@ -18,7 +19,6 @@ export class AnnouncementsComponent implements OnInit {
   ngOnInit() {
     this.informationService.getAnnouncements()
       .subscribe(anns => this.announcement = anns[0]);
-
   }
 
 }

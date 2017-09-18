@@ -9,7 +9,7 @@ import { PlayersService } from './players.service';
 import { StatsService } from './stats.service';
 import { PhotosService } from './photos.service';
 import { ASSlopeAdjustedPipe } from './asslope-adjusted.pipe';
-import { ASNamePipe } from './asname.pipe';
+import { ASCourseNamePipe } from './as-course-name.pipe';
 import { ASActivePlayerPipe } from './asactive-player.pipe';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { ASActivePlayerPipe } from './asactive-player.pipe';
     CommonModule
   ],
   exports: [
-    ASSlopeAdjustedPipe, ASNamePipe, ASActivePlayerPipe
+    ASSlopeAdjustedPipe, ASCourseNamePipe, ASActivePlayerPipe
   ],
   providers: [
     GolfService,
@@ -28,6 +28,6 @@ import { ASActivePlayerPipe } from './asactive-player.pipe';
     PlayersService,
     StatsService,
     PhotosService],
-  declarations: [ASSlopeAdjustedPipe, ASNamePipe, ASActivePlayerPipe]
+  declarations: [ASSlopeAdjustedPipe, ASCourseNamePipe, ASActivePlayerPipe]
 })
 export class GolfModule { }
