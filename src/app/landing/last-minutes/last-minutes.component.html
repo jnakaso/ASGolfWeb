@@ -1,16 +1,8 @@
 <div>
-  <div>
-    <h3>Minutes
-      <a routerLink="/information/Minutes">
-        <small>more..</small>
-      </a>
-    </h3>
-    <div *ngIf="minutes">
-      <p>From {{minutes.$.date}}</p>
-      <ul *ngFor="let entry of minutes.item">
-        <li>{{entry}}</li>
-      </ul>
-      <p>- {{minutes.$.author}}</p>
-    </div>
-  </div>
+  <h3 class="subhead">Minutes
+    <a routerLink="/information/minutes">
+      <small>more..</small>
+    </a>
+  </h3>
+  <markdown-to-html *ngIf="minutes != null" [data]="minutes"></markdown-to-html>
 </div>

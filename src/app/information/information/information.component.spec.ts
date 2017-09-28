@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
 import { InformationComponent } from './information.component';
 import { RulesComponent } from '../rules/rules.component';
@@ -13,6 +14,7 @@ import { MinutesComponent } from '../minutes/minutes.component';
 import { PageHeaderComponent } from '../../shared/page-header/page-header.component';
 import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
 import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component';
+import { GolfService } from '../../golf/golf.service';
 import { InformationService } from '../../golf/information.service';
 import { PlayersService } from '../../golf/players.service';
 
@@ -28,7 +30,8 @@ describe('InformationComponent', () => {
         NgbModule.forRoot(),
         Ng2PageScrollModule,
         HttpModule,
-        BrowserAnimationsModule],
+        BrowserAnimationsModule,
+        MarkdownToHtmlModule],
       declarations: [
         InformationComponent,
         RulesComponent,
@@ -37,7 +40,7 @@ describe('InformationComponent', () => {
         PageHeaderComponent,
         SlideOutMenuComponent,
         SubHeaderComponent],
-      providers: [InformationService, PlayersService]
+      providers: [GolfService, InformationService, PlayersService]
     })
       .compileComponents();
   }));

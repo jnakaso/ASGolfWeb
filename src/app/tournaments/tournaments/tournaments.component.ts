@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GolfService } from '../../golf/golf.service';
 import { TournamentsService } from '../../golf/tournaments.service';
 import { ASTournament } from '../../golf/astournament';
 
@@ -9,13 +10,19 @@ import { ASTournament } from '../../golf/astournament';
 })
 export class TournamentsComponent implements OnInit {
   sections: any[] = [];
-  season: number = 2016;
+  season: number;
   tournaments: ASTournament[] = [];
 
-  constructor(private tournamentsService: TournamentsService) { }
+  constructor(
+    private golfService: GolfService,
+    private tournamentsService: TournamentsService) { }
 
   ngOnInit() {
-    this.loadData(this.season);
+    this.golfService.getInitValues()
+      .subscribe(ini => {
+        this.season = ini.currentSeason;
+        this.loadData(this.season);
+      });
   }
 
   seasonChange(newSeason: number) {

@@ -16,7 +16,7 @@ import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component
     FormsModule,
     RouterModule.forChild([]),
     NgbModule.forRoot(),
-    Ng2PageScrollModule
+    Ng2PageScrollModule.forRoot()
   ],
   declarations: [
     NavbarComponent,

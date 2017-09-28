@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ASCourse } from '../../golf/ascourse';
+import { GolfService } from '../../golf/golf.service';
 import { CoursesService } from '../../golf/courses.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'as-where-we-played',
@@ -12,32 +14,37 @@ export class WhereWePlayedComponent implements OnInit {
   @Input() data: any;
   courses: ASCourse[] = [];
 
-  lastYear: number = 2016;
-  firstYear: number = 1996;
-  columns = 10;
+  lastYear: number;
+  firstYear: number = environment.startYear;
+  columns = 9;
   start: number;
   end: number;
   seasonRange: number[] = [];
 
-  constructor(private coursesService: CoursesService) {
+  constructor(
+    private golfService: GolfService,
+    private coursesService: CoursesService) {
   }
 
   ngOnInit() {
     this.loadData();
   }
 
-
   loadData() {
-    this.coursesService.getCourses().subscribe(data => this.courses = data);
-    this.start = this.lastYear;
-    this.loadPaging();
+    this.golfService.getInitValues()
+      .subscribe(ini => {
+        this.lastYear = ini.currentSeason;
+        this.start = this.lastYear;
+        this.coursesService.getCourses().subscribe(cc => {
+          this.courses = cc;
+          this.loadPaging();
+        });
+      });
   }
-
 
   getTitle() {
     return "Where We've Played";
   }
-
 
   getCount(course: ASCourse) {
     return this.data.filter(dd => dd.course == course.name).length;

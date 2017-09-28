@@ -10,41 +10,53 @@ const ASGOLF_ASSET_ROOT = environment.dataRoot;
 
 @Injectable()
 export class InformationService {
- 
-  constructor(
-    private http: Http) {
-  }
 
-  getMinutes(): Observable<any[]> {
-    return this.http.get(ASGOLF_ASSET_ROOT + `/data/Minutes.xml`)
-      .map(r => {
-        let minutes = [];
-        parseString(r.text(), (err, result) => minutes = result.MinutesAndInformation.Minutes)
-        return minutes;
-      });
-  }
+    constructor(
+        private http: Http) {
+    }
 
-  getAnnouncements(): Observable<ASAnnouncement[]> {
-    return this.http.get(ASGOLF_ASSET_ROOT + `/data/Announcements.xml`)
-      .map(r => {
-        let announcements = [];
-        parseString(r.text(), (err, result) => {
-          announcements = result.Announcements.Announcement;
-          announcements.forEach(obj => obj.date = obj['$'].date);
-        })
-        return announcements;
-      });
-  }
+    getMinutes(): Observable<string[]> {
+        return this.http.get(ASGOLF_ASSET_ROOT + `/minutes/minutes.js`)
+            .map(r => {
+                let paths = r.json();
+                return paths.map(p => `${ASGOLF_ASSET_ROOT}/minutes/${p}`);
+            });
+    }
 
-  getOfficers(): Observable<any> {
-    return this.http.get(ASGOLF_ASSET_ROOT + `/data/officers.xml`)
-      .map(r => {
-        let officers = {};
-        parseString(r.text(), (err, result) => {
-          officers = result.Officers.Season;
-        })
-        return officers;
-      });
-  }
+    getMdAnnouncements(): Observable<string[]> {
+        return this.http.get(`${ASGOLF_ASSET_ROOT}/announcements/announcements.js`)
+            .map(r => {
+                let paths = r.json();
+                return paths.map(p => `${ASGOLF_ASSET_ROOT}/announcements/${p}`);
+            });
+    }
+
+    getMdText(path: string): Observable<string> {
+        return this.http.get(path)
+            .map(r => r.text());
+    }
+
+    getAnnouncements(): Observable<ASAnnouncement[]> {
+        return this.http.get(ASGOLF_ASSET_ROOT + `/data/Announcements.xml`)
+            .map(r => {
+                let announcements = [];
+                parseString(r.text(), (err, result) => {
+                    announcements = result.Announcements.Announcement;
+                    announcements.forEach(obj => obj.date = obj['$'].date);
+                })
+                return announcements;
+            });
+    }
+
+    getOfficers(): Observable<any> {
+        return this.http.get(ASGOLF_ASSET_ROOT + `/data/officers.xml`)
+            .map(r => {
+                let officers = {};
+                parseString(r.text(), (err, result) => {
+                    officers = result.Officers.Season;
+                })
+                return officers;
+            });
+    }
 
 }

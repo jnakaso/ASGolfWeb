@@ -11,12 +11,12 @@ export class LastMinutesComponent implements OnInit {
   minutes: any;
 
   constructor(private informationService: InformationService) {
-
   }
 
   ngOnInit() {
     this.informationService.getMinutes()
-      .subscribe(result => this.minutes = this.minutes = result[0]);
+      .subscribe(result => this.informationService.getMdText(result[0])
+        .subscribe(text => this.minutes = text));
   }
 
 }

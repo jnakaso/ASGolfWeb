@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ASPlayer } from '../../golf/asplayer';
+import { GolfService } from '../../golf/golf.service';
 import { InformationService } from '../../golf/information.service';
 import { PlayersService } from '../../golf/players.service';
 
@@ -10,7 +11,7 @@ import { PlayersService } from '../../golf/players.service';
 })
 export class OfficersComponent implements OnInit {
   public static POSTITIONS = {
-    "TournamentChair": "T",
+    "TournamentChair": "TC",
     "President": "P",
     "VicePresident": "V",
     "AwardsChair": "A",
@@ -24,7 +25,7 @@ export class OfficersComponent implements OnInit {
   activeOnly: boolean = true;
   players: ASPlayer[];
 
-  lastYear: number = 2016;
+  lastYear: number;
   firstYear: number = 2007;
   columns = 9;
   start: number;
@@ -32,6 +33,7 @@ export class OfficersComponent implements OnInit {
   seasonRange: number[] = [];
 
   constructor(
+    private golfService: GolfService,
     private informationService: InformationService,
     private playersService: PlayersService) {
   }
@@ -65,12 +67,20 @@ export class OfficersComponent implements OnInit {
   }
 
   loadData() {
-    this.playersService.getPlayers()
-      .subscribe(e => this.players = e);
-    this.informationService.getOfficers()
-      .subscribe(result => this.officers = result);
-    this.start = this.lastYear;
-    this.loadPaging();
+    this.golfService.getInitValues()
+      .subscribe(ini => {
+        this.lastYear = ini.currentSeason;
+        this.start = this.lastYear;
+        this.playersService.getPlayers()
+          .subscribe(e => {
+            this.players = e;
+            this.informationService.getOfficers()
+              .subscribe(result => {
+                this.officers = result;
+                this.loadPaging();
+              });
+          });
+      });
   }
 
   filteredPlayers() {

@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
 import { AnnouncementsComponent } from './announcements.component';
 import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
@@ -12,7 +13,10 @@ describe('AnnouncementsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [
+        HttpModule,
+        MarkdownToHtmlModule.forRoot() 
+      ],
       declarations: [
         AnnouncementsComponent,
         SlideOutMenuComponent,

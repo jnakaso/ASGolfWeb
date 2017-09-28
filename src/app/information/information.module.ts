@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
 import { SharedModule } from '../shared/shared.module';
 import { OfficersComponent } from './officers/officers.component';
@@ -19,11 +20,16 @@ import { InformationComponent } from './information/information.component';
       {
         path: 'information',
         component: InformationComponent
+      },
+      {
+        path: 'information/minutes',
+        component: InformationComponent
       }
     ]),
     NgbModule,
     Ng2PageScrollModule,
-    SharedModule
+    SharedModule,
+    MarkdownToHtmlModule.forRoot()
   ],
   declarations: [OfficersComponent, MinutesComponent, RulesComponent, InformationComponent]
 })

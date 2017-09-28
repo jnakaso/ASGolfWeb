@@ -8,17 +8,18 @@ import { InformationService } from '../../golf/information.service';
   styleUrls: ['./announcements.component.css']
 })
 export class AnnouncementsComponent implements OnInit {
-
-  announcement: ASAnnouncement;
-  latest: string = './asgolf-assets/announcements/current.md'
+  current: string;
 
   constructor(
     private informationService: InformationService) {
   }
 
   ngOnInit() {
-    this.informationService.getAnnouncements()
-      .subscribe(anns => this.announcement = anns[0]);
+    this.informationService.getMdAnnouncements()
+      .subscribe(anns =>
+        this.informationService.getMdText(anns[0])
+          .subscribe(t => this.current = t)
+      );
   }
 
 }

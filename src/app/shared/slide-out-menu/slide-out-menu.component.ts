@@ -13,8 +13,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('out', style({
         transform: 'translate3d(-100%, 0, 0)'
       })),
-      transition('in => out', animate('400ms ease-in-out')),
-      transition('out => in', animate('400ms ease-in-out'))
+      transition('in => out', animate('500ms ease-in-out')),
+      transition('out => in', animate('500ms ease-in-out'))
     ]),
   ]
 })
@@ -29,6 +29,7 @@ export class SlideOutMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.menuState = 'out';
   }
 
   close() {
@@ -42,7 +43,6 @@ export class SlideOutMenuComponent implements OnInit {
   }
 
   toggleMenu() {
-    console.log
     // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }

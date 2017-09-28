@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   dataRoot: './asgolf-assets',
-  startYear: 2012
+  startYear: 2000
 };

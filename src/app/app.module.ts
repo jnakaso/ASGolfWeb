@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MarkdownModule } from 'angular2-markdown';
 
 import { SharedModule } from './shared/shared.module';
 import { StatsModule } from './stats/stats.module';
@@ -29,11 +28,12 @@ import { AppComponent } from './app.component';
       {
         path: '',
         redirectTo: '/landing',
-        pathMatch: 'full'
-      }]),
+        pathMatch: 'full',
+
+      }],
+      { useHash: true }),
     BrowserAnimationsModule,
-    MarkdownModule.forRoot(),
-    
+
     SharedModule,
     StatsModule,
     TournamentsModule,

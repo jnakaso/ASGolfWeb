@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FLIGHTS } from '../../golf/golf.service';
+import { GolfService } from '../../golf/golf.service';
 import { StatsService } from '../../golf/stats.service';
 
 const SECTIONS = [
@@ -21,13 +22,17 @@ const SECTIONS = [
 export class StatsComponent implements OnInit {
 
   sections = SECTIONS;
-  season: number = 2016;
+  season: number;
   stats: any;
 
-  constructor(private statsService: StatsService) {
+  constructor(
+    private golfService: GolfService,
+    private statsService: StatsService) {
   }
 
   ngOnInit() {
+    this.golfService.getInitValues()
+      .subscribe(ini => this.season = ini.currentSeason);
     this.loadData(this.season);
   }
 
