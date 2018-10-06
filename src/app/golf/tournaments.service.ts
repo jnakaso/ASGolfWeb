@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { map } from 'rxjs/operators';
 
 import { ASTwoDay } from './astwo-day';
 import { ASTournament } from './astournament';
@@ -16,17 +16,17 @@ export class TournamentsService {
 
   getTwoDay(season: number): Observable<ASTwoDay> {
     return this.http.get(ASGOLF_ASSET_ROOT + `/data/${season}/twoday.js`)
-      .map(r => r.json() as ASTwoDay);
+      .pipe(map(r => r.json()));
   }
 
   getTournament(season: number, id: number): Observable<ASTournament> {
     return this.http.get(ASGOLF_ASSET_ROOT + `/data/${season}/${id}.js`)
-      .map(r => r.json() as ASTournament);
+    .pipe(map(r => r.json()));
   }
 
   getTournaments(season: number): Observable<ASTournament[]> {
     return this.http.get(ASGOLF_ASSET_ROOT + `/data/${season}/tournaments.js`)
-      .map(r => r.json() as ASTournament[]);
+    .pipe(map(r => r.json()));
   }
 
 }

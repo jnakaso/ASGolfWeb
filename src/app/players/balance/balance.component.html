@@ -23,10 +23,10 @@
       <tbody>
         <tr *ngFor="let player of balances.players">
           <td>{{player.name}}</td>
-          <td class="text-right">{{player.amountPaid | currency:'USD':true:'1.0-0' }}</td>
-          <td class="text-right">{{player.dues | currency:'USD':true:'1.0-0' }}</td>
-          <td class="text-right" *ngFor="let cost of player.costs">{{cost | currency:'USD':true:'1.0-0'}}</td>
-          <td class="text-right">{{player.total | currency:'USD':true:'1.0-0' }}</td>
+          <td class="text-right">{{player.amountPaid | currency }}</td>
+          <td class="text-right">{{player.dues | currency }}</td>
+          <td class="text-right" *ngFor="let cost of player.costs">{{cost | currency}}</td>
+          <td class="text-right">{{player.total | currency }}</td>
         </tr>
       </tbody>
     </table>

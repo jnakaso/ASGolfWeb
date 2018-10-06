@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { SharedModule } from '../shared/shared.module';
 import { GolfModule } from '../golf/golf.module';
@@ -21,7 +20,6 @@ import { OnDeckComponent } from './on-deck/on-deck.component';
       }
     ]),
     NgbModule,
-    Ng2PageScrollModule,
     SharedModule,
     GolfModule
   ],

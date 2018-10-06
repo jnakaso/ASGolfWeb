@@ -3,7 +3,6 @@ import { HttpModule } from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
@@ -28,7 +27,6 @@ describe('InformationComponent', () => {
         FormsModule,
         RouterTestingModule,
         NgbModule.forRoot(),
-        Ng2PageScrollModule,
         HttpModule,
         BrowserAnimationsModule,
         MarkdownToHtmlModule],

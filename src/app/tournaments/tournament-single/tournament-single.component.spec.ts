@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -11,6 +13,8 @@ describe('TournamentSingleComponent', () => {
   let component: TournamentSingleComponent;
   let fixture: ComponentFixture<TournamentSingleComponent>;
 
+  let mockRoute = {};
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -20,7 +24,16 @@ describe('TournamentSingleComponent', () => {
         GolfModule],
       declarations: [
         TournamentSingleComponent,
-        TournamentComponent]
+        TournamentComponent],
+      // providers: [{
+      //   provider: ActivatedRoute,
+      //   useValue: {
+      //     params: {
+      //       season: 2017,
+      //       id: 123
+      //     }
+      //   }
+      // }]
     })
       .compileComponents();
   }));
@@ -31,7 +44,11 @@ describe('TournamentSingleComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should be created with some params', () => {
+  //   expect(component).toBeTruthy();
+  //   expect(component.season).toBe(2017);
+  //   expect(component.tournamentId).toBe(123);
+  // });
+
+
 });

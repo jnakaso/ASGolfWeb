@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
@@ -16,7 +16,7 @@ import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component
     FormsModule,
     RouterModule.forChild([]),
     NgbModule.forRoot(),
-    Ng2PageScrollModule.forRoot()
+    NgxPageScrollModule    
   ],
   declarations: [
     NavbarComponent,

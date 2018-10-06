@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GolfService } from './golf/golf.service';
-import { PageScrollConfig } from 'ng2-page-scroll';
+import { PageScrollConfig } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-root',

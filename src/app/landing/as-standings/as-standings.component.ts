@@ -9,6 +9,8 @@ import { StatsService } from '../../golf/stats.service';
 export class AsStandingsComponent implements OnInit {
 
   standings: any[] = [];
+  powerRank: number;
+  
   constructor(
     private golfService: GolfService,
     private statsService: StatsService) { }
@@ -16,7 +18,8 @@ export class AsStandingsComponent implements OnInit {
   ngOnInit() {
     this.golfService.getInitValues()
       .subscribe(ini => {
-        this.statsService.getStats(ini.currentSeason)
+        this.powerRank = ini.powerRank;
+        this.statsService.getStats(ini.powerRank)
           .subscribe(stats => this.standings = stats.standings)
       });
   }

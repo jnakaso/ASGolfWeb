@@ -1,0 +1,56 @@
+<div class="modal-header">
+  <h4 class="modal-title">Tournament Info</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Course:</label>
+      <div class="col-sm-12">
+        <select name="courseName" [ngModel]="info.courseName" class="form-control" (ngModelChange)="changeCourse($event)">
+          <option *ngFor="let course of courses" [value]="course.name">{{course.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Type:</label>
+      <div name="type" class="btn-group col-sm-12 btn-group-toggle" ngbRadioGroup [(ngModel)]="info.type">
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="NORMAL"> Regular
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="DAY_ONE"> Day One
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="DAY_TWO"> Day Two
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Date:</label>
+      <div class="col-sm-12">
+        <input name="date" [(ngModel)]="info.date" type="date" class="form-control" placeholder="MM-dd-yyyy" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Rating:</label>
+      <div class="col-sm-12">
+        <input name="rating" [(ngModel)]="info.rating" type="number" step="0.1" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Slope</label>
+      <div class="col-sm-12">
+        <input name="slope" [(ngModel)]="info.slope" type="number" class="form-control" />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+    <span class="fa fa-ban"></span> Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="ok()">
+    <span class="fa fa-check"></span> Ok</button>
+</div>

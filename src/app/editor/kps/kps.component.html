@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-6" *ngFor="let flt of flights">
+    <h4>{{flt}}-Flight</h4>
+    <table class="table table-sm table-striped">
+      <thead>
+        <th>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="newKp(flt)">
+            <span class="fa fa-plus"></span>
+          </button>
+        </th>
+        <th>Player</th>
+        <th class="text-right">Hole</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let kp of getKps(flt)">
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="editKp(kp)">
+              <span class="fa fa-pencil"></span>
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteKp(kp)">
+              <span class="fa fa-trash"></span>
+            </button>
+          </td>
+          <td>{{kp.player}}</td>
+          <td class="text-right">{{kp.hole}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

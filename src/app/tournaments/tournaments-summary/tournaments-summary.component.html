@@ -41,9 +41,9 @@
 						<tbody>
 							<tr *ngFor="let entry of getStandings()">
 								<td>{{entry.name}}</td>
-								<td class="text-right" >{{entry.earnings | currency:'USD':true:'1.2-2' }}</td>
+								<td class="text-right" >{{entry.earnings | currency }}</td>
 								<td class="text-right" *ngFor="let pts of entry.earningsByTour">
-									<span *ngIf="pts != 0">{{ pts | currency:'USD':true:'1.2-2' }}</span>
+									<span *ngIf="pts != 0">{{ pts | currency }}</span>
 								</td>
 							</tr>
 						</tbody>

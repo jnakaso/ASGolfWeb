@@ -1,6 +1,6 @@
 <div id="tour_{{tournamentId}}">
 	<as-sub-header [title]="getCourseName()" [hideTop]="hideTop"></as-sub-header>
-	<p><strong>Date:</strong> {{getTournamentDate(tournament)}} | <strong>Slope:</strong>  {{getTournamentSlope(tournament)}}  | <strong>Rating:</strong>  {{getTournamentRating(tournament)}} </p>
+	<p><strong>Date:</strong> {{getTournamentDate(tournament) | date }} | <strong>Slope:</strong>  {{getTournamentSlope(tournament)}}  | <strong>Rating:</strong>  {{getTournamentRating(tournament)}} </p>
         
 	<h3 *ngIf="showWinners(tournament)" >Winners</h3>
 	<div *ngIf="showWinners(tournament)" class="row">
@@ -20,7 +20,7 @@
 						<td>{{winner.player}}</td>
 						<td class="text-right">{{winner.net}}</td>
 						<td class="text-right">{{winner.points}}</td>
-						<td class="text-right">{{winner.earnings | currency:'USD':true:'1.2-2' }}</td>
+						<td class="text-right">{{winner.earnings | currency }}</td>
 					</tr>
 				</tbody>
 			</table>

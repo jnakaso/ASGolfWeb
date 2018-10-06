@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <h4>Honeypot</h4>
+    <table class="table table-sm ">
+      <tbody>
+        <tr>
+          <th width="10%"></th>
+          <th width="5%">Score</th>
+          <th width="5%">Earnings</th>
+          <th>Sandbaggers</th>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td class="text-right">{{honeypot.totalScore}}</td>
+          <td class="text-right">{{honeypot.totalEarnings | currency}}</td>
+          <td>{{honeypot.totalWinners}}</td>
+        </tr>
+        <tr>
+          <th>Front</th>
+          <td class="text-right">{{honeypot.frontScore}}</td>
+          <td class="text-right">{{honeypot.frontEarnings | currency}}</td>
+          <td>{{honeypot.frontWinners}}</td>
+        </tr>
+        <tr>
+          <th>Back</th>
+          <td class="text-right">{{honeypot.backScore}}</td>
+          <td class="text-right">{{honeypot.backEarnings | currency}}</td>
+          <td>{{honeypot.backWinners}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

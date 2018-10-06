@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { parseString } from 'xml2js';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ASAnnouncement } from './asannouncement';
 
 import { environment } from '../../environments/environment';
@@ -17,46 +17,46 @@ export class InformationService {
 
     getMinutes(): Observable<string[]> {
         return this.http.get(ASGOLF_ASSET_ROOT + `/minutes/minutes.js`)
-            .map(r => {
+            .pipe(map(r => {
                 let paths = r.json();
                 return paths.map(p => `${ASGOLF_ASSET_ROOT}/minutes/${p}`);
-            });
+            }));
     }
 
     getMdAnnouncements(): Observable<string[]> {
         return this.http.get(`${ASGOLF_ASSET_ROOT}/announcements/announcements.js`)
-            .map(r => {
+            .pipe(map(r => {
                 let paths = r.json();
                 return paths.map(p => `${ASGOLF_ASSET_ROOT}/announcements/${p}`);
-            });
+            }));
     }
 
     getMdText(path: string): Observable<string> {
         return this.http.get(path)
-            .map(r => r.text());
+            .pipe(map(r => r.text()));
     }
 
     getAnnouncements(): Observable<ASAnnouncement[]> {
         return this.http.get(ASGOLF_ASSET_ROOT + `/data/Announcements.xml`)
-            .map(r => {
+            .pipe(map(r => {
                 let announcements = [];
                 parseString(r.text(), (err, result) => {
                     announcements = result.Announcements.Announcement;
                     announcements.forEach(obj => obj.date = obj['$'].date);
                 })
                 return announcements;
-            });
+            }));
     }
 
     getOfficers(): Observable<any> {
         return this.http.get(ASGOLF_ASSET_ROOT + `/data/officers.xml`)
-            .map(r => {
+            .pipe(map(r => {
                 let officers = {};
                 parseString(r.text(), (err, result) => {
                     officers = result.Officers.Season;
                 })
                 return officers;
-            });
+            }));
     }
 
 }

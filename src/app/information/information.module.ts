@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Ng2PageScrollModule } from 'ng2-page-scroll';
-import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
+import { MarkdownModule } from 'ngx-markdown'
 
 import { SharedModule } from '../shared/shared.module';
 import { OfficersComponent } from './officers/officers.component';
@@ -27,9 +26,8 @@ import { InformationComponent } from './information/information.component';
       }
     ]),
     NgbModule,
-    Ng2PageScrollModule,
     SharedModule,
-    MarkdownToHtmlModule.forRoot()
+    MarkdownModule.forRoot()
   ],
   declarations: [OfficersComponent, MinutesComponent, RulesComponent, InformationComponent]
 })

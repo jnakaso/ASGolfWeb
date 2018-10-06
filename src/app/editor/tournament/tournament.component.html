@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <h2>{{tournament.info.courseName}}
+    <div class="pull-right">
+      <button type="button" class="btn btn-secondary" (click)="newTournament()">
+        <span class="fa fa-file"></span> New</button>
+      <button type="button" class="btn btn-secondary" (click)="editInfo()">
+        <span class="fa fa-cog"></span> Edit</button>
+      <button type="button" class="btn btn-secondary" (click)="sendTournament()">
+        <span class="fa fa-envelope"></span> Send</button>
+    </div>
+  </h2>
+  <p>{{tournament.info.date | date : format}} | {{tournament.info.rating | number: '1.1-1' }} | {{tournament.info.slope}} |
+    {{tournament.info.type}}
+  </p>
+  <ngb-tabset>
+    <ngb-tab title="Winners" #winners>
+      <ng-template ngbTabContent>
+        <div style="margin:10px">
+          <as-winners [tournament]="tournament"></as-winners>
+          <as-honeypot [tournament]="tournament"></as-honeypot>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Rounds" #rounds>
+      <ng-template ngbTabContent>
+        <div style="margin:10px">
+          <as-rounds [tournament]="tournament"></as-rounds>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Kps" #kps>
+      <ng-template ngbTabContent>
+        <div style="margin:10px">
+          <as-kps [tournament]="tournament"></as-kps>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="JSON" #json>
+      <ng-template ngbTabContent>
+        <div style="margin:10px">
+          <textarea style="width:100%" rows="20">{{tournament | compact }}</textarea>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

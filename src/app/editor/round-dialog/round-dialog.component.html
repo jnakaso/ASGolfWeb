@@ -1,0 +1,95 @@
+<div class="modal-header">
+  <h4 class="modal-title">Round</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Player:</label>
+      <div class="col-sm-4">
+        <select name="player" class="form-control" [ngModel]="round.playerID" (ngModelChange)="changePlayer($event)">
+          <option *ngFor="let player of activePlayers" [value]="player.id">{{player.firstName}} {{player.lastName}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">HDCP:</label>
+      <div class="col-sm-2">
+        <input name="handicap" class="form-control" type="number" step="1" [(ngModel)]="round.handicap" (ngModelChange)="changeScore($event)"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Flight:</label>
+      <div class="col-sm-2">
+        <select name="flight" [(ngModel)]="round.flight" class="form-control">
+          <option value="">Guest</option>
+          <option *ngFor="let flight of flights" value="{{flight}}">{{flight}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Scores:</label>
+      <div class="col-sm-10">
+        <table id="scores" class="table-bordered">
+          <tr>
+            <td *ngFor="let aa of [1,2,3,4,5,6,7,8,9]">
+              <span>{{aa}}</span>
+            </td>
+            <td>FRT</td>
+            <td>F.NET</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td *ngFor="let a of [0,1,2,3,4,5,6,7,8]">
+              <input name="hole{{a}}" type="number" style="width:50px" [(ngModel)]="round.holes[a]" (ngModelChange)="changeScore($event)"
+              />
+            </td>
+            <td>
+              <span>{{round.front}}</span>
+            </td>
+            <td>
+              <span>{{round.frontNet}}</span>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td *ngFor="let a of [10,11,12,13,14,15,16,17,18]">{{a}}</td>
+            <td>BCK</td>
+            <td>B.NET</td>
+            <td>TOT</td>
+            <td>T.NET</td>
+          </tr>
+          <tr>
+            <td *ngFor="let b of [9,10,11,12,13,14,15,16,17]">
+              <input name="hole{{b}}" type="number" style="width:50px" [(ngModel)]="round.holes[b]" (ngModelChange)="changeScore($event)"
+              />
+            </td>
+            <td>
+              <span>{{round.back}}</span>
+            </td>
+            <td>
+              <span>{{round.backNet}}</span>
+            </td>
+            <td>
+              <span>{{round.total}}</span>
+            </td>
+            <td>
+              <span>{{round.totalNet}}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+    <span class="fa fa-ban"></span> Cancel</button>
+  <button type="button" class="btn btn-primary" (click)="ok()">
+    <span class="fa fa-check"></span> Ok</button>
+</div>

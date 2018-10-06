@@ -16,6 +16,7 @@ import { InformationModule } from './information/information.module';
 import { GolfModule } from './golf/golf.module';
 
 import { AppComponent } from './app.component';
+import { EditorModule } from './editor/editor.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppComponent } from './app.component';
     RecordsModule,
     PhotosModule,
     InformationModule,
+    EditorModule,
     GolfModule
   ],
   bootstrap: [AppComponent]

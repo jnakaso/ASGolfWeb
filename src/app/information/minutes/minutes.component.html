@@ -2,7 +2,7 @@
   <as-sub-header [title]="'Minutes'"></as-sub-header>
 
   <div *ngFor="let path of paths">
-    <markdown-to-html [data]="getText(path)"></markdown-to-html>
+    <markdown [data]="getText(path)"></markdown>
     <hr/>
   </div>
 

@@ -9,4 +9,10 @@ export class ASCourse {
     id: number;
     name: string;
     tees: ASCourseTee[];
+
+    constructor(c) {
+        this.id = c.id;
+        this.name = c.name;
+        this.tees = c.tees;
+    }
 }
