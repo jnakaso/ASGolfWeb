@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -11,7 +11,7 @@ describe('OnDeckComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule, SharedModule, GolfModule],
+      imports: [HttpClientModule, SharedModule, GolfModule],
       declarations: [OnDeckComponent]
     })
       .compileComponents();

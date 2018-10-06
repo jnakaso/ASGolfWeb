@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
-import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 import { GolfModule } from '../golf/golf.module';
 
 import { LandingComponent } from './landing.component';
@@ -14,6 +13,7 @@ import { LastTournamentComponent } from './last-tournament/last-tournament.compo
 import { FunniesComponent } from './funnies/funnies.component';
 import { LastMinutesComponent } from './last-minutes/last-minutes.component';
 import { FunniesService } from './funnies/funnies.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -23,8 +23,8 @@ describe('LandingComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModuledule,
-        MarkdownToHtmlModule.forRoot(),
+        HttpClientModule,
+        MarkdownModule,
         GolfModule],
       declarations: [
         LandingComponent,

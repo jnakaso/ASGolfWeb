@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MiniOnDeckComponent } from './mini-on-deck.component';
 import { EventsService } from '../../golf/events.service';
@@ -11,7 +11,7 @@ describe('MiniOnDeckComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule],
+      imports: [HttpClientModule],
       declarations: [MiniOnDeckComponent],
       providers: [EventsService, GolfService]
     })

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Routes, RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -17,7 +17,7 @@ describe('WhereWePlayedComponent', () => {
         SharedModule,
         GolfModule,
         RouterModule.forRoot([]),
-        HttpClientModuledule
+        HttpClientModule
       ],
       declarations: [WhereWePlayedComponent],
       providers: [{ provide: APP_BASE_HREF, useValue: '/' }]

@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { OfficersComponent } from './officers.component';
@@ -8,6 +7,7 @@ import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component
 import { GolfService } from '../../golf/golf.service';
 import { InformationService } from '../../golf/information.service';
 import { PlayersService } from '../../golf/players.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('OfficersComponent', () => {
   let component: OfficersComponent;
@@ -15,7 +15,7 @@ describe('OfficersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule, FormsModule],
+      imports: [HttpClientModule, FormsModule],
       declarations: [
         OfficersComponent,
         SlideOutMenuComponent,

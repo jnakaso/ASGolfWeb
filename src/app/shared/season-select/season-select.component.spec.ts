@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { GolfModule } from '../../golf/golf.module';
 import { SeasonSelectComponent } from './season-select.component';
@@ -11,7 +11,7 @@ describe('SeasonSelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule, FormsModule, GolfModule],
+      imports: [HttpClientModule, FormsModule, GolfModule],
       declarations: [SeasonSelectComponent]
     })
       .compileComponents();

@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
-import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
+import { HttpClientModule } from '@angular/common/http';
 
 import { LastMinutesComponent } from './last-minutes.component';
 import { InformationService } from '../../golf/information.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 describe('LastMinutesComponent', () => {
   let component: LastMinutesComponent;
@@ -11,7 +11,7 @@ describe('LastMinutesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule, MarkdownToHtmlModule],
+      imports: [HttpClientModule, MarkdownModule],
       declarations: [LastMinutesComponent],
       providers: [InformationService]
     })

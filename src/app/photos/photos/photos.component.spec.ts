@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PhotosComponent } from './photos.component';
@@ -12,7 +12,7 @@ describe('PhotosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [NgbModule, HttpClientModuledule, NoopAnimationsModule],
+      imports: [NgbModule, HttpClientModule, NoopAnimationsModule],
       declarations: [
         PhotosComponent,
         MenuComponent

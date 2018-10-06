@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
-import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AnnouncementsComponent } from './announcements.component';
 import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
 import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component';
 import { InformationService } from '../../golf/information.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 describe('AnnouncementsComponent', () => {
   let component: AnnouncementsComponent;
@@ -14,8 +14,8 @@ describe('AnnouncementsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientModuledule,
-        MarkdownToHtmlModule.forRoot() 
+        HttpClientModule,
+        MarkdownModule.forRoot() 
       ],
       declarations: [
         AnnouncementsComponent,

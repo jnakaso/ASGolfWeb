@@ -1,10 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
 import { InformationComponent } from './information.component';
 import { RulesComponent } from '../rules/rules.component';
@@ -16,6 +14,8 @@ import { SubHeaderComponent } from '../../shared/sub-header/sub-header.component
 import { GolfService } from '../../golf/golf.service';
 import { InformationService } from '../../golf/information.service';
 import { PlayersService } from '../../golf/players.service';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('InformationComponent', () => {
   let component: InformationComponent;
@@ -27,9 +27,9 @@ describe('InformationComponent', () => {
         FormsModule,
         RouterTestingModule,
         NgbModule.forRoot(),
-        HttpClientModuledule,
+        HttpClientModule,
         BrowserAnimationsModule,
-        MarkdownToHtmlModule],
+        MarkdownModule],
       declarations: [
         InformationComponent,
         RulesComponent,

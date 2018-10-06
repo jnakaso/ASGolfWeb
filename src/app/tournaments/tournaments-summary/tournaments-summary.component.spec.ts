@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -14,7 +14,7 @@ describe('TournamentsSummaryComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         NgbModule,
-        HttpClientModuledule,
+        HttpClientModule,
         SharedModule,
         GolfModule],
       declarations: [TournamentsSummaryComponent]

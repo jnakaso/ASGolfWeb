@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientModuledule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FunniesComponent } from './funnies.component';
 import { FunniesService } from './funnies.service';
@@ -10,7 +10,7 @@ describe('FunniesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModuledule],
+      imports: [HttpClientModule],
       declarations: [FunniesComponent],
       providers: [FunniesService]
     })
