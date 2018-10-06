@@ -1,12 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
 
 import { InformationService } from './information.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('InformationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModule],
       providers: [InformationService]
     });
   });

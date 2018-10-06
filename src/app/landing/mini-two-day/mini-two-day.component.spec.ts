@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 
 import { MiniTwoDayComponent } from './mini-two-day.component';
 import { GolfService } from '../../golf/golf.service';
@@ -11,7 +11,7 @@ describe('MiniTwoDayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModuledule],
       declarations: [MiniTwoDayComponent],
       providers: [
         GolfService,

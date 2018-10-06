@@ -1,13 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpModule, Http, Response, ResponseOptions, XHRBackend } from '@angular/http';
+import { Response, ResponseOptions, XHRBackend } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CoursesService } from './courses.service';
 
 describe('CoursesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModule],
       providers: [
         CoursesService,
         { provide: XHRBackend, useClass: MockBackend }]

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -19,7 +19,7 @@ describe('TournamentSingleComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpModule,
+        HttpClientModuledule,
         SharedModule,
         GolfModule],
       declarations: [

@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { ASCourse } from '../golf/ascourse';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+const ASGOLF_ASSET_ROOT = environment.dataRoot;
 
 @Injectable()
 export class CoursesService {
-  static ASSET_ROOT = environment.dataRoot;
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getCourses(): Observable<ASCourse[]> {
-    return this.http.get(CoursesService.ASSET_ROOT + '/data/courses.js')
-      .pipe(map(r => r.json()));
+    return this.http.get<ASCourse[]>(ASGOLF_ASSET_ROOT + '/data/courses.js');
   }
 }

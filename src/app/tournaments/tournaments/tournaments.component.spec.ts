@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -18,7 +18,7 @@ describe('TournamentsComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         NgbModule,
-        HttpModule,
+        HttpClientModuledule,
         NoopAnimationsModule,
         SharedModule,
         GolfModule

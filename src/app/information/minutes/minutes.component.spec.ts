@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 
 import { MinutesComponent } from './minutes.component';
@@ -14,7 +14,7 @@ describe('MinutesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpModule,
+        HttpClientModuledule,
         MarkdownToHtmlModule],
       declarations: [
         MinutesComponent,

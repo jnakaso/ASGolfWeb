@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,7 +15,7 @@ describe('PlayersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, HttpModule, SharedModule, GolfModule, NoopAnimationsModule],
+      imports: [FormsModule, HttpClientModuledule, SharedModule, GolfModule, NoopAnimationsModule],
       declarations: [
         PlayersComponent,
         BalanceComponent,

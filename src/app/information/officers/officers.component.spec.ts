@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { OfficersComponent } from './officers.component';
@@ -15,7 +15,7 @@ describe('OfficersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule, FormsModule],
+      imports: [HttpClientModuledule, FormsModule],
       declarations: [
         OfficersComponent,
         SlideOutMenuComponent,

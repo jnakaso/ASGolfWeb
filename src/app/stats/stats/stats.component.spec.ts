@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -21,7 +21,7 @@ describe('StatsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule, NgbModule, NoopAnimationsModule, SharedModule, GolfModule],
+      imports: [HttpClientModuledule, NgbModule, NoopAnimationsModule, SharedModule, GolfModule],
       declarations: [
         StatsComponent,
         StandingsComponent,

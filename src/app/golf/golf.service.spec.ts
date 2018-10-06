@@ -1,13 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { HttpModule, Http, Response, ResponseOptions, XHRBackend } from '@angular/http';
+import { Response, ResponseOptions, XHRBackend } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { GolfService } from './golf.service';
 import { ASInit } from './asinit';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GolfServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModule],
       providers: [
         GolfService,
         { provide: XHRBackend, useClass: MockBackend }]

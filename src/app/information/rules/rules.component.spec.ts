@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 
 import { RulesComponent } from './rules.component';
 import { SlideOutMenuComponent } from '../../shared/slide-out-menu/slide-out-menu.component';
@@ -12,7 +12,7 @@ describe('RulesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientModuledule],
       declarations: [
         RulesComponent,
         SlideOutMenuComponent,

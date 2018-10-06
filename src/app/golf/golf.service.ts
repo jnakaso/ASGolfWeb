@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { NavbarItem } from '../shared/navbar-item';
@@ -24,7 +23,7 @@ export class GolfService {
   ];
   seasons: number[] = [];
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.getInitValues().subscribe((ini: ASInit) => {
       for (let y = environment.startYear; y <= ini.currentSeason; y++) {
         this.seasons.push(y);
@@ -38,8 +37,7 @@ export class GolfService {
   }
 
   getInitValues(): Observable<ASInit> {
-    return this.http.get(environment.dataRoot + "/data/ini.js")
-      .pipe(map(res => res.json()));
+    return this.http.get<ASInit>(environment.dataRoot + "/data/ini.js");
   }
 
   getBrand() {

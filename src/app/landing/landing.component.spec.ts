@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModuledule } from '@angular/http';
 import { SharedModule } from '../shared/shared.module';
 import { MarkdownToHtmlModule } from 'ng2-markdown-to-html'
 import { GolfModule } from '../golf/golf.module';
@@ -23,7 +23,7 @@ describe('LandingComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpModule,
+        HttpClientModuledule,
         MarkdownToHtmlModule.forRoot(),
         GolfModule],
       declarations: [
