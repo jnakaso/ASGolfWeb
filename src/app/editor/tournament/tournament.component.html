@@ -1,15 +1,15 @@
 <div class="container-fluid">
   <h2>{{tournament.info.courseName}}
     <div class="pull-right">
-      <button type="button" class="btn btn-secondary" (click)="newTournament()">
+      <button type="button" style="margin-left: 5px" class="btn " (click)="newTournament()">
         <span class="fa fa-file"></span> New</button>
-      <button type="button" class="btn btn-secondary" (click)="editInfo()">
+      <button type="button" style="margin-left: 5px" class="btn" (click)="editInfo()">
         <span class="fa fa-cog"></span> Edit</button>
-      <button type="button" class="btn btn-secondary" (click)="sendTournament()">
+      <button type="button" style="margin-left: 5px" class="btn" (click)="sendTournament()">
         <span class="fa fa-envelope"></span> Send</button>
     </div>
   </h2>
-  <p>{{tournament.info.date | date : format}} | {{tournament.info.rating | number: '1.1-1' }} | {{tournament.info.slope}} |
+  <p>{{tournament.info.date | date}} | {{tournament.info.rating | number: '1.1-1' }} | {{tournament.info.slope}} |
     {{tournament.info.type}}
   </p>
   <ngb-tabset>

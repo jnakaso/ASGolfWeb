@@ -36,7 +36,7 @@ export class TournamentsSummaryComponent implements OnInit {
   loadData(season: number) {
     if (this.season) {
       this.tournamentsService.getTournaments(this.season)
-        .subscribe(tt => this.tournaments = tt);
+        .subscribe((tt: ASTournament[]) => this.tournaments = tt.reverse());
       this.statsService.getStats(this.season)
         .subscribe(ss => this.stats = ss);
     }

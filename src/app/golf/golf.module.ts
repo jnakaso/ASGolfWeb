@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { GolfService } from './golf.service';
 import { CoursesService } from './courses.service';
 import { EventsService } from './events.service';
@@ -11,10 +10,11 @@ import { PhotosService } from './photos.service';
 import { ASSlopeAdjustedPipe } from './asslope-adjusted.pipe';
 import { ASCourseNamePipe } from './as-course-name.pipe';
 import { ASActivePlayerPipe } from './asactive-player.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule  
   ],
   exports: [
     ASSlopeAdjustedPipe, ASCourseNamePipe, ASActivePlayerPipe

@@ -24,6 +24,7 @@ export class RoundsComponent implements OnInit {
   }
 
   getRounds() {
+    console.log(this.tournament.rounds);
     return this.tournament.rounds;
   }
 
