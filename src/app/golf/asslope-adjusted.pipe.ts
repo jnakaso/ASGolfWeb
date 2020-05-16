@@ -1,13 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { ASCourseTee } from './ascourse';
 
 @Pipe({
   name: 'ASSlopeAdjusted'
 })
 export class ASSlopeAdjustedPipe implements PipeTransform {
 
-  transform(hdcp: number, slope: number) {
-    var adj = slope == null ? 113 : slope;
-    return hdcp * adj / 113;
+  transform(hdcp: number, tee: ASCourseTee) {
+    const slope = tee ? tee.slope : 113;
+    const rating = tee ? tee.rating : 72.0;
+    var par = tee ? tee.pars.reduce((sum, current) => sum + current, 0 ) : 72;
+    par = par == 0 ? 72 : par; // for courses without hole-by-hole
+    return hdcp * slope / 113 + rating - par;
   }
 
 }

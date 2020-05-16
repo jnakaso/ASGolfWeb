@@ -38,7 +38,7 @@ export class RoundDialogComponent implements OnInit {
     this.round.playerID = pNumber;
     const player = this.activePlayers.find(pp => pp.id === pNumber);
     this.round.player = player.firstName + ' ' + player.lastName;
-    this.round.handicap = this.calcAdjustedHandicap(player, this.tournament)
+    this.round.hdcp = this.calcAdjustedHandicap(player, this.tournament)
     this.roundsService.updateRoundTotals(this.round);
   }
 

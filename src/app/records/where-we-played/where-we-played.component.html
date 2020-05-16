@@ -3,16 +3,22 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Course</th>
-        <th class="text-right">Played</th>
+        <th class="text-left"><a role="button" style="cursor: pointer"
+          (click)="changeSort('name')"
+          title="Sort by course name">Course</a></th>
+        <th class="text-right"><a role="button" style="cursor: pointer"
+          (click)="changeSort('played')"
+          title="Sort by number of times played">Played</a></th>
         <th>
           <a class="btn" role="button" (click)="goLeft()" [ngClass]="{'disabled':!showLeft()}">
             <span class="fa fa-arrow-left"></span>
           </a>
         </th>
-        <th *ngFor="let year of seasonRange">{{year}}</th>
+        <th *ngFor="let year of seasonRange"><a role="button" style="cursor: pointer"
+          (click)="changeSort('year', year)"
+          title="Sort by if played this year">{{year}}</a></th>
         <th>
-          <a class="btn" role="button" (click)="goRight()" [ngClass]="{'disabled': !showRight()}">
+          <a class="btn" role="button" (click)="goRight()" [ngClass]="{'disabled': !showRight()}" >
             <span class="fa fa-arrow-right"></span>
           </a>
         </th>

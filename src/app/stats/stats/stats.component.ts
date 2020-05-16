@@ -32,8 +32,10 @@ export class StatsComponent implements OnInit {
 
   ngOnInit() {
     this.golfService.getInitValues()
-      .subscribe(ini => this.season = ini.currentSeason);
-    this.loadData(this.season);
+      .subscribe(ini => {
+        this.season = ini.currentSeason;
+        this.loadData(this.season);
+      });
   }
 
   seasonChange(newSeason: number) {

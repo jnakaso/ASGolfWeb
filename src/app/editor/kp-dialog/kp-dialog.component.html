@@ -1,33 +1,32 @@
 <div class="modal-header">
-    <h4 class="modal-title">KP</h4>
-    <button type="button" class="close" aria-label="Close" (click)="cancel()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body"><form class="form-horizontal" role="form">
+  <h4 class="modal-title">KP</h4>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" role="form">
     <div class="form-group">
       <label class="col-sm-2 control-label">Flight:</label>
       <div class="col-sm-2">
         <select name="flight" [(ngModel)]="kp.flight" class="form-control">
-            <option *ngFor="let flight of flights" [value]="flight">{{flight}}</option>
+          <option *ngFor="let flight of flights" [value]="flight">{{flight}}</option>
         </select>
-      </div> 
+      </div>
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">Player:</label>
       <div class="col-sm-6">
-        <select name="player" [ngModel]="kp.playerID" (ngModelChange)="changePlayer($event)" class="form-control" >
-            <option *ngFor="let player of activePlayers" [value]="player.id">{{player.firstName}} {{player.lastName}}</option>
+        <select name="player" [ngModel]="kp.playerID" (ngModelChange)="changePlayer($event)" class="form-control">
+          <option *ngFor="let player of activePlayers" [value]="player.id">{{player.firstName}} {{player.lastName}}
+          </option>
         </select>
-      </div> 
+      </div>
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">Hole:</label>
       <div class="col-sm-2">
-        <select name="hole" [(ngModel)]="kp.hole"  class="form-control">
+        <select name="hole" [(ngModel)]="kp.hole" class="form-control">
           <option *ngFor="let hNum of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]" [value]="hNum">{{hNum}}</option>
         </select>
-      </div> 
+      </div>
     </div>
   </form>
 </div>

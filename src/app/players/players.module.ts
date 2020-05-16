@@ -20,7 +20,7 @@ import { BalanceComponent } from './balance/balance.component';
         component: PlayersComponent
       }
     ]),
-    NgbModule.forRoot(),
+    NgbModule,
     SharedModule,
     GolfModule
   ],

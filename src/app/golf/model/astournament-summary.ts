@@ -5,8 +5,8 @@ import { ASHoneypot } from "./ashoneypot";
 import { ASTournament } from "../astournament";
 
 export class ASTournamentSummary {
-    id: number;
-    info: ASTournament = new ASTournament({});
+    id: number = null;
+    tournament: ASTournament = new ASTournament({});
     rounds: ASRound[] = [];
     winners: ASWinner[] = [];
     kps: ASKp[] = [];
@@ -14,7 +14,7 @@ export class ASTournamentSummary {
 
     constructor(t: any) {
         this.id = t.id;
-        this.info = t.info;
+        this.tournament = t.tournament;
         this.rounds = t.rounds ? t.rounds : [];
         this.winners = t.winners ? t.winners : [];
         this.kps = t.kps ? t.kps : [];

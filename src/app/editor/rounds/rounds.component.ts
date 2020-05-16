@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ASTournamentSummary } from '../../golf/model/astournament-summary';
 import { TournamentService } from '../tournament.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,10 +11,11 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
   templateUrl: './rounds.component.html',
   styleUrls: ['./rounds.component.css']
 })
-export class RoundsComponent implements OnInit {
-  
+export class RoundsComponent implements OnInit, OnChanges {
+
   @Input()
   tournament: ASTournamentSummary;
+  rounds: ASRound[] = [];
 
   constructor(
     private tournamentService: TournamentService,
@@ -23,9 +24,14 @@ export class RoundsComponent implements OnInit {
   ngOnInit() {
   }
 
-  getRounds() {
-    console.log(this.tournament.rounds);
-    return this.tournament.rounds;
+  ngOnChanges(change: SimpleChanges) {
+    if (change.tournament) {
+      this.changeTournament(change.tournament.currentValue);
+    }
+  }
+
+  changeTournament(t: ASTournamentSummary) {
+    this.rounds = this.tournament.rounds;
   }
 
   newRound() {
@@ -35,7 +41,7 @@ export class RoundsComponent implements OnInit {
     modalRef.result.then(updated => {
       if (updated) {
         this.tournamentService.addRound(this.tournament, updated)
-          .subscribe(tt => this.tournament = tt);
+          .subscribe(tt => this.changeTournament(tt));
       }
     }, err => { });
   }
@@ -48,7 +54,7 @@ export class RoundsComponent implements OnInit {
       if (updated) {
         Object.assign(round, updated);
         this.tournamentService.updateRound(this.tournament, round)
-          .subscribe(tt => this.tournament = tt);
+          .subscribe(tt => this.changeTournament(tt));
       }
     }, err => { });
   }
@@ -60,7 +66,7 @@ export class RoundsComponent implements OnInit {
     modalRef.result.then(confirmed => {
       if (confirmed) {
         this.tournamentService.deleteRound(this.tournament, round)
-          .subscribe(tt => this.tournament = tt);
+          .subscribe(tt => this.changeTournament(tt));
       }
     }, err => { });
   }

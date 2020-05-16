@@ -1,0 +1,14 @@
+{
+   "/asgolf-assets": {
+      "target" : "http://localhost:8080",
+      "secure": false
+    },
+    "/tournament-import": {
+      "target" : "http://localhost:8080",
+      "secure": false
+    },
+    "/tournament-update": {
+      "target" : "http://localhost:8080",
+      "secure": false
+    }
+}

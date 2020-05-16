@@ -37,7 +37,7 @@ export class GolfService {
   }
 
   getInitValues(): Observable<ASInit> {
-    return this.http.get<ASInit>(environment.dataRoot + "/data/ini.js");
+    return this.http.get<ASInit>("/asgolf-assets/data/ini.js");
   }
 
   getBrand() {

@@ -21,7 +21,7 @@ import { HoleInOnesComponent } from './hole-in-ones/hole-in-ones.component';
         component: RecordsComponent
       }
     ]),
-    NgbModule.forRoot(),
+    NgbModule,
     SharedModule
   ],
   declarations: [

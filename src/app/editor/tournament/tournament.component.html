@@ -1,5 +1,11 @@
 <div class="container-fluid">
-  <h2>{{tournament.info.courseName}}
+  <ngb-toast style="width:100%" 
+    *ngFor="let toast of toastService.toasts" 
+    [header]="toast.header" 
+    [autohide]="true"
+    [delay]="toast.delay || 5000" 
+    (hide)="toastService.remove(toast)">{{toast.body}}</ngb-toast>
+  <h2>{{tournament.tournament.courseName}}
     <div class="pull-right">
       <button type="button" style="margin-left: 5px" class="btn " (click)="newTournament()">
         <span class="fa fa-file"></span> New</button>
@@ -9,8 +15,8 @@
         <span class="fa fa-envelope"></span> Send</button>
     </div>
   </h2>
-  <p>{{tournament.info.date | date}} | {{tournament.info.rating | number: '1.1-1' }} | {{tournament.info.slope}} |
-    {{tournament.info.type}}
+  <p>{{tournament.tournament.date | date : 'mediumDate'}} | {{tournament.tournament.rating | number: '1.1-1' }} | {{tournament.tournament.slope}} |
+    {{tournament.tournament.type}}
   </p>
   <ngb-tabset>
     <ngb-tab title="Winners" #winners>
@@ -37,8 +43,13 @@
     </ngb-tab>
     <ngb-tab title="JSON" #json>
       <ng-template ngbTabContent>
+        <div *ngIf="!env.production" class="pull-left">
+          <button type="button" style="margin-left: 5px" class="btn " (click)="saveTournament()">
+            <span class="fa fa-save"></span> Save
+          </button>
+        </div>
         <div style="margin:10px">
-          <textarea style="width:100%" rows="20">{{tournament | compact }}</textarea>
+          <textarea style="width:100%" rows="20">{{ tournament | compact }}</textarea>
         </div>
       </ng-template>
     </ngb-tab>

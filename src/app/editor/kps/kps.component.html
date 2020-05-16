@@ -4,7 +4,7 @@
     <table class="table table-sm table-striped">
       <thead>
         <th>
-          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="newKp(flt)">
+          <button type="button" class="btn btn-sm" (click)="newKp(flt)">
             <span class="fa fa-plus"></span>
           </button>
         </th>
@@ -14,10 +14,10 @@
       <tbody>
         <tr *ngFor="let kp of getKps(flt)">
           <td>
-            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="editKp(kp)">
+            <button type="button" class="btn btn-sm" (click)="editKp(kp)">
               <span class="fa fa-pencil"></span>
             </button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteKp(kp)">
+            <button type="button" class="btn btn-sm" (click)="deleteKp(kp)">
               <span class="fa fa-trash"></span>
             </button>
           </td>

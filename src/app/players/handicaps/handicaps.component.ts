@@ -12,13 +12,15 @@ import { PlayersService } from '../../golf/players.service';
 })
 export class HandicapsComponent implements OnInit {
 
-  @Output() players: ASPlayer[] = [];
-  @Output() courses: ASCourse[] = [];
-  @Input() courseId: number;
-  @Output() courseSlope: number = 113;
-  @Output() @Output() activeOnly: boolean = true;
+  players: ASPlayer[] = [];
+  courseTees: any[] = [];
+  selectedCourseTee: any;
+  selectedTee: ASCourseTee;
+
+  activeOnly: boolean = true;
 
   selectedPlayer: ASPlayer;
+
   sortFunction: Function = this.cmpPlayer;
   asc: boolean = true;
 
@@ -32,9 +34,24 @@ export class HandicapsComponent implements OnInit {
     this.playersService.getPlayers()
       .subscribe(l => this.players = l);
     this.coursesService.getCourses()
-      .subscribe(l => this.courses = l);
+      .subscribe(c =>{
+        this.courseTees = 
+           c.sort((a,b) => a.name.localeCompare(b.name))
+            .map(course => this.mapCourse(course));
+        this.selectedCourseTee = this.courseTees[0];
+      } );
   }
 
+  mapCourse(course: ASCourse) {
+    var tee = course.tees.find((t: ASCourseTee) => t.name == 'white');
+    if (!tee) {
+      tee = course.tees[0];
+    }
+    return {
+      course: course,
+      tee: tee
+    }
+  }
 
   open(content, player: ASPlayer) {
     let ctrl = this;
@@ -51,17 +68,6 @@ export class HandicapsComponent implements OnInit {
             console.log(reason);
           })
       });
-  }
-
-  onChanges(event: any) {
-    this.courseId = parseInt(event);
-    let course = this.courses.find((c: ASCourse) => c.id == this.courseId);
-    if (course) {
-      let tee = course.tees.find((t: ASCourseTee) => t.name == 'white')
-      if (tee) {
-        this.courseSlope = tee.slope;
-      }
-    }
   }
 
   changeSort(sort: string) {
@@ -83,6 +89,10 @@ export class HandicapsComponent implements OnInit {
   cmpHdcp(p1: ASPlayer, p2: ASPlayer) {
     let o1 = this.asc ? p1 : p2;
     let o2 = this.asc ? p2 : p1;
-    return o1.handicap - o2.handicap;
+    return this.getHandicap(o1) - this.getHandicap(o2);
+  }
+
+  getHandicap(p: ASPlayer) {
+    return this.playersService.getHandicap(p);
   }
 }

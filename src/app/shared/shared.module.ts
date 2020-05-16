@@ -15,7 +15,7 @@ import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component
     CommonModule,
     FormsModule,
     RouterModule.forChild([]),
-    NgbModule.forRoot(),
+    NgbModule,
     NgxPageScrollModule    
   ],
   declarations: [

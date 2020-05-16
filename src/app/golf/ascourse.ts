@@ -3,6 +3,8 @@ export class ASCourseTee {
     name: string;
     rating: number;
     slope: number;
+    pars: number[];
+    handicaps: number[];
 }
 
 export class ASCourse {

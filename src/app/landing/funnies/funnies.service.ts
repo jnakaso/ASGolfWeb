@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
-const ASGOLF_ASSET_ROOT = environment.dataRoot;
-
 @Injectable()
 export class FunniesService {
 
@@ -12,10 +10,10 @@ export class FunniesService {
   }
 
   getFunnies(): Observable<any> {
-    return this.http.get(ASGOLF_ASSET_ROOT + '/data/funnies.js');
+    return this.http.get('/asgolf-assets/data/funnies.js');
   }
 
   getFunnyText(funny: string): Observable<any> {
-    return this.http.get(ASGOLF_ASSET_ROOT + '/funnies/' + funny, {responseType: 'text'});
+    return this.http.get('/asgolf-assets/funnies/' + funny, {responseType: 'text'});
   }
 }

@@ -4,7 +4,7 @@ export class ASRound {
     player: string;
     playerID: number;
     flight: string;
-    handicap: number;
+    hdcp: number;
     holes: number[];
     front: number;
     back: number;
@@ -20,7 +20,7 @@ export class ASRound {
         this.player = r.player;
         this.holes = r.holes;
         this.flight = r.flight;
-        this.handicap = r.handicap;
+        this.hdcp = r.hdcp;
         
         this.holes = r.holes;
         this.front = r.front;

@@ -36,7 +36,7 @@ export class WhereWePlayedComponent implements OnInit {
         this.lastYear = ini.currentSeason;
         this.start = this.lastYear;
         this.coursesService.getCourses().subscribe(cc => {
-          this.courses = cc;
+          this.courses = cc.sort(this.nameSort());
           this.loadPaging();
         });
       });
@@ -56,6 +56,28 @@ export class WhereWePlayedComponent implements OnInit {
 
   hasPlayed(course: ASCourse, season: number) {
     return this.data.find(e => e.course == course.name && e.date.indexOf('' + season) > -1);
+  }
+
+  nameSort() {
+    return (c1: ASCourse, c2: ASCourse) => c1.name.localeCompare(c2.name);
+  }
+
+  playedSort() {
+    return (c1: ASCourse, c2: ASCourse) => this.getCount(c2) - this.getCount(c1);
+  }
+
+  yearSort(year: number) {
+    return (c1: ASCourse, c2: ASCourse) => (this.hasPlayed(c2, year) ? 1 : 0) - (this.hasPlayed(c1, year) ? 1 : 0);
+  }
+
+  changeSort(sort: string, year?: number) {
+    if (sort == 'name') {
+      this.courses = this.courses.sort(this.nameSort());
+    } else if (sort == 'played') {
+      this.courses = this.courses.sort(this.playedSort());
+    } else if (sort == 'year') {
+      this.courses = this.courses.sort(this.yearSort(year));
+    }
   }
 
   // Paging

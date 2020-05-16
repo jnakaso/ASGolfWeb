@@ -6,8 +6,6 @@ import { ASBalance } from '../golf/asbalance';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
-const ASGOLF_ASSET_ROOT = environment.dataRoot;
-
 @Injectable()
 export class PlayersService {
 
@@ -15,16 +13,20 @@ export class PlayersService {
 
   }
 
+  getHandicap(p: ASPlayer) {
+    return isNaN(p.handicap) ? 0 : p.handicap;
+  }
+
   getPlayers(): Observable<ASPlayer[]> {
-    return this.http.get<ASPlayer[]>(ASGOLF_ASSET_ROOT + `/data/players.js`);
+    return this.http.get<ASPlayer[]>(`/asgolf-assets/data/players.js`);
   }
 
   getPlayerWithRounds(id: number): Observable<ASPlayer> {
-    return this.http.get<ASPlayer>(ASGOLF_ASSET_ROOT + `/data/players/${id}.js`);
+    return this.http.get<ASPlayer>(`/asgolf-assets/data/players/${id}.js`);
   }
 
-  getBalances(season: number) : Observable<ASBalance> {
-    return this.http.get<ASBalance>(ASGOLF_ASSET_ROOT + `/data/${season}/as-balance.js`);
+  getBalances(season: number): Observable<ASBalance> {
+    return this.http.get<ASBalance>(`/asgolf-assets/data/${season}/as-balance.js`);
   }
 
 }

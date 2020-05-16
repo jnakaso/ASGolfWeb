@@ -22,19 +22,21 @@ export class ScoringService {
       var place = 1;
       while (purse.length > 0 && working.length > 0) {
         var left = 0;
-        var money = 0;
+        var earnings = 0;
         var points = 0;
         const winnerRounds = this.roundsService.findLowest(working);
 
         left = Math.min(purse.length, winnerRounds.length);
         for (var i = 0; i < left; i++) {
-          money += purse[i].earnings;
+          earnings += purse[i].earnings;
           points += purse[i].points;
         }
-        money = money / winnerRounds.length;
+        earnings = earnings / winnerRounds.length;
         points = points / winnerRounds.length;
 
-        fltWinners = fltWinners.concat(winnerRounds.map(round => this.createWinner(round, place, points, money)));
+        fltWinners = fltWinners
+          .concat(winnerRounds
+            .map(round => this.createWinner(round, place, points, earnings)));
         place += left;
         purse = purse.slice(left);
         working = working.slice(left);
@@ -45,7 +47,7 @@ export class ScoringService {
 
   // TODO different purse per year
   createPurse(tournament: ASTournamentSummary): ASPurse[] {
-    switch (tournament.info.type) {
+    switch (tournament.tournament.type) {
       case 'DAY_ONE': return [];
       case 'DAY_TWO': return [
         new ASPurse(100, 18),
@@ -61,7 +63,7 @@ export class ScoringService {
     }
   }
 
-  createWinner(round: ASRound, place, points, money) {
+  createWinner(round: ASRound, place, points, earnings) {
     return new ASWinner({
       roundID: round.id,
       playerID: round.playerID,
@@ -69,7 +71,7 @@ export class ScoringService {
       score: round.totalNet,
       place: place,
       points: points,
-      money: money,
+      earnings: earnings,
       flight: round.flight
     });
   }

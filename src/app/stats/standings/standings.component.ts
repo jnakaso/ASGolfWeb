@@ -12,4 +12,7 @@ export class StandingsComponent {
   @Input()
   data: any;
 
+  getHandicap(p: any) {
+    return isNaN(p.handicap) ? 0 : p.handicap;
+  }
 }

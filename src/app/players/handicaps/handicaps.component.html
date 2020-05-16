@@ -4,10 +4,9 @@
 	<div class="row">
 		<div class="col-md-6">
 			<span>Course:</span>
-			<select name="course" [ngModel]="courseId" (ngModelChange)="onChanges($event)">
-              		<option *ngFor="let entry of courses" [value]="entry.id">{{entry.name}}</option>
-        		</select>
-			<span *ngIf="courseSlope">  Slope: {{courseSlope}}</span>
+			<select name="course" [(ngModel)]="selectedCourseTee">
+				<option *ngFor="let entry of courseTees" [ngValue]="entry">{{entry.course.name}}  {{entry.tee.slope}}/{{entry.tee.rating}}</option>
+			</select>
 		</div>
 		<div class="col-md-offset-4 col-md-2">
 			<input type="checkbox" [(ngModel)]="activeOnly" />
@@ -16,15 +15,17 @@
 	</div>
 	<table class="table table-hover table-striped">
 		<thead class="thead-default">
-			<th width="50%"><a role="button" (click)="changeSort('ply')">Player</a></th>
-			<th class="text-right" width="25%"><a role="button" (click)="changeSort('ind')">Index</a></th>
-			<th class="text-right" width="25%"><a role="button" (click)="changeSort('adj')">Adjusted</a></th>
+			<th width="50%"><a role="button" style="cursor: pointer" (click)="changeSort('ply')">Player</a></th>
+			<th class="text-right" width="25%"><a role="button" style="cursor: pointer"
+					(click)="changeSort('ind')">Index</a></th>
+			<th class="text-right" width="25%"><a role="button" style="cursor: pointer"
+					(click)="changeSort('adj')">Adjusted</a></th>
 		</thead>
 		<tbody>
 			<tr role="button" *ngFor="let player of getPlayers()" (click)="open(content, player)">
 				<td>{{player.firstName}} {{player.lastName}}</td>
-				<td class="text-right">{{player.handicap | number:'1.2-2' }}</td>
-				<td class="text-right">{{player.handicap | ASSlopeAdjusted : courseSlope | number:'1.0-0'}}</td>
+				<td class="text-right">{{ getHandicap(player) | number:'1.2-2' }}</td>
+				<td class="text-right">{{ getHandicap(player) | ASSlopeAdjusted : selectedCourseTee.tee | number:'1.0-0'}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -34,8 +35,8 @@
 		<div class="modal-header">
 			<h4 class="modal-title" id="myModalLabel">{{selectedPlayer.firstName}} {{selectedPlayer.lastName}}</h4>
 			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-          		<span aria-hidden="true">&times;</span>
-        	</button>
+				<span aria-hidden="true">&times;</span>
+			</button>
 		</div>
 		<div class="modal-body">
 			<table class="table table-hover">

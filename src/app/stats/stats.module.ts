@@ -22,7 +22,7 @@ import { DrJekyllComponent } from './dr-jekyll/dr-jekyll.component';
         component: StatsComponent
       }
     ]),
-    NgbModule.forRoot(),
+    NgbModule,
     SharedModule
   ],
   providers: [],

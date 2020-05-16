@@ -1,8 +1,5 @@
 <div class="modal-header">
   <h4 class="modal-title">Round</h4>
-  <button type="button" class="close" aria-label="Close" (click)="cancel()">
-    <span aria-hidden="true">&times;</span>
-  </button>
 </div>
 <div class="modal-body">
   <form class="form-horizontal" role="form">
@@ -17,7 +14,7 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">HDCP:</label>
       <div class="col-sm-2">
-        <input name="handicap" class="form-control" type="number" step="1" [(ngModel)]="round.handicap" (ngModelChange)="changeScore($event)"
+        <input name="handicap" class="form-control" type="number" step="1" [(ngModel)]="round.hdcp" (ngModelChange)="changeScore($event)"
         />
       </div>
     </div>

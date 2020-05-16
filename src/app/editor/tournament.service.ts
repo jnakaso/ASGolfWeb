@@ -1,14 +1,15 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ASTournamentSummary } from '../golf/model/astournament-summary';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ASPlayer } from '../golf/asplayer';
 import { ASTournament } from '../golf/astournament';
 import { ASKp } from '../golf/model/askp';
 import { ASRound } from '../golf/model/asround';
+import { ASTournamentSummary } from '../golf/model/astournament-summary';
 import { ASWinner } from '../golf/model/aswinner';
-import { ASPurse } from '../golf/model/aspurse';
-import { ASHoneypot } from '../golf/model/ashoneypot';
 import { HoneypotService } from './honeypot.service';
 import { ScoringService } from './scoring.service';
-import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class TournamentService {
@@ -17,12 +18,13 @@ export class TournamentService {
   maxHandicap = 40;
 
   constructor(
+    private http: HttpClient,
     private scoringService: ScoringService,
     private honeypotService: HoneypotService) { }
 
   createSummary() {
     return new ASTournamentSummary({
-      info: new ASTournament({
+      tournament: new ASTournament({
         courseName: 'New Tournament',
         date: new Date(),
         type: 'NORMAL',
@@ -34,6 +36,65 @@ export class TournamentService {
       winners: []
     });
   }
+
+  mapTour(tour: any): ASTournamentSummary {
+    return new ASTournamentSummary({
+      id: tour.id,
+      tournament: new ASTournament({
+        courseName: tour.course.name,
+        date: tour.date,
+        type: tour.type,
+        slope: tour.slope,
+        rating: tour.rating
+      }),
+      kps: tour.kps.map(kk => this.mapKp(kk)),
+      rounds: tour.rounds.map(rr => this.mapRound(rr)),
+      winners: tour.winners.map(ww => this.mapWinner(ww)),
+    });
+  }
+
+  mapKp(kk): ASKp {
+    return new ASKp(
+      {
+        playerID: kk.player.id,
+        player: kk.player.firstName + ' ' + kk.player.lastName,
+        hole: kk.hole,
+        flight: kk.flight
+      });
+  }
+
+  mapRound(rr): ASRound {
+    return new ASRound(
+      {
+        id: rr.round,
+        player: rr.player.firstName + ' ' + rr.player.lastName,
+        playerID: rr.player.id,
+        flight: rr.flight,
+        hdcp: rr.handicap,
+        holes: rr.scores,
+        front: rr.front,
+        back: rr.back,
+        total: rr.total,
+        frontNet: rr.frontNet,
+        backNet: rr.backNet,
+        totalNet: rr.totalNet,
+        adjusted: rr.adjusted
+      });
+  }
+
+  mapWinner(ww): ASWinner {
+    return new ASWinner(
+      {
+        roundID: ww.round.id,
+        playerID: ww.round.player.id,
+        player: ww.round.player.firstName + " " + ww.round.player.lastName,
+        flight: ww.round.flight,
+        score: ww.round.total,
+        place: ww.finish,
+        points: ww.points,
+        earnings: ww.earnings
+      }
+    )}
 
   createRound() {
     return new ASRound({
@@ -72,8 +133,8 @@ export class TournamentService {
     return of(tournament);
   }
 
-  calcAdjustedHandicap(player, tournament: ASTournamentSummary): number {
-    return Math.round(Math.min(player.handicap, this.maxHandicap) * tournament.info.slope / 113);
+  calcAdjustedHandicap(player: ASPlayer, tournament: ASTournamentSummary): number {
+    return Math.round(Math.min(player.handicap, this.maxHandicap) * tournament.tournament.slope / 113);
   }
 
   updateTournamentTotals(tournament: ASTournamentSummary): ASTournamentSummary {
@@ -82,6 +143,18 @@ export class TournamentService {
     return tournament;
   }
 
-
+  saveTournament(season: number, summary: ASTournamentSummary): Observable<any> {
+    if (summary.id == null) {
+      const params = new HttpParams()
+        .append("seasonId", season.toString())
+        .append("tournament", JSON.stringify(summary))
+        .append("update", "true");
+      return this.http.post("/tournament-import", null, { params: params })
+        .pipe(map(resp => this.mapTour(resp)));
+    } else {
+      return this.http.post("/tournament-update", summary)
+        .pipe(map(resp => this.mapTour(resp)));
+    }
+  }
 
 }

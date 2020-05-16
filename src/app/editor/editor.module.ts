@@ -19,6 +19,7 @@ import { WinnersComponent } from './winners/winners.component';
 import { HoneypotComponent } from './honeypot/honeypot.component';
 import { ScoringService } from './scoring.service';
 import { RoundsService } from './rounds.service';
+import { GolfService } from '../golf/golf.service';
 
 @NgModule({
   imports: [
@@ -30,7 +31,7 @@ import { RoundsService } from './rounds.service';
       }
     ]),
     FormsModule,
-    NgbModule.forRoot(),
+    NgbModule,
     SharedModule,
     GolfModule
   ],
@@ -52,6 +53,7 @@ import { RoundsService } from './rounds.service';
     KpDialogComponent
   ],
   providers: [
+    GolfService,
     TournamentService,
     ScoringService,
     HoneypotService,

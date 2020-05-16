@@ -18,11 +18,8 @@ export class TournamentsTwoDayComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.season) {
-      this.loadTwoday(this.season);
-    }
+    this.loadTwoday(this.season);
   }
-
 
   ngOnChanges(changes: any) {
     this.loadTwoday(this.season);
@@ -33,8 +30,10 @@ export class TournamentsTwoDayComponent implements OnInit {
   }
 
   loadTwoday(season: number) {
-    this.tournamentsService.getTwoDay(this.season)
+    if (this.season) {
+      this.tournamentsService.getTwoDay(this.season)
       .subscribe(tt => this.twoday = tt);
+    }
   }
 
 }

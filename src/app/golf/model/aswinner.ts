@@ -8,7 +8,7 @@ export class ASWinner {
     score: number;
     place: number;
     points: number;
-    money: number;
+    earnings: number;
  
     constructor (t : any) {
         this.id = t.id;
@@ -19,6 +19,6 @@ export class ASWinner {
         this.score = t.score;
         this.place = t.place;
         this.points = t.points;
-        this.money = t.money;
+        this.earnings = t.earnings;
     }
 }

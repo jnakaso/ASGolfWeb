@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ASTournament } from '../../golf/astournament';
 import { ASCourse } from '../../golf/ascourse';
 import { CoursesService } from '../../golf/courses.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'as-info-dialog',
@@ -12,13 +13,16 @@ import { CoursesService } from '../../golf/courses.service';
 export class InfoDialogComponent implements OnInit {
 
   info: ASTournament;
+  playDate: string;
   selected: ASCourse
   courses = [];
   constructor(
     public modal: NgbActiveModal,
-    private coursesService: CoursesService) { }
+    private coursesService: CoursesService,
+    @Inject(LOCALE_ID) private locale: string) { }
 
   ngOnInit() {
+    this.playDate = formatDate(this.info.date, 'yyyy-MM-dd', this.locale);
     this.coursesService.getCourses()
       .subscribe(cc => this.courses = cc.sort((c1, c2) => c1.name.localeCompare(c2.name)));
   }
@@ -40,6 +44,7 @@ export class InfoDialogComponent implements OnInit {
   }
 
   ok() {
+    this.info.date = new Date(this.playDate);
     this.modal.close(this.info);
   }
 

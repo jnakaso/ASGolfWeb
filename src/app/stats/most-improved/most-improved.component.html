@@ -19,7 +19,7 @@
 						<td>{{entry.name}}</td>
 						<td class="text-right">{{entry.count}}</td>
 						<td class="text-right">{{entry.change}}</td>
-						<td class="text-right">{{entry.percentChange }}</td>
+						<td class="text-right">{{entry.percentChange *100 | number: '1.1-2' }} %</td>
 					</tr>
 				</tbody>
 			</table>

@@ -5,7 +5,6 @@ import { environment } from '../../environments/environment';
 
 import { ASTwoDay } from './astwo-day';
 import { ASTournament } from './astournament';
-const ASGOLF_ASSET_ROOT = environment.dataRoot;
 
 @Injectable()
 export class TournamentsService {
@@ -14,15 +13,15 @@ export class TournamentsService {
   }
 
   getTwoDay(season: number): Observable<ASTwoDay> {
-    return this.http.get<ASTwoDay>(ASGOLF_ASSET_ROOT + `/data/${season}/twoday.js`);
+    return this.http.get<ASTwoDay>(`/asgolf-assets/data/${season}/twoday.js`);
   }
 
   getTournament(season: number, id: number): Observable<ASTournament> {
-    return this.http.get<ASTournament>(ASGOLF_ASSET_ROOT + `/data/${season}/${id}.js`);
+    return this.http.get<ASTournament>(`/asgolf-assets/data/${season}/${id}.js`);
   }
 
   getTournaments(season: number): Observable<ASTournament[]> {
-    return this.http.get<ASTournament[]>(ASGOLF_ASSET_ROOT + `/data/${season}/tournaments.js`);
+    return this.http.get<ASTournament[]>(`/asgolf-assets/data/${season}/tournaments.js`);
   }
 
 }

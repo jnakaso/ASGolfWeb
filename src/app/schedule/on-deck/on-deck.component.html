@@ -1,6 +1,6 @@
 <div id="OnDeck">
   <as-sub-header [title]="'On Deck'"></as-sub-header>
-  <p class="card-text">Adjusted handicaps for <b>{{course | ASCourseName}}</b> : slope = {{courseSlope}}</p>
+  <p class="card-text">Adjusted handicaps for <b>{{course | ASCourseName}}</b> : slope = {{courseSlope}} : rating = {{courseRating}}</p>
   <table class="table table-condensed">
     <thead class="thead-default">
       <th class="text-left">Player</th>
@@ -10,8 +10,8 @@
     <tbody>
       <tr *ngFor="let player of players | ASActivePlayer: true">
         <td class="text-left">{{player.firstName}} {{player.lastName}}</td>
-        <td class="text-right" width="20%">{{player.handicap | number: '1.1-1' }}</td>
-        <td class="text-right" width="20%">{{player.handicap | ASSlopeAdjusted : courseSlope | number:'1.0-0'}}</td>
+        <td class="text-right" width="20%">{{getHandicap(player) | number: '1.1-1' }}</td>
+        <td class="text-right" width="20%">{{getHandicap(player)| ASSlopeAdjusted : courseSlope | number:'1.0-0'}}</td>
       </tr>
     </tbody>
   </table>

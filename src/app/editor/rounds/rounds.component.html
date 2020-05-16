@@ -2,16 +2,14 @@
   <table class="table table-sm table-striped">
     <thead>
       <th>
-        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="newRound()">
+        <button type="button" class="btn btn-sm" (click)="newRound()">
           <span class="fa fa-plus"></span>
         </button>
       </th>
       <th>FLT</th>
       <th>Player</th>
       <th class="text-right">HDCP</th>
-      <th class="text-right" *ngFor="let hole of front">{{hole + 1}}</th>
       <th class="text-right">FRT</th>
-      <th class="text-right" *ngFor="let hole of back">{{hole + 1}}</th>
       <th class="text-right">BCK</th>
       <th class="text-right">Score</th>
       <th class="text-right">FRT Net</th>
@@ -19,21 +17,19 @@
       <th class="text-right">Net</th>
     </thead>
     <tbody>
-      <tr *ngFor="let round of getRounds()">
+      <tr *ngFor="let round of rounds">
         <td>
-          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="editRound(round)">
+          <button type="button" class="btn btn-sm" (click)="editRound(round)">
             <span class="fa fa-pencil"></span>
           </button>
-          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="deleteRound(round)">
+          <button type="button" class="btn btn-sm" (click)="deleteRound(round)">
             <span class="fa fa-trash"></span>
           </button>
         </td>
         <td>{{round.flight}}</td>
         <td>{{round.player}}</td>
-        <td class="text-right">{{round.handicap}}</td>
-        <td class="text-right" *ngFor="let hole of front">{{round.holes[hole]}}</td>
+        <td class="text-right">{{round.hdcp}}</td>
         <td class="text-right">{{round.front}}</td>
-        <td class="text-right" *ngFor="let hole of back">{{round.holes[hole]}}</td>
         <td class="text-right">{{round.back}}</td>
         <td class="text-right">{{round.total}}</td>
         <td class="text-right">{{round.frontNet}}</td>

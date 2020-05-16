@@ -46,7 +46,7 @@ describe('ScoringService', () => {
     expect(winners.length).toEqual(3);
     expect(winners[0].player).toEqual('PlayerB');
     expect(winners[1].player).toEqual('PlayerC');
-    expect(winners[1].money).toEqual(20);
+    expect(winners[1].earnings).toEqual(20);
   }));
 
   it('calculate with tie', inject([ScoringService], (service: ScoringService) => {
@@ -67,7 +67,7 @@ describe('ScoringService', () => {
     });
     const winners = service.calculate(tournament);
     expect(winners.length).toEqual(2);
-    expect(winners[1].money).toEqual(30);
+    expect(winners[1].earnings).toEqual(30);
     expect(winners[1].points).toEqual(7.5);
 
   }));

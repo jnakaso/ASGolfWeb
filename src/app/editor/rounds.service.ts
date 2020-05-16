@@ -18,9 +18,9 @@ export class RoundsService {
     round.front = fr;
     round.back = bk;
     round.total = fr + bk;
-    round.frontNet = fr - (round.handicap / 2);
-    round.backNet = bk - (round.handicap / 2);
-    round.totalNet = round.total - round.handicap;
+    round.frontNet = fr - (round.hdcp / 2);
+    round.backNet = bk - (round.hdcp / 2);
+    round.totalNet = round.total - round.hdcp;
   }
 
   filteByFlight(rounds: ASRound[], flight: string) {
