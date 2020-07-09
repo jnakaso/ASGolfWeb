@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { StatsComponent } from '../stats/stats.component';
+
 @Component({
   selector: 'as-standings',
   templateUrl: './standings.component.html',

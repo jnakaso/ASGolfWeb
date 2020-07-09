@@ -14,4 +14,9 @@ export class ASSlopeAdjustedPipe implements PipeTransform {
     return hdcp * slope / 113 + rating - par;
   }
 
+
+  old_transform(hdcp: number, tee: ASCourseTee) {
+    const par = tee.pars.reduce((sum, p) => sum + p, 0);
+    return hdcp * tee.slope / 113 + tee.rating - par;
+  }
 }

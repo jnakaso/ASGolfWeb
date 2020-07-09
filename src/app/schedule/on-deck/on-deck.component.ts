@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { PlayersService } from '../../golf/players.service';
 import { CoursesService } from '../../golf/courses.service';
-import { ASCourse } from '../../golf/ascourse';
+import { ASCourse, ASCourseTee } from '../../golf/ascourse';
 import { ASPlayer } from '../../golf/asplayer';
 
 @Component({
@@ -17,6 +17,7 @@ export class OnDeckComponent implements OnInit {
 
   @Input() nextCourseId: number;
   @Output() course: ASCourse;
+  @Output() courseTee: ASCourseTee;
   @Output() players: ASPlayer[] = [];
   @Output() courseName: string;
   @Output() courseSlope: number = OnDeckComponent.DEFAULT_SLOPE;
@@ -43,19 +44,22 @@ export class OnDeckComponent implements OnInit {
       this.coursesService.getCourses()
         .subscribe(e => {
           this.course = e.find(t => t.id == cmp.nextCourseId);
-          this.courseSlope = this.findSlope(this.course);
-          this.courseRating = this.findRating(this.course);
+          this.courseTee = this.findTee(this.course);
+          this.courseSlope = this.findSlope(this.courseTee);
+          this.courseRating = this.findRating(this.courseTee);
         });
     }
   }
 
-  findSlope(course: ASCourse) {
-    let tee = this.course ? this.course.tees.find(t => t.name == OnDeckComponent.DEFAULT_TEE_NAME) : null;
+  findTee(course: ASCourse): ASCourseTee {
+    return this.course ? this.course.tees.find(t => t.name == OnDeckComponent.DEFAULT_TEE_NAME) : null;
+  }
+
+  findSlope(tee: ASCourseTee) {
     return tee ? tee.slope : OnDeckComponent.DEFAULT_SLOPE;
   }
 
-  findRating(course: ASCourse) {
-    let tee = this.course ? this.course.tees.find(t => t.name == OnDeckComponent.DEFAULT_TEE_NAME) : null;
+  findRating(tee: ASCourseTee) {
     return tee ? tee.rating : OnDeckComponent.DEFAULT_RATING;
   }
 

@@ -15,7 +15,7 @@
         <span class="fa fa-envelope"></span> Send</button>
     </div>
   </h2>
-  <p>{{tournament.tournament.date | date : 'mediumDate'}} | {{tournament.tournament.rating | number: '1.1-1' }} | {{tournament.tournament.slope}} |
+  <p>{{tournament.tournament.date | date : 'shortDate' : 'UTC'}} | {{tournament.tournament.rating | number: '1.1-1' }} | {{tournament.tournament.slope}} |
     {{tournament.tournament.type}}
   </p>
   <ngb-tabset>

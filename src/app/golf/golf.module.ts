@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
-    CommonModule  
+    CommonModule
   ],
   exports: [
     ASSlopeAdjustedPipe, ASCourseNamePipe, ASActivePlayerPipe
@@ -28,6 +28,9 @@ import { CommonModule } from '@angular/common';
     PlayersService,
     StatsService,
     PhotosService],
-  declarations: [ASSlopeAdjustedPipe, ASCourseNamePipe, ASActivePlayerPipe]
+  declarations: [
+    ASSlopeAdjustedPipe,
+    ASCourseNamePipe,
+    ASActivePlayerPipe]
 })
 export class GolfModule { }

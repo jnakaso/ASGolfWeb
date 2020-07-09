@@ -11,7 +11,7 @@
       <tr *ngFor="let player of players | ASActivePlayer: true">
         <td class="text-left">{{player.firstName}} {{player.lastName}}</td>
         <td class="text-right" width="20%">{{getHandicap(player) | number: '1.1-1' }}</td>
-        <td class="text-right" width="20%">{{getHandicap(player)| ASSlopeAdjusted : courseSlope | number:'1.0-0'}}</td>
+        <td class="text-right" width="20%">{{getHandicap(player)| ASSlopeAdjusted : courseTee | number:'1.0-0'}}</td>
       </tr>
     </tbody>
   </table>

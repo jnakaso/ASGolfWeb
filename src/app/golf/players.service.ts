@@ -14,7 +14,7 @@ export class PlayersService {
   }
 
   getHandicap(p: ASPlayer) {
-    return isNaN(p.handicap) ? 0 : p.handicap;
+    return isNaN(p.handicap) ? 18 : p.handicap;
   }
 
   getPlayers(): Observable<ASPlayer[]> {

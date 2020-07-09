@@ -1,7 +1,7 @@
 <section *ngIf="tournament">
     <h3 class="subhead">Last Tournament :
         <a routerLink="/tournament/{{tournament.tournament.seasonID}}/{{tournament.tournament.id}}">{{tournament.tournament.courseName}} 
-                <span style="font-size:14px">{{tournament.tournament.date | date }}</span>
+                <span style="font-size:14px">{{tournament.tournament.date | date : 'shortDate' : 'UTC' }}</span>
             </a>
     </h3>
     <div class="row">

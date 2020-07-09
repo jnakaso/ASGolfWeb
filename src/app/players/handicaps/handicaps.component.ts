@@ -15,7 +15,6 @@ export class HandicapsComponent implements OnInit {
   players: ASPlayer[] = [];
   courseTees: any[] = [];
   selectedCourseTee: any;
-  selectedTee: ASCourseTee;
 
   activeOnly: boolean = true;
 
