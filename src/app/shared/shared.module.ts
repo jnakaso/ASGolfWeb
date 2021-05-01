@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { SeasonSelectComponent } from './season-select/season-select.component';
 import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component
     FormsModule,
     RouterModule.forChild([]),
     NgbModule,
-    NgxPageScrollModule    
+    NgxPageScrollModule,
+    NgxPageScrollCoreModule.forRoot({scrollOffset: 70, duration: 500})
   ],
   declarations: [
     NavbarComponent,

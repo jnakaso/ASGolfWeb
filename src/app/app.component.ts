@@ -9,7 +9,5 @@ import { GolfService } from './golf/golf.service';
 export class AppComponent {
   title = 'AS Golf';
   constructor(public golfService: GolfService) {
-    // PageScrollConfig.defaultScrollOffset = 70;
-    // PageScrollConfig.defaultDuration = 500;
   }
 }
