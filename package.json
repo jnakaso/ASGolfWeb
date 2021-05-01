@@ -28,7 +28,7 @@
     "core-js": "^2.6.11",
     "events": "^3.1.0",
     "font-awesome": "^4.7.0",
-    "ngx-markdown": "^6.3.0",
+    "ngx-markdown": "^8.2.2",
     "ngx-page-scroll": "^5.0.1",
     "prismjs": "^1.20.0",
     "rxjs": "~6.6.7",
