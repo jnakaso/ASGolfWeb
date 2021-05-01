@@ -17,6 +17,10 @@ export class InformationService {
             .pipe(map(paths => paths.map(p => `/asgolf-assets/minutes/${p}`)));
     }
 
+    getRules(): Observable<string> {
+        return this.httpClient.get('/asgolf-assets/rules/rules.txt', { responseType: 'text' });
+    }
+
     getMdAnnouncements(): Observable<string[]> {
         return this.httpClient.get<string[]>(`/asgolf-assets/announcements/announcements.js`)
             .pipe(map(r => r.map(p => `/asgolf-assets/announcements/${p}`)));
