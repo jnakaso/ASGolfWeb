@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -8,7 +8,7 @@ describe('MoneyPlayerComponent', () => {
   let component: MoneyPlayerComponent;
   let fixture: ComponentFixture<MoneyPlayerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, SharedModule, GolfModule],
       declarations: [MoneyPlayerComponent]

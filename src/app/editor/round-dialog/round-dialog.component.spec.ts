@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { RoundDialogComponent } from './round-dialog.component';
 
@@ -6,7 +6,7 @@ describe('RoundDialogComponent', () => {
   let component: RoundDialogComponent;
   let fixture: ComponentFixture<RoundDialogComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RoundDialogComponent ]
     })

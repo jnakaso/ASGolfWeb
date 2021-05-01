@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -9,7 +9,7 @@ describe('FullScheduleComponent', () => {
   let component: FullScheduleComponent;
   let fixture: ComponentFixture<FullScheduleComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, SharedModule, GolfModule],
       declarations: [FullScheduleComponent]

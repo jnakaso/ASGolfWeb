@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SharedModule } from '../../shared/shared.module';
 import { DrJekyllComponent } from './dr-jekyll.component';
@@ -7,7 +7,7 @@ describe('DrJekyllComponent', () => {
   let component: DrJekyllComponent;
   let fixture: ComponentFixture<DrJekyllComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule],
       declarations: [DrJekyllComponent]

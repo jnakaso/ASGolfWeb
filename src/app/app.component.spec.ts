@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,9 +7,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GolfService } from './golf/golf.service';
 import { HttpClientModule } from '@angular/common/http';
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([]), HttpClientModule],
+      imports: [RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }), HttpClientModule],
       declarations: [
         AppComponent, NavbarComponent
       ],
@@ -17,19 +17,19 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'AS Golf'`, async(() => {
+  it(`should have as title 'AS Golf'`, waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('AS Golf');
   }));
 
-  it('should render a nav bar and the default content', async(() => {
+  it('should render a nav bar and the default content', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;

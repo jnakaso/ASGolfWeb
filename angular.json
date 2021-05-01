@@ -28,7 +28,10 @@
               "node_modules/prismjs/themes/prism-okaidia.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "xml2js"
+            ]
           },
           "configurations": {
             "production": {
@@ -41,7 +44,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,

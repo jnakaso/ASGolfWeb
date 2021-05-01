@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AsStandingsComponent } from './as-standings.component';
@@ -9,7 +9,7 @@ describe('AsStandingsComponent', () => {
   let component: AsStandingsComponent;
   let fixture: ComponentFixture<AsStandingsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
       declarations: [AsStandingsComponent],

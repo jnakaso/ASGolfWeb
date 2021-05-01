@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
         pathMatch: 'full',
 
       }],
-      { useHash: true }),
+      { useHash: true, relativeLinkResolution: 'legacy' }),
     BrowserAnimationsModule,
 
     SharedModule,

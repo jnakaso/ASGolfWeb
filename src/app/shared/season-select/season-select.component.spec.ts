@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ describe('SeasonSelectComponent', () => {
   let component: SeasonSelectComponent;
   let fixture: ComponentFixture<SeasonSelectComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, FormsModule, GolfModule],
       declarations: [SeasonSelectComponent]

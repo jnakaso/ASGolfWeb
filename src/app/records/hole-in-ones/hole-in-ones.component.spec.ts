@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SharedModule } from '../../shared/shared.module';
 import { GolfModule } from '../../golf/golf.module';
@@ -8,7 +8,7 @@ describe('HoleInOnesComponent', () => {
   let component: HoleInOnesComponent;
   let fixture: ComponentFixture<HoleInOnesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [SharedModule, GolfModule],
       declarations: [HoleInOnesComponent]

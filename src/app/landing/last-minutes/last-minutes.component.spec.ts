@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LastMinutesComponent } from './last-minutes.component';
@@ -9,7 +9,7 @@ describe('LastMinutesComponent', () => {
   let component: LastMinutesComponent;
   let fixture: ComponentFixture<LastMinutesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule, MarkdownModule],
       declarations: [LastMinutesComponent],

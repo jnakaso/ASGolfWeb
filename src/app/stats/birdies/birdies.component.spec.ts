@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule } from '../../shared/shared.module';
@@ -8,7 +8,7 @@ describe('BirdiesComponent', () => {
   let component: BirdiesComponent;
   let fixture: ComponentFixture<BirdiesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [NgbModule, SharedModule],
       declarations: [BirdiesComponent]
