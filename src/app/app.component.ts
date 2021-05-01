@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { GolfService } from './golf/golf.service';
-import { PageScrollConfig } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import { PageScrollConfig } from 'ngx-page-scroll';
 export class AppComponent {
   title = 'AS Golf';
   constructor(public golfService: GolfService) {
-    PageScrollConfig.defaultScrollOffset = 70;
-    PageScrollConfig.defaultDuration = 500;
+    // PageScrollConfig.defaultScrollOffset = 70;
+    // PageScrollConfig.defaultDuration = 500;
   }
 }
