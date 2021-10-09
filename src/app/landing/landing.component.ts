@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../golf/events.service';
+import { GolfService } from '../golf/golf.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  showEvents = false;
+
+  constructor(private golfService: GolfService) { }
 
   ngOnInit() {
+    this.golfService.getInitValues()
+      .subscribe(ini => { this.showEvents = ini.currentEvent !== null });
   }
 
 }
