@@ -7,6 +7,8 @@ export class ASTwoDayScore {
     dayone: number;
     totalNet: number;
     player: string;
+    handicapOne: number;
+    handicapTwo: number;
 }
 
 export class ASTwoDay {
