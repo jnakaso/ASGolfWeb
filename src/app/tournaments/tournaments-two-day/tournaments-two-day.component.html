@@ -14,10 +14,10 @@
       <tbody>
         <tr *ngFor="let score of twodayScores(flt)">
           <td>{{score.player}}</td>
-          <td class="text-right">{{score.handicap}}</td>
-          <td class="text-right">{{score.dayone}}</td>
-          <td class="text-right">{{score.daytwo}}</td>
-          <td class="text-right">{{score.totalNet}}</td>
+          <td class="text-right">{{score.handicapOne}} / {{score.handicapTwo}}</td>
+          <td class="text-right">{{score.dayone}} / {{score.dayone - score.handicapOne}}</td>
+          <td class="text-right">{{score.daytwo}} / {{score.daytwo - score.handicapTwo}}</td>
+          <td class="text-right">{{score.total}} / {{score.totalNet}}</td>
         </tr>
       </tbody>
     </table>
