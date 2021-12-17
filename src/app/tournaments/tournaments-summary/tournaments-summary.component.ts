@@ -3,7 +3,7 @@ import { GolfService } from '../../golf/golf.service';
 import { StatsService } from '../../golf/stats.service';
 import { TournamentsService } from '../../golf/tournaments.service';
 import { ASTournament } from '../../golf/astournament';
-import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { NgbNavChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'as-tournaments-summary',
@@ -15,6 +15,7 @@ export class TournamentsSummaryComponent implements OnInit {
   @Input() season: number;
   tournaments: ASTournament[] = [];
   standings: any;
+  active = 1;
 
   constructor(
     private golfService: GolfService,
@@ -31,12 +32,12 @@ export class TournamentsSummaryComponent implements OnInit {
       this.loadData(changes.season.currentValue);
     }
   }
-  public beforeChange($event: NgbTabChangeEvent) {
-    if ($event.nextId === 'SummaryPoints') {
+  public beforeChange($event: NgbNavChangeEvent) {
+    if ($event.nextId === 'ngb-nav-0') {
       this.standings = this.standings.sort((s1, s2) => s2.points - s1.points);
-    } else if ($event.nextId === 'SummaryEarnings') {
+    } else if ($event.nextId === 'ngb-nav-1') {
       this.standings = this.standings.sort((s1, s2) => s2.earnings - s1.earnings);
-    } else if ($event.nextId === 'SummaryKps') {
+    } else if ($event.nextId === 'ngb-nav-2') {
       this.standings = this.standings.sort((s1, s2) => s2.kps - s1.kps);
     }
   }

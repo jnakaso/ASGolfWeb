@@ -3,9 +3,10 @@
   <p>
     Eagles, Birdies, Buzzards, and other Unidentifiable Flying Objects.
   </p>
-  <ngb-tabset>
-    <ngb-tab title="Gross" id="Gross">
-      <ng-template ngbTabContent>
+  <nav ngbNav #navBird="ngbNav" class="nav-tabs">
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Gross</a>
+      <ng-template ngbNavContent>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -16,6 +17,7 @@
               <th class="text-right">Pars</th>
               <th class="text-right">Bogeys</th>
               <th class="text-right">Doubles</th>
+              <th class="text-right">More+</th>
             </tr>
           </thead>
           <tbody>
@@ -27,23 +29,28 @@
               <td class="text-right">{{entry.scores[0]}}</td>
               <td class="text-right">{{entry.scores[1]}}</td>
               <td class="text-right">{{entry.scores[2]}}</td>
+              <td class="text-right">{{calcMore(entry.scores)}}</td>
             </tr>
           </tbody>
         </table>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Net Adjusted" id="Net">
-      <ng-template ngbTabContent>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Net Adjusted</a>
+      <ng-template ngbNavContent>
         <table class="table table-striped">
           <thead>
             <tr>
               <th>Player</th>
               <th class="text-right">Tournaments</th>
+              <th class="text-right"><a href="https://en.wikipedia.org/wiki/Par_(score)#Condor">Condor</a></th>
+              <th class="text-right"><a href="https://en.wikipedia.org/wiki/Par_(score)#Albatross">Albatross</a></th>
               <th class="text-right">Eagles</th>
               <th class="text-right">Birdies</th>
               <th class="text-right">Pars</th>
               <th class="text-right">Bogeys</th>
               <th class="text-right">Doubles</th>
+              <th class="text-right">More+</th>
             </tr>
           </thead>
 
@@ -51,15 +58,19 @@
             <tr *ngFor="let entry of data">
               <td>{{entry.name}}</td>
               <td class="text-right">{{entry.rounds}}</td>
+              <td class="text-right">{{entry.adjusted[-4]}}</td>
+              <td class="text-right">{{entry.adjusted[-3]}}</td>
               <td class="text-right">{{entry.adjusted[-2]}}</td>
               <td class="text-right">{{entry.adjusted[-1]}}</td>
               <td class="text-right">{{entry.adjusted[0]}}</td>
               <td class="text-right">{{entry.adjusted[1]}}</td>
               <td class="text-right">{{entry.adjusted[2]}}</td>
+              <td class="text-right">{{calcMore(entry.adjusted)}}</td>
             </tr>
           </tbody>
         </table>
       </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+    </ng-container>
+  </nav>
+  <div [ngbNavOutlet]="navBird"></div>
 </section>

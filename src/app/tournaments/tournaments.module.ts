@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { TournamentsComponent } from './tournaments/tournaments.component';
@@ -25,7 +25,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     ]),
     NgbModule,
     SharedModule,
-    NgxPageScrollModule  
+    NgxPageScrollModule
   ],
   declarations: [
     TournamentsComponent,

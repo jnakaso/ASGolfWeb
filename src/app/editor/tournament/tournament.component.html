@@ -18,30 +18,34 @@
   <p>{{tournament.tournament.date | date : 'shortDate' : 'UTC'}} | {{tournament.tournament.rating | number: '1.1-1' }} | {{tournament.tournament.slope}} |
     {{tournament.tournament.type}}
   </p>
-  <ngb-tabset>
-    <ngb-tab title="Winners" #winners>
+  <ul ngbNav>
+    <li [ngbNavItem]= "1">
+      <a ngbNavLink>Winners</a>
       <ng-template ngbTabContent>
         <div style="margin:10px">
           <as-winners [tournament]="tournament"></as-winners>
           <as-honeypot [tournament]="tournament"></as-honeypot>
         </div>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Rounds" #rounds>
+    </li>
+    <li [ngbNavItem]= "2">
+      <a ngbNavLink>Rounds</a>
       <ng-template ngbTabContent>
         <div style="margin:10px">
           <as-rounds [tournament]="tournament"></as-rounds>
         </div>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Kps" #kps>
+    </li>
+    <li [ngbNavItem]= "3">
+      <a ngbNavLink>Kps</a>
       <ng-template ngbTabContent>
         <div style="margin:10px">
           <as-kps [tournament]="tournament"></as-kps>
         </div>
       </ng-template>
-    </ngb-tab>
-    <ngb-tab title="JSON" #json>
+    </li>
+    <li [ngbNavItem]= "4">
+      <a ngbNavLink>JSON</a>
       <ng-template ngbTabContent>
         <div *ngIf="!env.production" class="pull-left">
           <button type="button" style="margin-left: 5px" class="btn " (click)="saveTournament()">
@@ -52,6 +56,6 @@
           <textarea style="width:100%" rows="20">{{ tournament | compact }}</textarea>
         </div>
       </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+    </li>
+  </ul>
 </div>
