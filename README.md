@@ -17,8 +17,8 @@ Use the `-prod` flag for a production build.
 Use the `-base-href` flag for a production build.  
 
 examples
->ng build --prod --base-href /asgolf2017/
->ng build --prod --base-href /asgolf/
+>ng build --configuration production --base-href /asgolf2017/
+>ng build --configuration production --base-href /asgolf/
 
 ## Running unit tests
 
