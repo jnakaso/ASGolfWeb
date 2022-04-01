@@ -8,6 +8,9 @@ import { GolfModule } from '../golf/golf.module';
 import { PlayersComponent } from './players.component';
 import { HandicapsComponent } from './handicaps/handicaps.component';
 import { BalanceComponent } from './balance/balance.component';
+import { ChartsComponent } from './charts/charts.component';
+import { PlayersChartComponent } from './players-chart/players-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -21,9 +24,10 @@ import { BalanceComponent } from './balance/balance.component';
       }
     ]),
     NgbModule,
+    NgxChartsModule,
     SharedModule,
     GolfModule
   ],
-  declarations: [PlayersComponent, HandicapsComponent, BalanceComponent]
+  declarations: [PlayersComponent, HandicapsComponent, BalanceComponent, ChartsComponent, PlayersChartComponent]
 })
 export class PlayersModule { }

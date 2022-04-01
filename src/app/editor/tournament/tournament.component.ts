@@ -23,6 +23,7 @@ export class TournamentComponent implements OnInit {
   flights = this.tournamentService.flights;
   env = environment;
   season: number;
+  active = 1;
 
   constructor(
     private golfService: GolfService,

@@ -16,12 +16,11 @@ export class OnDeckComponent implements OnInit {
   static DEFAULT_RATING: number = 72.0;
 
   @Input() nextCourseId: number;
-  @Output() course: ASCourse;
-  @Output() courseTee: ASCourseTee;
   @Output() players: ASPlayer[] = [];
-  @Output() courseName: string;
-  @Output() courseSlope: number = OnDeckComponent.DEFAULT_SLOPE;
-  @Output() courseRating: number = OnDeckComponent.DEFAULT_RATING;
+  @Output() courses: ASCourse[] = [];
+
+  course: ASCourse;
+  @Output() courseTees: ASCourseTee[] = [];
 
   constructor(
     private coursesService: CoursesService,
@@ -31,6 +30,8 @@ export class OnDeckComponent implements OnInit {
   ngOnInit() {
     this.playersService.getPlayers()
       .subscribe(l => { this.players = l.sort((p1, p2) => this.cmpHdcp(p1, p2)); });
+    this.coursesService.getCourses()
+      .subscribe(c => this.changedCourses(c));
   }
 
   cmpHdcp(p1: ASPlayer, p2: ASPlayer) {
@@ -38,17 +39,7 @@ export class OnDeckComponent implements OnInit {
   }
 
   ngOnChanges(changes: any) {
-    let cmp = this;
     this.nextCourseId = changes.nextCourseId ? changes.nextCourseId.currentValue : null;
-    if (this.nextCourseId) {
-      this.coursesService.getCourses()
-        .subscribe(e => {
-          this.course = e.find(t => t.id == cmp.nextCourseId);
-          this.courseTee = this.findTee(this.course);
-          this.courseSlope = this.findSlope(this.courseTee);
-          this.courseRating = this.findRating(this.courseTee);
-        });
-    }
   }
 
   findTee(course: ASCourse): ASCourseTee {
@@ -66,4 +57,15 @@ export class OnDeckComponent implements OnInit {
   getHandicap(p: ASPlayer) {
     return this.playersService.getHandicap(p);
   }
+
+  changedCourses(nCourses) {
+    this.courses = nCourses.sort((c1, c2) => c1.name.localeCompare(c2.name));
+    this.changeCourse(this.courses.find(t => t.id == this.nextCourseId));
+  }
+
+  changeCourse(nCourse) {
+    this.course = nCourse;
+    this.courseTees = nCourse.tees;
+  }
+
 }

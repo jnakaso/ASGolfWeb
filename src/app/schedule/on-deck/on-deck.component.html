@@ -1,17 +1,26 @@
 <div id="OnDeck">
   <as-sub-header [title]="'On Deck'"></as-sub-header>
-  <p class="card-text">Adjusted handicaps <b>{{course | ASCourseName}}</b> : slope = {{courseSlope}} : rating = {{courseRating}}</p>
+  <p class="card-text">Adjusted handicaps
+    <select name="course" [ngModel]="course" (ngModelChange)="changeCourse($event)">
+      <option *ngFor="let entry of courses" [ngValue]="entry">{{entry.name}}</option>
+    </select>
+  </p>
   <table class="table table-condensed">
     <thead class="thead-default">
-      <th class="text-left">Player</th>
-      <th class="text-right">Index</th>
-      <th class="text-right">HDCP</th>
+      <tr>
+        <th class="text-left" rowspan="2">Player</th>
+        <th class="text-right" rowspan="2">Index</th>
+        <th class="text-right" *ngFor="let tee of courseTees">{{tee.name}}</th>
+      </tr>
+      <tr>
+        <th class="text-right" *ngFor="let tee of courseTees">{{tee.slope}} / {{tee.rating}}</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let player of players | ASActivePlayer: true">
         <td class="text-left">{{player.firstName}} {{player.lastName}}</td>
         <td class="text-right" width="20%">{{getHandicap(player) | number: '1.1-1' }}</td>
-        <td class="text-right" width="20%">{{getHandicap(player)| ASSlopeAdjusted : courseTee | number:'1.0-0'}}</td>
+        <td class="text-right" width="20%" *ngFor="let tee of courseTees">{{getHandicap(player)| ASSlopeAdjusted : tee | number:'1.0-0'}}</td>
       </tr>
     </tbody>
   </table>

@@ -20,16 +20,22 @@ import { HoneypotComponent } from './honeypot/honeypot.component';
 import { ScoringService } from './scoring.service';
 import { RoundsService } from './rounds.service';
 import { GolfService } from '../golf/golf.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    HttpClientModule,
     RouterModule.forChild([
       {
         path: 'editor',
         component: TournamentComponent
       }
     ]),
+    BrowserAnimationsModule,
     FormsModule,
     NgbModule,
     SharedModule,

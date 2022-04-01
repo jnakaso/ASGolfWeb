@@ -9,10 +9,12 @@ import { GolfModule } from '../golf/golf.module';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { FullScheduleComponent } from './full-schedule/full-schedule.component';
 import { OnDeckComponent } from './on-deck/on-deck.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: 'schedule',
