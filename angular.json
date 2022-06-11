@@ -118,7 +118,6 @@
       }
     }
   },
-  "defaultProject": "asgolf-web-app",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "as",

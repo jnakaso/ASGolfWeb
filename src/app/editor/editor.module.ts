@@ -25,44 +25,40 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forChild([
-      {
-        path: 'editor',
-        component: TournamentComponent
-      }
-    ]),
-    BrowserAnimationsModule,
-    FormsModule,
-    NgbModule,
-    SharedModule,
-    GolfModule
-  ],
-  declarations: [
-    TournamentComponent,
-    CompactPipe,
-    RoundDialogComponent,
-    KpDialogComponent,
-    InfoDialogComponent,
-    ConfirmationDialogComponent,
-    KpsComponent,
-    RoundsComponent,
-    WinnersComponent,
-    HoneypotComponent],
-  entryComponents: [
-    ConfirmationDialogComponent,
-    InfoDialogComponent,
-    RoundDialogComponent,
-    KpDialogComponent
-  ],
-  providers: [
-    GolfService,
-    TournamentService,
-    ScoringService,
-    HoneypotService,
-    RoundsService]
+    imports: [
+        CommonModule,
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forChild([
+            {
+                path: 'editor',
+                component: TournamentComponent
+            }
+        ]),
+        BrowserAnimationsModule,
+        FormsModule,
+        NgbModule,
+        SharedModule,
+        GolfModule
+    ],
+    declarations: [
+        TournamentComponent,
+        CompactPipe,
+        RoundDialogComponent,
+        KpDialogComponent,
+        InfoDialogComponent,
+        ConfirmationDialogComponent,
+        KpsComponent,
+        RoundsComponent,
+        WinnersComponent,
+        HoneypotComponent
+    ],
+    providers: [
+        GolfService,
+        TournamentService,
+        ScoringService,
+        HoneypotService,
+        RoundsService
+    ]
 })
 export class EditorModule { }
