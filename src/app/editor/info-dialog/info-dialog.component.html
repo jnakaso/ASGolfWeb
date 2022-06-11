@@ -4,14 +4,6 @@
 <div class="modal-body">
   <form class="form-horizontal" role="form">
     <div class="form-group">
-      <label class="col-sm-12 control-label">Course:</label>
-      <div class="col-sm-12">
-        <select name="courseName" [ngModel]="info.courseName" class="form-control" (ngModelChange)="changeCourse($event)">
-          <option *ngFor="let course of courses" [value]="course.name">{{course.name}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
       <label class="col-sm-12 control-label">Type:</label>
       <div name="type" class="btn-group col-sm-12 btn-group-toggle" ngbRadioGroup [(ngModel)]="info.type">
         <label ngbButtonLabel class="btn-secondary">
@@ -29,6 +21,22 @@
       <label class="col-sm-12 control-label">Date:</label>
       <div class="col-sm-12">
         <input name="date" [(ngModel)]="playDate" type="date" class="form-control" placeholder="MM-dd-yyyy" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Course:</label>
+      <div class="col-sm-12">
+        <select name="courseName" [ngModel]="selected?.id" class="form-control" (ngModelChange)="changeCourse($event)">
+          <option *ngFor="let course of courses" [value]="course.id">{{course.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-12 control-label">Tee:</label>
+      <div class="col-sm-12">
+        <select name="courseTees" [ngModel]="selectedTees?.name" class="form-control" (ngModelChange)="changeCourseTee($event)">
+          <option *ngFor="let tees of courseTees" [value]="tees.name">{{tees.name}}</option>
+        </select>
       </div>
     </div>
     <div class="form-group">
