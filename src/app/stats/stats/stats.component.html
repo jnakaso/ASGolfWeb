@@ -1,10 +1,25 @@
-<as-page-header [title]="'Statistics'" [links]="sections"></as-page-header>
-<as-season-select [season]="season" (seasonChange)="seasonChange($event)"></as-season-select>
-<as-standings [season]="season" [data]="getStats('standings')"></as-standings>
-<as-vardon [season]="season" [data]="getStats('vardon')"></as-vardon>
-<as-sandbagger [season]="season" [data]="getStats('sandbagger')"></as-sandbagger>
-<as-most-improved [season]="season" [data]="getStats('mostImproved')"></as-most-improved>
-<as-birdies [season]="season" [data]="getStats('birdies')"></as-birdies>
-<as-good-bad-ugly [season]="season" [data]="getStats('goodBadUgly', {})"></as-good-bad-ugly>
-<as-three-putt [season]="season" [bad]="getStats('threePutt')" [good]="getStats('goodPuttingKp')"></as-three-putt>
-<as-dr-jekyll [season]="season" [data]="getStats('drJekyll')"></as-dr-jekyll>
+<as-page-header [title]="'Statistics'" [accordion]="acc" [item]="season" [items]="seasons"
+    (itemChange)="seasonChange($event)"></as-page-header>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ngb-panel *ngFor="let section of sections" [id]="section.id" [title]="section.label">
+        <ng-template ngbPanelContent>
+            <as-vardon *ngIf="section.id == 'vardon'" [season]="season.value" [data]="getStats(section.id)"></as-vardon>
+            <as-sandbagger *ngIf="section.id == 'sandbagger'" [season]="season.value" [data]="getStats(section.id)">
+            </as-sandbagger>
+            <as-most-improved *ngIf="section.id == 'mostImproved'" [season]="season.value"
+                [data]="getStats('mostImproved')">
+            </as-most-improved>
+            <as-birdies *ngIf="section.id == 'birdies'" [season]="season.value" [data]="getStats('birdies')">
+            </as-birdies>
+            <as-good-bad-ugly *ngIf="section.id == 'goodBadUgly'" [season]="season.value"
+                [data]="getStats('goodBadUgly', {})"></as-good-bad-ugly>
+            <as-three-putt *ngIf="section.id == 'threePutt'" [season]="season" .value [bad]="getStats('threePutt')"
+                [good]="getStats('goodPuttingKp')">
+            </as-three-putt>
+            <as-dr-jekyll *ngIf="section.id == 'drJekyll'" [season]="season.value" [data]="getStats('drJekyll')">
+            </as-dr-jekyll>
+            <as-standings *ngIf="section.id == 'standings'" [season]="season.value" [data]="getStats(section.id)">
+            </as-standings>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

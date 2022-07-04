@@ -1,4 +1,13 @@
-<as-page-header [title]="'Players'" [links]="sections"></as-page-header>
-<!-- <as-players-chart></as-players-chart> -->
-<as-balance ></as-balance>
-<as-handicaps ></as-handicaps>
+<as-page-header [title]="'Player'" [accordion]="acc"></as-page-header>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="sections">
+    <ngb-panel id="Balance" title="Balance">
+        <ng-template ngbPanelContent>
+            <as-balance></as-balance>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="Handicaps" title="Handicaps">
+        <ng-template ngbPanelContent>
+            <as-handicaps></as-handicaps>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

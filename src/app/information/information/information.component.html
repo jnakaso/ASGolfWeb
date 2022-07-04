@@ -1,4 +1,10 @@
-<as-page-header [title]="'Information'" [links]="sections"></as-page-header>
-<as-rules></as-rules>
-<as-officers></as-officers>
-<as-minutes></as-minutes>
+<as-page-header [title]="'Information'" [accordion]="acc"></as-page-header>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ngb-panel *ngFor="let section of sections" [id]="section.id" [title]="section.label">
+        <ng-template ngbPanelContent>
+            <as-rules *ngIf="section.id == 'rules'" ></as-rules>
+            <as-officers *ngIf="section.id == 'officers'" ></as-officers>
+            <as-minutes *ngIf="section.id == 'minutes'" ></as-minutes>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

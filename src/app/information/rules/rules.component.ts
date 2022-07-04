@@ -14,7 +14,7 @@ export class RulesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.informationService.getRules().subscribe(t => {this.rules = t; console.log(this.rules)});
+    this.informationService.getRules().subscribe(t => this.rules = t);
   }
 
 }

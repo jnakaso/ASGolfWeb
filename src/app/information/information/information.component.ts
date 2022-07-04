@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class InformationComponent {
   private static SECTIONS = [
-    { href: '#Rules', label: `Rules` },
-    { href: '#Officers', label: `Officers` },
-    { href: '#Minutes', label: `Minutes` }
+    { id: 'rules', label: `Rules` },
+    { id: 'officers', label: `Officers` },
+    { id: 'minutes', label: `Minutes` }
   ];
-
+  activeIds = InformationComponent.SECTIONS.map(sec => sec.id);
   sections = InformationComponent.SECTIONS;
 
   constructor() {

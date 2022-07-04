@@ -1,7 +1,20 @@
-<as-page-header [title]="'Tournaments'" [links]="sections"></as-page-header>
-<as-season-select [season]="season" (seasonChange)="seasonChange($event)"></as-season-select>
-<as-tournaments-summary [season]="season"></as-tournaments-summary>
-<as-tournaments-two-day [season]="season"></as-tournaments-two-day>
-<section *ngFor="let tour of tournaments">
-    <as-tournament [season]="season" [tournamentId]="tour.id"></as-tournament>
-</section>
+<as-page-header [title]="'Tournaments'" [accordion]="acc" [item]="season" [items]="seasons"
+    (itemChange)="seasonChange($event)"></as-page-header>
+
+<ngb-accordion #acc="ngbAccordion" [activeIds]="sections">
+    <ngb-panel id="Summary" title="{{season?.label}} Season Summary">
+        <ng-template ngbPanelContent>
+            <as-tournaments-summary [season]="season.value"></as-tournaments-summary>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="TwoDay" title="{{season?.label}} Two Day Tournament" *ngIf="showTwoDay">
+        <ng-template ngbPanelContent>
+            <as-tournaments-two-day [twoDay]="twoDay"></as-tournaments-two-day>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel *ngFor="let tour of tournaments" [id]="'t_' + tour.id" [title]="tour.courseName">
+        <ng-template ngbPanelContent>
+            <as-tournament [season]="season.value" [tournamentId]="tour.id"></as-tournament>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

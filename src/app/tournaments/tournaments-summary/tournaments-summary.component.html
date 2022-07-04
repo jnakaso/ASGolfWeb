@@ -1,8 +1,7 @@
-<section id="Summary">
-	<as-sub-header [title]="season  + ' Season Summary'"></as-sub-header>
+<section style="margin-bottom:1em" id="Summary">
 	<nav ngbNav #nav="ngbNav" class="nav-tabs" (navChange)="beforeChange($event)">
 		<ng-container ngbNavItem>
-			<a ngbNavLink>Points</a>
+			<a ngbNavLink  id="Points" >Points</a>
 			<ng-template ngbNavContent>
 				<table class="table table-sm table-striped">
 					<thead>

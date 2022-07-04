@@ -1,4 +1,6 @@
-<label>Select Season:</label>
-<select [ngModel]="season" (ngModelChange)="onChanges($event)">
-    <option *ngFor="let ss of seasons" [ngValue]="ss">{{ss}}</option>
-  </select>
+<section>
+  <label>Select Season:</label>
+  <select [ngModel]="season" (ngModelChange)="onChanges($event)">
+      <option *ngFor="let ss of seasons" [ngValue]="ss">{{ss}}</option>
+    </select>
+</section>

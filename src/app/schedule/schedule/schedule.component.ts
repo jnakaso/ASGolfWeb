@@ -7,20 +7,20 @@ import { GolfService } from '../../golf/golf.service';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
-  private static SECTIONS = [
-    { href: '#OnDeck', label: `On Deck` },
-    { href: '#FullSchedule', label: `Full Schedule` }
-  ];
 
+  sections = ['OnDeck', 'FullSchedule'];
   nextCourseId: number;
-  sections = ScheduleComponent.SECTIONS;
+  season: number;
 
   constructor(private golfAppService: GolfService) {
   }
 
   ngOnInit() {
     this.golfAppService.getInitValues()
-      .subscribe(i => this.nextCourseId = i.nextCourseId);
+      .subscribe(i => {
+        this.nextCourseId = i.nextCourseId;
+        this.season = i.currentSeason;
+      });
   }
 
 }

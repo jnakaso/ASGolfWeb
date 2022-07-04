@@ -1,6 +1,12 @@
-<as-page-header [title]="'Record Book'" [links]="sections"></as-page-header>
-<p>All Time Stats</p>
-<as-money-player [data]="getRecords('bigMoney')"></as-money-player>
-<as-kp-sweeper [data]="getRecords('kpSweeper')"></as-kp-sweeper>
-<as-hole-in-ones [data]="getRecords('holesInOne')"></as-hole-in-ones>
-<as-where-we-played [data]="getRecords('whereWePlayed')"></as-where-we-played>
+<as-page-header [title]="'Record Book'" [accordion]="acc"></as-page-header>
+<section><p>All Time Stats</p></section>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
+    <ngb-panel *ngFor="let section of sections" [id]="section.id" [title]="section.label">
+        <ng-template ngbPanelContent>
+            <as-money-player  *ngIf="section.id == 'bigMoney'" [data]="getRecords('bigMoney')"></as-money-player>
+            <as-kp-sweeper *ngIf="section.id == 'kpSweeper'" [data]="getRecords('kpSweeper')"></as-kp-sweeper>
+            <as-hole-in-ones *ngIf="section.id == 'holesInOne'" [data]="getRecords('holesInOne')"></as-hole-in-ones>
+            <as-where-we-played *ngIf="section.id == 'whereWePlayed'" [data]="getRecords('whereWePlayed')"></as-where-we-played>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

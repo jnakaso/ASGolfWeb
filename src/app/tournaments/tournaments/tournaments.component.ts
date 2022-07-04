@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GolfService } from '../../golf/golf.service';
 import { TournamentsService } from '../../golf/tournaments.service';
 import { ASTournament } from '../../golf/astournament';
+import { ASTwoDay } from '../../golf/astwo-day';
 
 @Component({
   selector: 'as-tournaments',
@@ -10,42 +11,49 @@ import { ASTournament } from '../../golf/astournament';
 })
 export class TournamentsComponent implements OnInit {
   sections: any[] = [];
-  season: number;
+  season: any;
   tournaments: ASTournament[] = [];
-
+  twoDay: ASTwoDay;
+  showTwoDay = false;
+  seasons = [];
   constructor(
     private golfService: GolfService,
     private tournamentsService: TournamentsService) { }
 
   ngOnInit() {
+    this.seasons = this.golfService.getSeasons()
+      .map(s => { return { value: s, label: s } });
     this.golfService.getInitValues()
       .subscribe(ini => {
-        this.season = ini.currentSeason;
+        this.season = this.seasons.find(s => s.value == ini.currentSeason);
         this.loadData(this.season);
       });
   }
 
-  seasonChange(newSeason: number) {
+  seasonChange(newSeason) {
     this.loadData(newSeason);
   }
 
-  loadData(newSeason: number) {
+  loadData(newSeason) {
     if (newSeason != undefined) {
       this.season = newSeason;
-      this.tournamentsService.getTournaments(this.season)
+      this.tournamentsService.getTournaments(this.season.value)
         .subscribe(tours => {
           this.tournaments = tours;
-          this.loadSections();
+          this.loadSections(tours);
+        });
+
+      this.tournamentsService.getTwoDay(this.season.value)
+        .subscribe(tt => {
+          this.twoDay = tt;
+          this.showTwoDay = tt.scores.length > 0
         });
     }
   }
 
-  loadSections() {
-    this.sections = [];
-    this.sections.push({ href: "#Summary", label: "Season Summary" });
-    this.sections.push({ href: "#TwoDay", label: "Two Day Tournament Results" });
-    this.tournaments.forEach(t => {
-      this.sections.push({ href: "#tour_" + t.id, label: t.courseName });
-    });
+  loadSections(tours) {
+    this.sections = ['Summary', 'TwoDay'].concat(tours.map(t => 't_' + t.id));
   }
+
+
 }

@@ -24,19 +24,19 @@ export class PhotosComponent implements OnInit {
     this.photosService.getPhotos()
       .subscribe(l => {
         this.folders = l;
-        this.updateFolder(l[0].name);
+        this.updateFolder(l[0]);
         this.sections = this.folders ? this.folders.map(f => {
-          return { href: f.name, label: f.label };
+          return { value: f.name, label: f.label };
         }) : [];
       });
   }
 
-  updateFolder(selected: string) {
-    this.currentFolder = this.folders.find(f => f.name == selected);
+  updateFolder(selected) {
+    this.currentFolder = selected;
     this.photos = this.currentFolder ? this.currentFolder.photos : [];
   }
 
-  changeFolder(selected: string) {
+  changeFolder(selected) {
       this.updateFolder(selected);
   }
 

@@ -8,7 +8,6 @@ import { TournamentsSummaryComponent } from './tournaments-summary/tournaments-s
 import { TournamentsTwoDayComponent } from './tournaments-two-day/tournaments-two-day.component';
 import { TournamentComponent } from './tournament/tournament.component';
 import { TournamentSingleComponent } from './tournament-single/tournament-single.component';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
       }
     ]),
     NgbModule,
-    SharedModule,
-    NgxPageScrollModule
+    SharedModule
   ],
   declarations: [
     TournamentsComponent,

@@ -8,31 +8,25 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { SeasonSelectComponent } from './season-select/season-select.component';
 import { SlideOutMenuComponent } from './slide-out-menu/slide-out-menu.component';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild([]),
-    NgbModule,
-    NgxPageScrollModule,
-    NgxPageScrollCoreModule.forRoot({scrollOffset: 70, duration: 500})
+    NgbModule
   ],
   declarations: [
     NavbarComponent,
     PageHeaderComponent,
     SubHeaderComponent,
-    SeasonSelectComponent,
-    SlideOutMenuComponent
+    SeasonSelectComponent
   ],
   exports: [
     NavbarComponent,
     PageHeaderComponent,
     SubHeaderComponent,
-    SeasonSelectComponent,
-    SlideOutMenuComponent
+    SeasonSelectComponent
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,6 @@
-<section id="TwoDay">
-  <as-sub-header [title]="season  + ' Two-Day Tournament Results'"></as-sub-header>
-  <p><strong>Day One:</strong> {{twoday.dayoneCourseName}} | <strong>Day Two:</strong> {{twoday.daytwoCourseName}}</p>
+<section style="margin-bottom:1em" id="TwoDay">
+  <p><strong>Day One:</strong> {{twoDay.dayoneCourseName}} | <strong>Day Two:</strong> {{twoDay.daytwoCourseName}}
+  </p>
   <div *ngFor="let flt of flights">
     <h4>{{flt}}-Flight</h4>
     <table class="table table-sm table-striped">

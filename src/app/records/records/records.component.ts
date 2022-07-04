@@ -7,11 +7,12 @@ import { StatsService } from '../../golf/stats.service';
 })
 export class RecordsComponent implements OnInit {
   private static RECORD_SECTIONS = [
-    { href: '#MoneyPlayer', label: `Money Player` },
-    { href: '#KpSweeper', label: `KP Sweeper` },
-    { href: '#HolesInOne', label: `Hole In Ones` },
-    { href: '#WhereWePlayed', label: `Where We've Played` }
-  ];
+    { id: 'bigMoney', label: `Money Player` },
+    { id: 'kpSweeper', label: `KP Sweeper` },
+    { id: 'holesInOne', label: `Hole In Ones` },
+    { id: 'whereWePlayed', label: `Where We've Played` }
+   ];
+  activeIds = RecordsComponent.RECORD_SECTIONS.map(sec => sec.id);
   sections = RecordsComponent.RECORD_SECTIONS;
   stats: any;
 

@@ -1,22 +1,21 @@
-<section id="Photos">
-  <div class="page-header">
-    <button style="float: left; position: relative;" class="btn btn-link" (click)="photoMenu.toggleMenu()">
-        <span class="fa fa-lg fa-bars" ></span>
-    </button>
-    <h2>Photos</h2>
-  </div>
-  <as-photo-menu #photoMenu [sections]="sections" (selectedEvent)="changeFolder($event)"></as-photo-menu>
-  <div class="row">
-    <div class="ml-auto col-md-6 mr-auto">
-      <h4>{{currentFolder.label}}</h4>
-      <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let photo of photos">
-          <img src="http://ppcc.com/asgolf-assets/photos/{{currentFolder.name}}/{{photo.src}}" style="width:100%; height:100%">
-          <div class="carousel-caption">
-            <h5>{{photo.caption}}</h5>
-          </div>
-        </ng-template>
-      </ngb-carousel>
-    </div>
-  </div>
-</section>
+<as-page-header title="Photos" [accordion]="acc" [item]="currentFolder" [items]="folders"
+  (itemChange)="changeFolder($event)"></as-page-header>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="['photos']">
+  <ngb-panel id="photos" [title]="currentFolder.label">
+    <ng-template ngbPanelContent>
+      <section>
+        <div class="ml-auto col-md-6 mr-auto">
+          <ngb-carousel>
+            <ng-template ngbSlide *ngFor="let photo of photos">
+              <img src="http://ppcc.com/asgolf-assets/photos/{{currentFolder.name}}/{{photo.src}}"
+                style="width:100%; height:100%">
+              <div class="carousel-caption">
+                <h5>{{photo.caption}}</h5>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </section>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

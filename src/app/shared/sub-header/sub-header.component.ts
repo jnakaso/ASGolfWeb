@@ -7,11 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SubHeaderComponent  {
 
-  @Input() title: string;
-  @Input() hideTop: boolean = false;
-
-  scroll() {
-    window.scrollTo(0, 0);
-  }
 
 }

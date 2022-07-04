@@ -12,7 +12,6 @@ import { BirdiesComponent } from './birdies/birdies.component';
 import { GoodBadUglyComponent } from './good-bad-ugly/good-bad-ugly.component';
 import { ThreePuttComponent } from './three-putt/three-putt.component';
 import { DrJekyllComponent } from './dr-jekyll/dr-jekyll.component';
-import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
       }
     ]),
     NgbModule,
-    SharedModule,
-    NgxPageScrollModule
+    SharedModule
   ],
   providers: [],
   declarations: [StatsComponent, StandingsComponent, VardonComponent, SandbaggerComponent, MostImprovedComponent, BirdiesComponent, GoodBadUglyComponent, ThreePuttComponent, DrJekyllComponent]

@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #052;">
-  <button class="navbar-toggler navbar-toggler-right " type="button" 
-  (click)="toggleMenu()"  aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right "
+    type="button" (click)="toggleMenu()"
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" routerLinkActive="active" routerLink="/{{brand.route}}" (click)="offMenu()">{{brand.label}}</a>
+  <a class="navbar-brand" routerLinkActive="active" routerLink="/{{brand.route}}"
+    (click)="offMenu()">{{brand.label}}</a>
   <div class="collapse navbar-collapse" [ngClass]="{collapse:hideSections}" id="navbarNavAltMarkup">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active" *ngFor="let item of sections">

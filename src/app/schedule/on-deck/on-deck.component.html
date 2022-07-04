@@ -1,5 +1,4 @@
-<div id="OnDeck">
-  <as-sub-header [title]="'On Deck'"></as-sub-header>
+<section id="OnDeck">
   <p class="card-text">Adjusted handicaps
     <select name="course" [ngModel]="course" (ngModelChange)="changeCourse($event)">
       <option *ngFor="let entry of courses" [ngValue]="entry">{{entry.name}}</option>
@@ -24,4 +23,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</section>

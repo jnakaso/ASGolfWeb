@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { GolfService } from '../../golf/golf.service';
 import { EventsService } from '../../golf/events.service';
 import { ASEvent } from '../../golf/asevent';
@@ -8,9 +8,11 @@ import { ASEvent } from '../../golf/asevent';
   templateUrl: './full-schedule.component.html',
   styleUrls: ['./full-schedule.component.css']
 })
-export class FullScheduleComponent implements OnInit {
+export class FullScheduleComponent implements OnChanges {
 
+  @Input()
   season: number;
+
   events: ASEvent[];
 
   constructor(
@@ -19,20 +21,12 @@ export class FullScheduleComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.golfService.getInitValues()
-      .subscribe(i => {
-        this.season = i.currentSeason;
-        this.loadEvents(this.season);
-      });
-  }
-
-  seasonChange(newSeason: number) {
-    let cmp = this;
-    if (newSeason != undefined) {
-      this.loadEvents(newSeason);
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.season) {
+      this.loadEvents(this.season);
     }
   }
+
 
   loadEvents(newSeason: number) {
     this.season = newSeason;

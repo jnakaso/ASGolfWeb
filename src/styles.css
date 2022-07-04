@@ -3,9 +3,17 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 
-body { margin-top: 70px}
+body { 
+  margin-top: 70px;
+  scroll-behavior: auto;
+}
 
 .subhead {
-  margin: 25px 0px 10px 0px;
-  border-bottom: 1px solid black;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+section {
+  margin-bottom: 5px;
 }

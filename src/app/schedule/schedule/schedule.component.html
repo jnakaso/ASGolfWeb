@@ -1,3 +1,13 @@
-<as-page-header [title]="'Schedule'" [links]="sections"></as-page-header>
-<as-on-deck [nextCourseId]="nextCourseId"></as-on-deck>
-<as-full-schedule></as-full-schedule>
+<as-page-header [title]="'Schedule'" [accordion]="acc"></as-page-header>
+<ngb-accordion #acc="ngbAccordion" [activeIds]="sections">
+    <ngb-panel id="OnDeck" title="On Deck">
+        <ng-template ngbPanelContent>
+            <as-on-deck [nextCourseId]="nextCourseId"></as-on-deck>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel id="FullSchedule" title="{{season}} Full Schedule">
+        <ng-template ngbPanelContent>
+            <as-full-schedule [season]="season"></as-full-schedule>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>

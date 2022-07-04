@@ -1,7 +1,12 @@
-<div class="page-header">
-  <button style="float: left; position: relative;" class="btn btn-link" (click)="slideOutMenu.toggleMenu()">
-      <span class="fa fa-lg fa-bars" ></span>
+<h3>
+  {{title}}
+  <div *ngIf="items" ngbDropdown class="d-inline-block">
+    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{item?.label}}</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button *ngFor="let it of items" ngbDropdownItem (click)="changeItem(it)">{{it.label}}</button>
+    </div>
+  </div>
+  <button type="button" class="pull-right btn btn-lg" (click)="toggle()">
+    <span class="fa {{showAll ? 'fa-chevron-up': 'fa-chevron-down'}}"></span>
   </button>
-  <h2>{{title}}</h2>
-</div>
-<as-slide-out-menu #slideOutMenu [links]="links"></as-slide-out-menu>
+</h3>

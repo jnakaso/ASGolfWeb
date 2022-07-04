@@ -1,6 +1,4 @@
-<div id="FullSchedule">
-  <as-sub-header [title]="season + ' Schedule'"></as-sub-header>
-  <as-season-select [season]="season" (seasonChange)="seasonChange($event);"></as-season-select>
+<section id="FullSchedule">
   <span>Download  the {{season}} <a href="../asgolf-assets/data/{{season}}/as-schedule.ics">schedule</a></span>
   <table class="table table-condensed">
     <thead class="thead-default">
@@ -24,4 +22,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</section>

@@ -4,14 +4,14 @@ import { GolfService } from '../../golf/golf.service';
 import { StatsService } from '../../golf/stats.service';
 
 const SECTIONS = [
-  { href: '#Standings', label: 'Standings' },
-  { href: '#Vardon', label: 'Vardon' },
-  { href: '#Sandbagger', label: 'Sandbagger' },
-  { href: '#MostImproved', label: 'Most Improved' },
-  { href: '#Birdies', label: 'U.F.O.s' },
-  { href: '#GoodBadUgly', label: 'The Good, The Bad, and The Ugly' },
-  { href: '#ThreePutt', label: 'Three Putt KPs' },
-  { href: '#DrJekyll', label: 'Dr. Jekyll and Mr. Hyde' }
+  { id: 'vardon', label: 'Vardon' },
+  { id: 'sandbagger', label: 'Sandbagger' },
+  { id: 'mostImproved', label: 'Most Improved' },
+  { id: 'birdies', label: 'U.F.O.s' },
+  { id: 'goodBadUgly', label: 'The Good, The Bad, and The Ugly' },
+  { id: 'threePutt', label: 'Three Putt KPs' },
+  { id: 'drJekyll', label: 'Dr. Jekyll and Mr. Hyde' },
+  { id: 'standings', label: 'Standings' },
 ];
 
 @Component({
@@ -21,8 +21,10 @@ const SECTIONS = [
 })
 export class StatsComponent implements OnInit {
 
+  activeIds = SECTIONS.map(s => s.id);
   sections = SECTIONS;
-  season: number;
+  season;
+  seasons = [];
   stats: any;
 
   constructor(
@@ -31,9 +33,11 @@ export class StatsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.seasons = this.golfService.getSeasons()
+      .map(s => { return { value: s, label: s } });
     this.golfService.getInitValues()
       .subscribe(ini => {
-        this.season = ini.currentSeason;
+        this.season = this.seasons.find(s => s.value ==ini.currentSeason);
         this.loadData(this.season);
       });
   }
@@ -42,7 +46,7 @@ export class StatsComponent implements OnInit {
     this.loadData(newSeason);
   }
 
-  loadData(newSeason: number) {
+  loadData(newSeason) {
     if (newSeason != undefined) {
       this.season = newSeason;
       this.loadStats(this.season);
@@ -50,7 +54,7 @@ export class StatsComponent implements OnInit {
   }
 
   loadStats(season: number) {
-    this.statsService.getStats(this.season)
+    this.statsService.getStats(this.season.value)
       .subscribe(s => this.stats = s);
   }
 

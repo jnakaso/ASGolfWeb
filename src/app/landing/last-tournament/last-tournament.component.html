@@ -1,30 +1,31 @@
-<section *ngIf="tournament">
-    <h3 class="subhead">Last Tournament :
-        <a routerLink="/tournament/{{tournament.tournament.seasonID}}/{{tournament.tournament.id}}">{{tournament.tournament.courseName}} 
-                <span style="font-size:14px">{{tournament.tournament.date | date : 'shortDate' : 'UTC' }}</span>
+<section class="card" *ngIf="tournament">
+    <div class="card-body">
+        <h3 class="card-title">Last Tournament:  <a
+                routerLink="/tournament/{{tournament.tournament.seasonID}}/{{tournament.tournament.id}}">{{tournament.tournament.courseName}}
             </a>
-    </h3>
-    <div class="row">
-        <div class="col-md-6 table-responsive" *ngFor="let flt of getFlights()">
-            <h5>{{flt}}-Flight</h5>
-            <table class="table table-striped">
-                <thead>
-                    <th class="text-right">Place</th>
-                    <th>Player</th>
-                    <th class="text-right">Net</th>
-                    <th class="text-right">Points</th>
-                    <th>Earnings</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let winner of getWinners(flt)">
-                        <td class="text-right">{{winner.place}}</td>
-                        <td>{{winner.player}}</td>
-                        <td class="text-right">{{winner.net}}</td>
-                        <td class="text-right">{{winner.points}}</td>
-                        <td class="text-right">{{winner.earnings | currency }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        </h3>
+        <div class="row">
+            <div class="col-md-6 table-responsive" *ngFor="let flt of getFlights()">
+                <h5>{{flt}}-Flight</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <th class="text-right">Place</th>
+                        <th>Player</th>
+                        <th class="text-right">Net</th>
+                        <th class="text-right">Points</th>
+                        <th>Earnings</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let winner of getWinners(flt)">
+                            <td class="text-right">{{winner.place}}</td>
+                            <td>{{winner.player}}</td>
+                            <td class="text-right">{{winner.net}}</td>
+                            <td class="text-right">{{winner.points}}</td>
+                            <td class="text-right">{{winner.earnings | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </section>
