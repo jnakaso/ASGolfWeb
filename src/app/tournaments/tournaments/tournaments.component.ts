@@ -52,7 +52,7 @@ export class TournamentsComponent implements OnInit {
   }
 
   loadSections(tours) {
-    this.sections = ['Summary', 'TwoDay'].concat(tours.map(t => 't_' + t.id));
+    this.sections = ['Summary', 'TwoDay'].concat(tours.map(t => 'tour_' + t.id));
   }
 
 

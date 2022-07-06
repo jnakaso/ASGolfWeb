@@ -1,9 +1,14 @@
 <section id="OnDeck">
-  <p class="card-text">Adjusted handicaps
-    <select name="course" [ngModel]="course" (ngModelChange)="changeCourse($event)">
-      <option *ngFor="let entry of courses" [ngValue]="entry">{{entry.name}}</option>
-    </select>
-  </p>
+  <div>
+    <label class="form-label">Adjusted Handicaps:</label>
+    <div *ngIf="course" ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+        ngbDropdownToggle>{{course.name}}</button>
+      <div ngbDropdownMenu>
+        <button *ngFor="let entry of courses" ngbDropdownItem (click)="changeCourse(entry)">{{entry.name}}</button>
+      </div>
+    </div>
+  </div>
   <table class="table table-condensed">
     <thead class="thead-default">
       <tr>
@@ -19,7 +24,8 @@
       <tr *ngFor="let player of players | ASActivePlayer: true">
         <td class="text-left">{{player.firstName}} {{player.lastName}}</td>
         <td class="text-right" width="20%">{{getHandicap(player) | number: '1.1-1' }}</td>
-        <td class="text-right" width="20%" *ngFor="let tee of courseTees">{{getHandicap(player)| ASSlopeAdjusted : tee | number:'1.0-0'}}</td>
+        <td class="text-right" width="20%" *ngFor="let tee of courseTees">{{getHandicap(player)| ASSlopeAdjusted : tee |
+          number:'1.0-0'}}</td>
       </tr>
     </tbody>
   </table>

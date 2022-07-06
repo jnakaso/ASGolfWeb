@@ -19,6 +19,7 @@ export class HandicapsComponent implements OnInit {
   activeOnly: boolean = true;
 
   selectedPlayer: ASPlayer;
+  player: ASPlayer;
 
   sortFunction: Function = this.cmpPlayer;
   asc: boolean = true;
@@ -33,12 +34,12 @@ export class HandicapsComponent implements OnInit {
     this.playersService.getPlayers()
       .subscribe(l => this.players = l);
     this.coursesService.getCourses()
-      .subscribe(c =>{
-        this.courseTees = 
-           c.sort((a,b) => a.name.localeCompare(b.name))
+      .subscribe(c => {
+        this.courseTees =
+          c.sort((a, b) => a.name.localeCompare(b.name))
             .map(course => this.mapCourse(course));
         this.selectedCourseTee = this.courseTees[0];
-      } );
+      });
   }
 
   mapCourse(course: ASCourse) {
@@ -54,24 +55,25 @@ export class HandicapsComponent implements OnInit {
 
   open(content, player: ASPlayer) {
     let ctrl = this;
-    this.playersService.getPlayerWithRounds(player.id)
-      .subscribe(p => {
-        this.selectedPlayer = p;
-        this.modalService.open(
-          content,
-          { size: 'lg' }
-        )
-          .result.then((result) => {
-            console.log(result);
-          }, (reason) => {
-            console.log(reason);
-          })
-      });
-  }
+    this.selectedPlayer = player;
+    this.modalService.open(
+      content,
+      { size: 'lg' }
+    )
+      .result.then((result) => {
+        console.log(result);
+      }, (reason) => {
+        console.log(reason);
+      })
+}
 
   changeSort(sort: string) {
     this.asc = !this.asc;
     this.sortFunction = sort == 'ply' ? this.cmpPlayer : this.cmpHdcp;
+  }
+
+  changeCourse(entry) {
+    this.selectedCourseTee = entry;
   }
 
   getPlayers() {

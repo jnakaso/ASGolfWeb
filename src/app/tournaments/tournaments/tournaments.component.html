@@ -12,7 +12,7 @@
             <as-tournaments-two-day [twoDay]="twoDay"></as-tournaments-two-day>
         </ng-template>
     </ngb-panel>
-    <ngb-panel *ngFor="let tour of tournaments" [id]="'t_' + tour.id" [title]="tour.courseName">
+    <ngb-panel *ngFor="let tour of tournaments" id="tour_{{tour.id}}" [title]="tour.courseName">
         <ng-template ngbPanelContent>
             <as-tournament [season]="season.value" [tournamentId]="tour.id"></as-tournament>
         </ng-template>

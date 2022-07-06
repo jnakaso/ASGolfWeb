@@ -1,6 +1,4 @@
-<section #Minutes id="Minutes">
-  <as-sub-header [title]="'Minutes'"></as-sub-header>
-
+<section>
   <div *ngFor="let path of paths">
     <markdown [data]="getText(path)"></markdown>
     <hr/>

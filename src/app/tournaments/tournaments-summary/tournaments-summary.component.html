@@ -9,7 +9,7 @@
 							<th width="10%">Player</th>
 							<th class="text-right" width="5%">Total</th>
 							<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
-								<a style="cursor:pointer" pageScroll href="#tour_{{tour.id}}"
+								<a style="cursor:pointer" href="#tour_{{tour.id}}-header"
 									title="{{tour.courseName}}">{{ii + 1}}</a>
 							</th>
 						</tr>

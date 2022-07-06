@@ -17,3 +17,7 @@ body {
 section {
   margin-bottom: 5px;
 }
+
+.form-label {
+  margin-right: 1em;
+}

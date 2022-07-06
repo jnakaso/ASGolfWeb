@@ -11,6 +11,8 @@ import { BalanceComponent } from './balance/balance.component';
 import { ChartsComponent } from './charts/charts.component';
 import { PlayersChartComponent } from './players-chart/players-chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { PlayerHistoryComponent } from './player-history/player-history.component';
+import { PlayerScoresComponent } from './player-scores/player-scores.component';
 
 
 @NgModule({
@@ -28,6 +30,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     SharedModule,
     GolfModule
   ],
-  declarations: [PlayersComponent, HandicapsComponent, BalanceComponent, ChartsComponent, PlayersChartComponent]
+  declarations: [PlayersComponent,
+    HandicapsComponent, BalanceComponent, ChartsComponent, PlayersChartComponent,
+    PlayerHistoryComponent,
+    PlayerScoresComponent]
 })
 export class PlayersModule { }
