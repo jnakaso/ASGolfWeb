@@ -13,7 +13,7 @@
             </as-birdies>
             <as-good-bad-ugly *ngIf="section.id == 'goodBadUgly'" [season]="season.value"
                 [data]="getStats('goodBadUgly', {})"></as-good-bad-ugly>
-            <as-three-putt *ngIf="section.id == 'threePutt'" [season]="season" .value [bad]="getStats('threePutt')"
+            <as-three-putt *ngIf="section.id == 'threePutt'" [season]="season.value" [bad]="getStats('threePutt')"
                 [good]="getStats('goodPuttingKp')">
             </as-three-putt>
             <as-dr-jekyll *ngIf="section.id == 'drJekyll'" [season]="season.value" [data]="getStats('drJekyll')">
