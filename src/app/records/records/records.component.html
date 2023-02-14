@@ -3,6 +3,7 @@
 <ngb-accordion #acc="ngbAccordion" [activeIds]="activeIds">
     <ngb-panel *ngFor="let section of sections" [id]="section.id" [title]="section.label">
         <ng-template ngbPanelContent>
+            <as-goy-history  *ngIf="section.id == 'goyHistory'" [data]="getRecords('goyHistory')"></as-goy-history>
             <as-money-player  *ngIf="section.id == 'bigMoney'" [data]="getRecords('bigMoney')"></as-money-player>
             <as-kp-sweeper *ngIf="section.id == 'kpSweeper'" [data]="getRecords('kpSweeper')"></as-kp-sweeper>
             <as-hole-in-ones *ngIf="section.id == 'holesInOne'" [data]="getRecords('holesInOne')"></as-hole-in-ones>

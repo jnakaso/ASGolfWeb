@@ -1,0 +1,18 @@
+<section id="GoyHistory">
+    <as-sub-header [title]="'G.O.Y.'"></as-sub-header>
+    <p>Golfer of the Year Titles since 2000</p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="25%">Number of Titles</th>
+          <th>Player(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of playerCounts">
+          <td>{{entry.count}}</td>
+          <td>{{entry.player}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
