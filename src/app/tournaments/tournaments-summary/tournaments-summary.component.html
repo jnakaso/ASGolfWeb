@@ -16,7 +16,7 @@
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
+							<td>{{entry.playerName}}</td>
 							<td class="text-right">{{entry.points}}</td>
 							<td class="text-right" *ngFor="let pts of entry.pointsByTour">
 								<span *ngIf="pts != 0">{{ pts }}</span>
@@ -42,7 +42,7 @@
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
+							<td>{{entry.playerName}}</td>
 							<td class="text-right">{{entry.earnings | currency }}</td>
 							<td class="text-right" *ngFor="let pts of entry.earningsByTour">
 								<span *ngIf="pts != 0">{{ pts | currency }}</span>
@@ -68,7 +68,7 @@
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
+							<td>{{entry.playerName}}</td>
 							<td class="text-right">{{entry.kps}}</td>
 							<td class="text-right" *ngFor="let pts of entry.kpsByTour">
 								<span *ngIf="pts != 0">{{ pts }}</span>

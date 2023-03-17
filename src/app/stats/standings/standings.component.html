@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let entry of data">
-          <td>{{entry.name}}</td>
+          <td>{{entry.playerName}}</td>
           <td class="text-right">{{getHandicap(entry)| number:'.1-1'}}</td>
           <td class="text-right">{{entry.attendance}}</td>
           <td class="text-right">{{entry.kps}}</td>

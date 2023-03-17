@@ -1,387 +1,2448 @@
 {
-    "lastUpdated": "8/7/2017",
-    "dues": "$140",
-    "total": "$661",
-    "tournaments": [
+    "goodPuttingKp": [
         {
-            "date": "3/26/17",
-            "course": "Brookdale",
-            "cost": "$34"
+            "hole": "16",
+            "score": 2,
+            "playerName": "Kiyo Sawa",
+            "playDate": "09-10-2022",
+            "active": true,
+            "course": "Cedarcrest",
+            "id": 20
         },
         {
-            "date": "4/2/17",
-            "course": "Camaloch",
-            "cost": "$34"
-        },
-        {
-            "date": "4/23/17",
-            "course": "Allenmore",
-            "cost": "$38"
-        },
-        {
-            "date": "5/20/17",
-            "course": "High Cedars (CANCELLED)",
-            "cost": ""
-        },
-        {
-            "date": "6/4/17",
-            "course": "Madrona Links",
-            "cost": "$39"
-        },
-        {
-            "date": "6/25/17",
-            "course": "Kayak Point",
-            "cost": "$65"
-        },
-        {
-            "date": "7/16/17",
-            "course": "Battle Creek",
-            "cost": "$42"
-        },
-        {
-            "date": "7/30/17",
+            "hole": "11",
+            "score": 2,
+            "playerName": "Harry Nishimoto",
+            "playDate": "08-06-2022",
+            "active": true,
             "course": "Snohomish",
-            "cost": "$46"
+            "id": 14
         },
         {
-            "date": "8/6/17",
-            "course": "Eaglemont",
-            "cost": "$77"
+            "hole": "13",
+            "score": 2,
+            "playerName": "Jeffrey Nakasone",
+            "playDate": "07-30-2022",
+            "active": true,
+            "course": "Camaloch",
+            "id": 9
         },
         {
-            "date": "8/20/17",
-            "course": "North Shore",
-            "cost": "$48"
+            "hole": "3",
+            "score": 2,
+            "playerName": "Bruce Kaneshiro",
+            "playDate": "07-16-2022",
+            "active": true,
+            "course": "Avalon S/N",
+            "id": 1
         },
         {
-            "date": "9/23/17",
-            "course": "Maplewood",
-            "cost": "$52"
+            "hole": "8",
+            "score": 2,
+            "playerName": "Jin Chung",
+            "playDate": "06-25-2022",
+            "active": true,
+            "course": "Riverbend",
+            "id": 70
+        },
+        {
+            "hole": "2",
+            "score": 2,
+            "playerName": "Terry Aoki",
+            "playDate": "05-13-2022",
+            "active": true,
+            "course": "Allenmore",
+            "id": 51
+        },
+        {
+            "hole": "16",
+            "score": 2,
+            "playerName": "George Tsukamaki",
+            "playDate": "04-03-2022",
+            "active": true,
+            "course": "Oakbrook",
+            "id": 35
         }
     ],
-    "players": [
+    "threePutt": [
         {
-            "name": "Mel A.",
-            "amountPaid": "590",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                0,
-                51,
-                0
-            ],
-            "total": 129
+            "hole": "2",
+            "score": 4,
+            "playerName": "Finch Arakawa",
+            "playDate": "09-10-2022",
+            "active": true,
+            "course": "Cedarcrest",
+            "id": 76
         },
         {
-            "name": "Don C.",
-            "amountPaid": "627",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 95
+            "hole": "7",
+            "score": 4,
+            "playerName": "Ken Yamabe",
+            "playDate": "09-10-2022",
+            "active": true,
+            "course": "Cedarcrest",
+            "id": 11
         },
         {
-            "name": "Jin C.",
-            "amountPaid": "750",
-            "dues": 140,
-            "costs": [
-                0,
-                31,
-                28,
-                0,
-                0,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 286
+            "hole": "16",
+            "score": 4,
+            "playerName": "Howard Himeno",
+            "playDate": "09-10-2022",
+            "active": true,
+            "course": "Cedarcrest",
+            "id": 32
         },
         {
-            "name": "Allan F.",
-            "amountPaid": "571",
-            "dues": 140,
-            "costs": [
-                0,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 71
+            "hole": "3",
+            "score": 4,
+            "playerName": "Finch Arakawa",
+            "playDate": "08-27-2022",
+            "active": true,
+            "course": "Gold Mountain - Cascade",
+            "id": 76
         },
         {
-            "name": "Howard H.",
-            "amountPaid": "661",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                0,
-                41,
-                71,
-                0,
-                0
-            ],
-            "total": 222
+            "hole": "17",
+            "score": 4,
+            "playerName": "Kiyo Sawa",
+            "playDate": "08-27-2022",
+            "active": true,
+            "course": "Gold Mountain - Cascade",
+            "id": 20
         },
         {
-            "name": "Bruce K.",
-            "amountPaid": "661",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 129
+            "hole": "9",
+            "score": 4,
+            "playerName": "Mel Asato",
+            "playDate": "07-30-2022",
+            "active": true,
+            "course": "Camaloch",
+            "id": 3
         },
         {
-            "name": "Rich K.",
-            "amountPaid": "675",
-            "dues": 140,
-            "costs": [
-                0,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 175
+            "hole": "13",
+            "score": 4,
+            "playerName": "Finch Arakawa",
+            "playDate": "06-25-2022",
+            "active": true,
+            "course": "Riverbend",
+            "id": 76
         },
         {
-            "name": "Jeff K.",
-            "amountPaid": "590",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                0,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 94
+            "hole": "8",
+            "score": 5,
+            "playerName": "Terry Aoki",
+            "playDate": "06-04-2022",
+            "active": true,
+            "course": "Walter E. Hall",
+            "id": 51
         },
         {
-            "name": "Jeff N.",
-            "amountPaid": "661",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 129
+            "hole": "14",
+            "score": 5,
+            "playerName": "Bruce Kaneshiro",
+            "playDate": "06-04-2022",
+            "active": true,
+            "course": "Walter E. Hall",
+            "id": 1
         },
         {
-            "name": "Harry N.",
-            "amountPaid": "600",
-            "dues": 140,
-            "costs": [
-                0,
-                31,
-                28,
-                0,
-                0,
-                0,
-                0,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 238
+            "hole": "14",
+            "score": 4,
+            "playerName": "Terry Aoki",
+            "playDate": "06-04-2022",
+            "active": true,
+            "course": "Walter E. Hall",
+            "id": 51
         },
         {
-            "name": "Nate N.",
-            "amountPaid": "550",
-            "dues": 140,
-            "costs": [
-                0,
-                0,
-                0,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 109
+            "hole": "11",
+            "score": 4,
+            "playerName": "Art Funamori",
+            "playDate": "05-20-2022",
+            "active": true,
+            "course": "Swinomish",
+            "id": 73
         },
         {
-            "name": "Nate O.",
-            "amountPaid": "588",
-            "dues": 140,
-            "costs": [
-                0,
-                31,
-                28,
-                0,
-                0,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 124
+            "hole": "16",
+            "score": 4,
+            "playerName": "Scot Ishino",
+            "playDate": "05-13-2022",
+            "active": true,
+            "course": "Allenmore",
+            "id": 75
         },
         {
-            "name": "Kiyo S.",
-            "amountPaid": "661",
-            "dues": 140,
-            "costs": [
-                32,
-                0,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 160
+            "hole": "16",
+            "score": 4,
+            "playerName": "Nate Nouchi",
+            "playDate": "05-13-2022",
+            "active": true,
+            "course": "Allenmore",
+            "id": 64
         },
         {
-            "name": "Mun T.",
-            "amountPaid": "500",
-            "dues": 140,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": -32
+            "hole": "8",
+            "score": 4,
+            "playerName": "Jeffrey Nakasone",
+            "playDate": "05-13-2022",
+            "active": true,
+            "course": "Allenmore",
+            "id": 9
         },
         {
-            "name": "Dan T.",
-            "amountPaid": "525",
-            "dues": 0,
-            "costs": [
-                32,
-                31,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 133
+            "hole": "2",
+            "score": 4,
+            "playerName": "Mun Taketa",
+            "playDate": "05-13-2022",
+            "active": true,
+            "course": "Allenmore",
+            "id": 5
         },
         {
-            "name": "George T.",
-            "amountPaid": "500",
-            "dues": 140,
-            "costs": [
-                0,
-                0,
-                0,
-                0,
-                36,
-                60,
-                0,
-                41,
-                71,
-                51,
-                0
-            ],
-            "total": 101
+            "hole": "4",
+            "score": 4,
+            "playerName": "Bruce Kaneshiro",
+            "playDate": "04-23-2022",
+            "active": true,
+            "course": "Legion Memorial",
+            "id": 1
         },
         {
-            "name": "Takashi T.",
-            "amountPaid": "500",
-            "dues": 140,
-            "costs": [
-                0,
-                0,
-                28,
-                0,
-                36,
-                60,
-                42,
-                41,
-                71,
-                0,
-                0
-            ],
-            "total": 82
+            "hole": "4",
+            "score": 4,
+            "playerName": "Allan Fukuyama",
+            "playDate": "04-03-2022",
+            "active": true,
+            "course": "Oakbrook",
+            "id": 69
+        },
+        {
+            "hole": "16",
+            "score": 4,
+            "playerName": "Bruce Kaneshiro",
+            "playDate": "04-03-2022",
+            "active": true,
+            "course": "Oakbrook",
+            "id": 1
         }
-    ]
+    ],
+    "drJekyll": [
+        {
+            "split": 13,
+            "playerName": "Jeffrey Nakasone",
+            "playDate": "07-16-2022",
+            "course": "Avalon S/N",
+            "back": 39,
+            "id": 9,
+            "front": 52
+        },
+        {
+            "split": 12,
+            "playerName": "Ken Yamabe",
+            "playDate": "08-20-2022",
+            "course": "The Home Course",
+            "back": 48,
+            "id": 11,
+            "front": 60
+        },
+        {
+            "split": 12,
+            "playerName": "Scot Ishino",
+            "playDate": "05-20-2022",
+            "course": "Swinomish",
+            "back": 44,
+            "id": 75,
+            "front": 56
+        },
+        {
+            "split": -10,
+            "playerName": "Scot Ishino",
+            "playDate": "09-10-2022",
+            "course": "Cedarcrest",
+            "back": 56,
+            "id": 75,
+            "front": 46
+        },
+        {
+            "split": 10,
+            "playerName": "Finch Arakawa",
+            "playDate": "06-25-2022",
+            "course": "Riverbend",
+            "back": 46,
+            "id": 76,
+            "front": 56
+        }
+    ],
+    "vardon": [
+        {
+            "average": 74,
+            "tournaments": 2,
+            "playerName": "Dan Tamashiro"
+        },
+        {
+            "average": 74.63636,
+            "tournaments": 11,
+            "playerName": "Mel Asato"
+        },
+        {
+            "average": 75,
+            "tournaments": 9,
+            "playerName": "Art Funamori"
+        },
+        {
+            "average": 75.454544,
+            "tournaments": 11,
+            "playerName": "Allan Fukuyama"
+        },
+        {
+            "average": 75.5,
+            "tournaments": 10,
+            "playerName": "Nate Nouchi"
+        },
+        {
+            "average": 75.875,
+            "tournaments": 8,
+            "playerName": "George Tsukamaki"
+        },
+        {
+            "average": 76.181816,
+            "tournaments": 11,
+            "playerName": "Jeff Ko"
+        },
+        {
+            "average": 77.4,
+            "tournaments": 10,
+            "playerName": "Nate Okinaka"
+        },
+        {
+            "average": 77.57143,
+            "tournaments": 7,
+            "playerName": "Kiyo Sawa"
+        },
+        {
+            "average": 77.583336,
+            "tournaments": 12,
+            "playerName": "Howard Himeno"
+        },
+        {
+            "average": 77.625,
+            "tournaments": 8,
+            "playerName": "Harry Nishimoto"
+        },
+        {
+            "average": 77.818184,
+            "tournaments": 11,
+            "playerName": "Bruce Kaneshiro"
+        },
+        {
+            "average": 78.5,
+            "tournaments": 10,
+            "playerName": "Mun Taketa"
+        },
+        {
+            "average": 78.6,
+            "tournaments": 10,
+            "playerName": "Ken Yamabe"
+        },
+        {
+            "average": 78.63636,
+            "tournaments": 11,
+            "playerName": "Scot Ishino"
+        },
+        {
+            "average": 79.09091,
+            "tournaments": 11,
+            "playerName": "Jeffrey Nakasone"
+        },
+        {
+            "average": 81.25,
+            "tournaments": 4,
+            "playerName": "Takashi Tsukamaki"
+        },
+        {
+            "average": 81.333336,
+            "tournaments": 9,
+            "playerName": "Terry Aoki"
+        },
+        {
+            "average": 81.4,
+            "tournaments": 10,
+            "playerName": "Jin Chung"
+        },
+        {
+            "average": 82.545456,
+            "tournaments": 11,
+            "playerName": "Finch Arakawa"
+        }
+    ],
+    "birdies": [
+        {
+            "tournaments": 9,
+            "playerName": "Terry Aoki",
+            "scores": {
+                "0": 31,
+                "1": 58,
+                "2": 50,
+                "3": 13,
+                "4": 7,
+                "5": 1,
+                "-1": 2
+            },
+            "adjusted": {
+                "0": 54,
+                "1": 55,
+                "2": 15,
+                "3": 9,
+                "4": 1,
+                "-1": 27,
+                "-2": 1
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Finch Arakawa",
+            "scores": {
+                "0": 20,
+                "1": 69,
+                "2": 71,
+                "3": 23,
+                "4": 9,
+                "5": 4,
+                "6": 1,
+                "-1": 1
+            },
+            "adjusted": {
+                "0": 63,
+                "1": 73,
+                "2": 22,
+                "3": 7,
+                "4": 4,
+                "-1": 25,
+                "-2": 4
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Mel Asato",
+            "scores": {
+                "0": 57,
+                "1": 90,
+                "2": 31,
+                "3": 12,
+                "-1": 8
+            },
+            "adjusted": {
+                "0": 80,
+                "1": 55,
+                "2": 12,
+                "3": 3,
+                "-2": 6,
+                "-1": 42
+            }
+        },
+        {
+            "tournaments": 10,
+            "playerName": "Jin Chung",
+            "scores": {
+                "0": 40,
+                "1": 71,
+                "2": 44,
+                "3": 18,
+                "4": 3,
+                "5": 1,
+                "-1": 3
+            },
+            "adjusted": {
+                "0": 63,
+                "1": 56,
+                "2": 25,
+                "3": 6,
+                "4": 1,
+                "-1": 27,
+                "-2": 2
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Allan Fukuyama",
+            "scores": {
+                "0": 83,
+                "1": 87,
+                "2": 20,
+                "3": 3,
+                "-1": 4,
+                "-2": 1
+            },
+            "adjusted": {
+                "0": 91,
+                "1": 59,
+                "2": 11,
+                "-1": 35,
+                "-2": 2
+            }
+        },
+        {
+            "tournaments": 9,
+            "playerName": "Art Funamori",
+            "scores": {
+                "0": 34,
+                "1": 59,
+                "2": 51,
+                "3": 13,
+                "4": 3,
+                "-1": 2
+            },
+            "adjusted": {
+                "0": 51,
+                "1": 49,
+                "2": 13,
+                "3": 2,
+                "-1": 42,
+                "-2": 5
+            }
+        },
+        {
+            "tournaments": 12,
+            "playerName": "Howard Himeno",
+            "scores": {
+                "0": 72,
+                "1": 82,
+                "2": 41,
+                "3": 15,
+                "4": 4,
+                "-1": 2
+            },
+            "adjusted": {
+                "0": 81,
+                "1": 59,
+                "2": 21,
+                "3": 7,
+                "-1": 46,
+                "-2": 2
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Scot Ishino",
+            "scores": {
+                "0": 24,
+                "1": 76,
+                "2": 61,
+                "3": 24,
+                "4": 11,
+                "5": 1,
+                "6": 1
+            },
+            "adjusted": {
+                "0": 71,
+                "1": 55,
+                "2": 18,
+                "3": 10,
+                "4": 1,
+                "-1": 37,
+                "-2": 6
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Bruce Kaneshiro",
+            "scores": {
+                "0": 70,
+                "1": 79,
+                "2": 33,
+                "3": 10,
+                "4": 1,
+                "5": 2,
+                "-1": 3
+            },
+            "adjusted": {
+                "0": 79,
+                "1": 51,
+                "2": 17,
+                "3": 6,
+                "5": 2,
+                "-1": 41,
+                "-2": 2
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Jeff Ko",
+            "scores": {
+                "0": 87,
+                "1": 80,
+                "2": 11,
+                "3": 8,
+                "4": 1,
+                "-1": 11
+            },
+            "adjusted": {
+                "0": 91,
+                "1": 52,
+                "2": 9,
+                "3": 6,
+                "4": 1,
+                "-1": 35,
+                "-2": 4
+            }
+        },
+        {
+            "tournaments": 11,
+            "playerName": "Jeffrey Nakasone",
+            "scores": {
+                "0": 56,
+                "1": 89,
+                "2": 31,
+                "3": 12,
+                "4": 3,
+                "5": 1,
+                "-1": 6
+            },
+            "adjusted": {
+                "0": 88,
+                "1": 51,
+                "2": 17,
+                "3": 8,
+                "4": 2,
+                "-1": 29,
+                "-2": 3
+            }
+        },
+        {
+            "tournaments": 8,
+            "playerName": "Harry Nishimoto",
+            "scores": {
+                "0": 18,
+                "1": 49,
+                "2": 46,
+                "3": 25,
+                "4": 3,
+                "5": 2,
+                "-1": 1
+            },
+            "adjusted": {
+                "0": 55,
+                "1": 37,
+                "2": 16,
+                "3": 3,
+                "4": 1,
+                "-2": 3,
+                "-1": 29
+            }
+        },
+        {
+            "tournaments": 10,
+            "playerName": "Nate Nouchi",
+            "scores": {
+                "0": 53,
+                "1": 82,
+                "2": 35,
+                "3": 7,
+                "4": 1,
+                "-1": 2
+            },
+            "adjusted": {
+                "0": 68,
+                "1": 54,
+                "2": 12,
+                "3": 1,
+                "4": 1,
+                "-1": 42,
+                "-2": 2
+            }
+        },
+        {
+            "tournaments": 10,
+            "playerName": "Nate Okinaka",
+            "scores": {
+                "0": 14,
+                "1": 65,
+                "2": 67,
+                "3": 22,
+                "4": 7,
+                "5": 3,
+                "6": 1,
+                "-1": 1
+            },
+            "adjusted": {
+                "0": 88,
+                "1": 40,
+                "2": 15,
+                "3": 3,
+                "4": 2,
+                "5": 1,
+                "-2": 4,
+                "-1": 27
+            }
+        },
+        {
+            "tournaments": 7,
+            "playerName": "Kiyo Sawa",
+            "scores": {
+                "0": 13,
+                "1": 42,
+                "2": 38,
+                "3": 22,
+                "4": 6,
+                "5": 2,
+                "-1": 3
+            },
+            "adjusted": {
+                "0": 37,
+                "1": 28,
+                "2": 20,
+                "3": 4,
+                "4": 1,
+                "-1": 30,
+                "-2": 5,
+                "-3": 1
+            }
+        },
+        {
+            "tournaments": 10,
+            "playerName": "Mun Taketa",
+            "scores": {
+                "0": 27,
+                "1": 90,
+                "2": 39,
+                "3": 15,
+                "4": 2,
+                "5": 4,
+                "-1": 3
+            },
+            "adjusted": {
+                "0": 82,
+                "1": 46,
+                "2": 17,
+                "3": 3,
+                "4": 4,
+                "-2": 7,
+                "-1": 21
+            }
+        },
+        {
+            "tournaments": 2,
+            "playerName": "Dan Tamashiro",
+            "scores": {
+                "0": 10,
+                "1": 16,
+                "2": 7,
+                "3": 1,
+                "4": 1,
+                "-1": 1
+            },
+            "adjusted": {
+                "0": 16,
+                "1": 9,
+                "2": 1,
+                "3": 1,
+                "-1": 8,
+                "-2": 1
+            }
+        },
+        {
+            "tournaments": 4,
+            "playerName": "Takashi Tsukamaki",
+            "scores": {
+                "0": 18,
+                "1": 24,
+                "2": 23,
+                "3": 6,
+                "-1": 1
+            },
+            "adjusted": {
+                "0": 20,
+                "1": 23,
+                "2": 11,
+                "3": 3,
+                "-1": 15
+            }
+        },
+        {
+            "tournaments": 8,
+            "playerName": "George Tsukamaki",
+            "scores": {
+                "0": 28,
+                "1": 66,
+                "2": 33,
+                "3": 14,
+                "-1": 3
+            },
+            "adjusted": {
+                "0": 59,
+                "1": 38,
+                "2": 15,
+                "3": 1,
+                "-2": 5,
+                "-1": 26
+            }
+        },
+        {
+            "tournaments": 10,
+            "playerName": "Ken Yamabe",
+            "scores": {
+                "0": 30,
+                "1": 63,
+                "2": 49,
+                "3": 20,
+                "4": 13,
+                "5": 3,
+                "-1": 2
+            },
+            "adjusted": {
+                "0": 59,
+                "1": 47,
+                "2": 19,
+                "3": 9,
+                "4": 2,
+                "-1": 37,
+                "-2": 7
+            }
+        }
+    ],
+    "mostImproved": [
+        {
+            "tournaments": 9,
+            "percentChange": -0.21428572,
+            "playerName": "Terry Aoki",
+            "change": -3
+        },
+        {
+            "tournaments": 11,
+            "percentChange": -0.6,
+            "playerName": "Finch Arakawa",
+            "change": -9
+        },
+        {
+            "tournaments": 11,
+            "percentChange": 0,
+            "playerName": "Mel Asato",
+            "change": 0
+        },
+        {
+            "tournaments": 10,
+            "percentChange": -1,
+            "playerName": "Jin Chung",
+            "change": -8
+        },
+        {
+            "tournaments": 11,
+            "percentChange": -0.14285715,
+            "playerName": "Allan Fukuyama",
+            "change": -1
+        },
+        {
+            "tournaments": 9,
+            "percentChange": 0,
+            "playerName": "Art Funamori",
+            "change": 0
+        },
+        {
+            "tournaments": 12,
+            "percentChange": 0.083333336,
+            "playerName": "Howard Himeno",
+            "change": 1
+        },
+        {
+            "tournaments": 11,
+            "percentChange": -0.21052632,
+            "playerName": "Scot Ishino",
+            "change": -4
+        },
+        {
+            "tournaments": 11,
+            "percentChange": 0.1,
+            "playerName": "Bruce Kaneshiro",
+            "change": 1
+        },
+        {
+            "tournaments": 11,
+            "percentChange": -0.2,
+            "playerName": "Jeff Ko",
+            "change": -1
+        },
+        {
+            "tournaments": 11,
+            "percentChange": -0.33333334,
+            "playerName": "Jeffrey Nakasone",
+            "change": -3
+        },
+        {
+            "tournaments": 8,
+            "percentChange": -0.0952381,
+            "playerName": "Harry Nishimoto",
+            "change": -2
+        },
+        {
+            "tournaments": 10,
+            "percentChange": -0.083333336,
+            "playerName": "Nate Nouchi",
+            "change": -1
+        },
+        {
+            "tournaments": 10,
+            "percentChange": -0.14285715,
+            "playerName": "Nate Okinaka",
+            "change": -3
+        },
+        {
+            "tournaments": 7,
+            "percentChange": 0,
+            "playerName": "Kiyo Sawa",
+            "change": 0
+        },
+        {
+            "tournaments": 10,
+            "percentChange": -0.21428572,
+            "playerName": "Mun Taketa",
+            "change": -3
+        },
+        {
+            "tournaments": 2,
+            "percentChange": 0.22222222,
+            "playerName": "Dan Tamashiro",
+            "change": 4
+        },
+        {
+            "tournaments": 4,
+            "percentChange": -0.25,
+            "playerName": "Takashi Tsukamaki",
+            "change": -3
+        },
+        {
+            "tournaments": 8,
+            "percentChange": -0.4,
+            "playerName": "George Tsukamaki",
+            "change": -6
+        },
+        {
+            "tournaments": 10,
+            "percentChange": 0,
+            "playerName": "Ken Yamabe",
+            "change": 0
+        }
+    ],
+    "standings": [
+        {
+            "earnings": 233.83333,
+            "playerName": "Mel Asato",
+            "handicap": 16.191538,
+            "kpsByTour": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                2,
+                0,
+                1,
+                1,
+                0
+            ],
+            "hdcp": 16.191538,
+            "handicapsByTour": [
+                11.48,
+                13.78,
+                15.43,
+                15.94,
+                15.56,
+                2.24,
+                16.21,
+                20.05,
+                13.78,
+                16.1,
+                16.52,
+                17.15
+            ],
+            "pointsByTour": [
+                12,
+                9,
+                3,
+                12,
+                6,
+                0,
+                7.5,
+                4.5,
+                9,
+                3,
+                6,
+                7.5
+            ],
+            "earningsByTour": [
+                43,
+                25,
+                0,
+                40,
+                13.333333015441895,
+                0,
+                23,
+                13.5,
+                25,
+                3,
+                28,
+                20
+            ],
+            "attendance": 11,
+            "playerId": 3,
+            "points": 79.5,
+            "kps": 6
+        },
+        {
+            "earnings": 187,
+            "playerName": "Allan Fukuyama",
+            "handicap": 11.551473,
+            "kpsByTour": [
+                1,
+                2,
+                0,
+                2,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1
+            ],
+            "hdcp": 11.551473,
+            "handicapsByTour": [
+                7,
+                8.82,
+                10.51,
+                10.9,
+                10.61,
+                11.58,
+                11.58,
+                3.65,
+                9.19,
+                10.77,
+                10.72,
+                13.18
+            ],
+            "pointsByTour": [
+                3,
+                12,
+                6,
+                9,
+                3,
+                3,
+                7.5,
+                0,
+                12,
+                3,
+                3,
+                7.5
+            ],
+            "earningsByTour": [
+                3,
+                46,
+                15,
+                31,
+                0,
+                3,
+                20,
+                0,
+                40,
+                3,
+                3,
+                23
+            ],
+            "attendance": 11,
+            "playerId": 69,
+            "points": 69,
+            "kps": 9
+        },
+        {
+            "earnings": 216.5,
+            "playerName": "Art Funamori",
+            "handicap": 21.659224,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1
+            ],
+            "hdcp": 21.659224,
+            "handicapsByTour": [
+                16.86,
+                2.87,
+                2.65,
+                21.99,
+                22.5,
+                23.72,
+                22.69,
+                3.65,
+                19.29,
+                23.22,
+                23.28,
+                23.1
+            ],
+            "pointsByTour": [
+                3,
+                0,
+                0,
+                3,
+                12,
+                3,
+                9,
+                0,
+                12,
+                3,
+                12,
+                12
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                0,
+                3,
+                40,
+                0,
+                25,
+                0,
+                40,
+                3,
+                62.5,
+                43
+            ],
+            "attendance": 9,
+            "playerId": 73,
+            "points": 69,
+            "kps": 3
+        },
+        {
+            "earnings": 180,
+            "playerName": "Nate Okinaka",
+            "handicap": 28.248432,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 28.248432,
+            "handicapsByTour": [
+                19.55,
+                22.7,
+                2.65,
+                28.05,
+                4.66,
+                28.39,
+                28.25,
+                31.9,
+                23.89,
+                28.56,
+                28.11,
+                29.04
+            ],
+            "pointsByTour": [
+                3,
+                12,
+                0,
+                9,
+                0,
+                10.5,
+                3,
+                7.5,
+                3,
+                3,
+                12,
+                3
+            ],
+            "earningsByTour": [
+                0,
+                40,
+                0,
+                25,
+                0,
+                32.5,
+                0,
+                20,
+                0,
+                0,
+                62.5,
+                0
+            ],
+            "attendance": 10,
+            "playerId": 60,
+            "points": 66,
+            "kps": 0
+        },
+        {
+            "earnings": 181,
+            "playerName": "Nate Nouchi",
+            "handicap": 16.68714,
+            "kpsByTour": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 16.68714,
+            "handicapsByTour": [
+                11.48,
+                12.79,
+                15.43,
+                3.83,
+                17.54,
+                17.18,
+                17.14,
+                3.65,
+                13.78,
+                16.99,
+                16.52,
+                18.14
+            ],
+            "pointsByTour": [
+                3,
+                3,
+                3,
+                0,
+                7.5,
+                3,
+                12,
+                0,
+                3,
+                3,
+                15,
+                12
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                3,
+                0,
+                20,
+                3,
+                40,
+                0,
+                0,
+                0,
+                75,
+                40
+            ],
+            "attendance": 10,
+            "playerId": 64,
+            "points": 64.5,
+            "kps": 2
+        },
+        {
+            "earnings": 168.33333,
+            "playerName": "Jeff Ko",
+            "handicap": 9.980869,
+            "kpsByTour": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0
+            ],
+            "hdcp": 9.980869,
+            "handicapsByTour": [
+                5.2,
+                6.84,
+                10.51,
+                3.83,
+                8.62,
+                8.78,
+                8.8,
+                11.85,
+                6.43,
+                8.99,
+                9.75,
+                11.2
+            ],
+            "pointsByTour": [
+                3,
+                3,
+                9,
+                0,
+                6,
+                6,
+                3,
+                3,
+                3,
+                3,
+                21,
+                3
+            ],
+            "earningsByTour": [
+                3,
+                0,
+                25,
+                0,
+                13.333333015441895,
+                18,
+                3,
+                0,
+                0,
+                3,
+                103,
+                0
+            ],
+            "attendance": 11,
+            "playerId": 71,
+            "points": 63,
+            "kps": 5
+        },
+        {
+            "earnings": 168.5,
+            "playerName": "Mun Taketa",
+            "handicap": 19.997673,
+            "kpsByTour": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 19.997673,
+            "handicapsByTour": [
+                13.27,
+                15.76,
+                18.37,
+                17.96,
+                4.66,
+                2.24,
+                18.06,
+                22.78,
+                16.54,
+                21.44,
+                21.34,
+                22.1
+            ],
+            "pointsByTour": [
+                3,
+                3,
+                6,
+                3,
+                0,
+                0,
+                3,
+                12,
+                3,
+                3,
+                21,
+                4.5
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                18,
+                3,
+                0,
+                0,
+                0,
+                40,
+                0,
+                0,
+                100,
+                7.5
+            ],
+            "attendance": 10,
+            "playerId": 5,
+            "points": 61.5,
+            "kps": 2
+        },
+        {
+            "earnings": 183,
+            "playerName": "George Tsukamaki",
+            "handicap": 19.527191,
+            "kpsByTour": [
+                1,
+                2,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 19.527191,
+            "handicapsByTour": [
+                14.17,
+                15.76,
+                18.37,
+                19.98,
+                20.52,
+                20.92,
+                20.84,
+                22.78,
+                1.84,
+                1.87,
+                2.99,
+                5.25
+            ],
+            "pointsByTour": [
+                12,
+                3,
+                9,
+                12,
+                7.5,
+                3,
+                12,
+                3,
+                0,
+                0,
+                0,
+                0
+            ],
+            "earningsByTour": [
+                43,
+                6,
+                25,
+                43,
+                20,
+                0,
+                43,
+                3,
+                0,
+                0,
+                0,
+                0
+            ],
+            "attendance": 8,
+            "playerId": 35,
+            "points": 61.5,
+            "kps": 6
+        },
+        {
+            "earnings": 95,
+            "playerName": "Howard Himeno",
+            "handicap": 15.112143,
+            "kpsByTour": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                2,
+                0,
+                1,
+                0,
+                0,
+                1
+            ],
+            "hdcp": 15.112143,
+            "handicapsByTour": [
+                11.48,
+                12.79,
+                16.41,
+                15.94,
+                15.56,
+                15.32,
+                14.36,
+                18.23,
+                11.94,
+                15.21,
+                15.55,
+                16.16
+            ],
+            "pointsByTour": [
+                3,
+                3,
+                12,
+                3,
+                3,
+                12,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                43,
+                0,
+                0,
+                40,
+                6,
+                0,
+                3,
+                0,
+                0,
+                3
+            ],
+            "attendance": 12,
+            "playerId": 32,
+            "points": 54,
+            "kps": 5
+        },
+        {
+            "earnings": 119,
+            "playerName": "Bruce Kaneshiro",
+            "handicap": 13.548376,
+            "kpsByTour": [
+                1,
+                1,
+                0,
+                0,
+                2,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1
+            ],
+            "hdcp": 13.548376,
+            "handicapsByTour": [
+                9.69,
+                10.8,
+                13.46,
+                3.83,
+                14.57,
+                14.38,
+                13.43,
+                17.31,
+                10.11,
+                12.55,
+                12.65,
+                14.17
+            ],
+            "pointsByTour": [
+                6,
+                6,
+                3,
+                0,
+                3,
+                9,
+                3,
+                12,
+                3,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                18,
+                18,
+                0,
+                0,
+                6,
+                25,
+                3,
+                40,
+                3,
+                0,
+                3,
+                3
+            ],
+            "attendance": 11,
+            "playerId": 1,
+            "points": 54,
+            "kps": 8
+        },
+        {
+            "earnings": 108,
+            "playerName": "Jeffrey Nakasone",
+            "handicap": 17.076265,
+            "kpsByTour": [
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                2,
+                0,
+                1,
+                0,
+                0
+            ],
+            "hdcp": 17.076265,
+            "handicapsByTour": [
+                8.79,
+                10.8,
+                13.46,
+                12.91,
+                13.58,
+                2.24,
+                13.43,
+                16.4,
+                9.19,
+                13.44,
+                13.62,
+                17.15
+            ],
+            "pointsByTour": [
+                9,
+                3,
+                3,
+                3,
+                12,
+                0,
+                3,
+                9,
+                3,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                25,
+                3,
+                3,
+                0,
+                43,
+                0,
+                0,
+                31,
+                0,
+                3,
+                0,
+                0
+            ],
+            "attendance": 11,
+            "playerId": 9,
+            "points": 54,
+            "kps": 6
+        },
+        {
+            "earnings": 81,
+            "playerName": "Scot Ishino",
+            "handicap": 26.989882,
+            "kpsByTour": [
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 26.989882,
+            "handicapsByTour": [
+                17.76,
+                2.87,
+                23.29,
+                23,
+                23.49,
+                24.65,
+                24.55,
+                30.07,
+                22.05,
+                25,
+                25.21,
+                28.05
+            ],
+            "pointsByTour": [
+                3,
+                0,
+                12,
+                6,
+                3,
+                3,
+                3,
+                7.5,
+                3,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                43,
+                15,
+                0,
+                0,
+                0,
+                23,
+                0,
+                0,
+                0,
+                0
+            ],
+            "attendance": 11,
+            "playerId": 75,
+            "points": 49.5,
+            "kps": 2
+        },
+        {
+            "earnings": 101,
+            "playerName": "Ken Yamabe",
+            "handicap": 24.747293,
+            "kpsByTour": [
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                0,
+                2,
+                1,
+                0,
+                1
+            ],
+            "hdcp": 24.747293,
+            "handicapsByTour": [
+                19.55,
+                20.72,
+                24.27,
+                3.83,
+                24.48,
+                2.24,
+                24.55,
+                27.34,
+                20.21,
+                23.22,
+                23.28,
+                26.07
+            ],
+            "pointsByTour": [
+                9,
+                3,
+                3,
+                0,
+                3,
+                0,
+                6,
+                3,
+                6,
+                3,
+                3,
+                9
+            ],
+            "earningsByTour": [
+                28,
+                0,
+                0,
+                0,
+                0,
+                0,
+                21,
+                0,
+                21,
+                3,
+                0,
+                28
+            ],
+            "attendance": 10,
+            "playerId": 11,
+            "points": 48,
+            "kps": 7
+        },
+        {
+            "earnings": 71.333336,
+            "playerName": "Jin Chung",
+            "handicap": 19.780865,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 19.780865,
+            "handicapsByTour": [
+                0.72,
+                10.8,
+                13.46,
+                13.92,
+                13.58,
+                14.38,
+                15.28,
+                20.05,
+                14.7,
+                17.88,
+                18.45,
+                5.25
+            ],
+            "pointsByTour": [
+                0,
+                3,
+                3,
+                6,
+                6,
+                3,
+                3,
+                3,
+                6,
+                3,
+                6,
+                0
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                0,
+                15,
+                13.333333015441895,
+                3,
+                0,
+                0,
+                15,
+                0,
+                25,
+                0
+            ],
+            "attendance": 10,
+            "playerId": 70,
+            "points": 42,
+            "kps": 1
+        },
+        {
+            "earnings": 40,
+            "playerName": "Finch Arakawa",
+            "handicap": 27.600595,
+            "kpsByTour": [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1
+            ],
+            "hdcp": 27.600595,
+            "handicapsByTour": [
+                14.17,
+                16.75,
+                19.36,
+                19.98,
+                19.53,
+                20.92,
+                22.69,
+                27.34,
+                1.84,
+                26.78,
+                26.17,
+                29.04
+            ],
+            "pointsByTour": [
+                3,
+                9,
+                3,
+                3,
+                3,
+                3,
+                3,
+                3,
+                0,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                0,
+                28,
+                0,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0,
+                3,
+                3,
+                3
+            ],
+            "attendance": 11,
+            "playerId": 76,
+            "points": 39,
+            "kps": 5
+        },
+        {
+            "earnings": 58,
+            "playerName": "Harry Nishimoto",
+            "handicap": 26.957668,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 26.957668,
+            "handicapsByTour": [
+                19.55,
+                21.71,
+                2.65,
+                3.83,
+                4.66,
+                25.59,
+                3.24,
+                30.07,
+                22.05,
+                25.89,
+                25.21,
+                28.05
+            ],
+            "pointsByTour": [
+                3,
+                6,
+                0,
+                0,
+                0,
+                10.5,
+                0,
+                3,
+                3,
+                3,
+                3,
+                4.5
+            ],
+            "earningsByTour": [
+                0,
+                15,
+                0,
+                0,
+                0,
+                32.5,
+                0,
+                0,
+                3,
+                0,
+                0,
+                7.5
+            ],
+            "attendance": 8,
+            "playerId": 14,
+            "points": 36,
+            "kps": 1
+        },
+        {
+            "earnings": 49,
+            "playerName": "Kiyo Sawa",
+            "handicap": 27.875809,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                1
+            ],
+            "hdcp": 27.875809,
+            "handicapsByTour": [
+                22.24,
+                23.69,
+                2.65,
+                3.83,
+                27.46,
+                2.24,
+                3.24,
+                3.65,
+                25.72,
+                27.67,
+                28.11,
+                29.04
+            ],
+            "pointsByTour": [
+                6,
+                3,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0,
+                9,
+                3,
+                3,
+                3
+            ],
+            "earningsByTour": [
+                15,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                25,
+                0,
+                6,
+                3
+            ],
+            "attendance": 7,
+            "playerId": 20,
+            "points": 30,
+            "kps": 3
+        },
+        {
+            "earnings": 22.5,
+            "playerName": "Terry Aoki",
+            "handicap": 21.906267,
+            "kpsByTour": [
+                0,
+                0,
+                1,
+                0,
+                3,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 21.906267,
+            "handicapsByTour": [
+                0.72,
+                2.87,
+                16.41,
+                15.94,
+                17.54,
+                18.12,
+                18.06,
+                20.96,
+                14.7,
+                18.77,
+                2.99,
+                22.1
+            ],
+            "pointsByTour": [
+                0,
+                0,
+                3,
+                3,
+                3,
+                3,
+                3,
+                4.5,
+                3,
+                3,
+                0,
+                3
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                3,
+                0,
+                9,
+                0,
+                0,
+                7.5,
+                3,
+                0,
+                0,
+                0
+            ],
+            "attendance": 9,
+            "playerId": 51,
+            "points": 28.5,
+            "kps": 5
+        },
+        {
+            "earnings": 0,
+            "playerName": "Takashi Tsukamaki",
+            "handicap": 15.2324705,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 15.2324705,
+            "handicapsByTour": [
+                0.72,
+                2.87,
+                14.44,
+                14.93,
+                14.57,
+                2.24,
+                3.24,
+                17.31,
+                1.84,
+                1.87,
+                2.99,
+                5.25
+            ],
+            "pointsByTour": [
+                0,
+                0,
+                3,
+                3,
+                3,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0,
+                0
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "attendance": 4,
+            "playerId": 25,
+            "points": 12,
+            "kps": 0
+        },
+        {
+            "earnings": 15,
+            "playerName": "Dan Tamashiro",
+            "handicap": 17.855589,
+            "kpsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "hdcp": 17.855589,
+            "handicapsByTour": [
+                0.72,
+                2.87,
+                2.65,
+                3.83,
+                4.66,
+                19.05,
+                3.24,
+                3.65,
+                14.7,
+                1.87,
+                2.99,
+                5.25
+            ],
+            "pointsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                6,
+                0,
+                0,
+                3,
+                0,
+                0,
+                0
+            ],
+            "earningsByTour": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                15,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "attendance": 2,
+            "playerId": 52,
+            "points": 9,
+            "kps": 0
+        }
+    ],
+    "sandbagger": [
+        {
+            "hi": 93,
+            "tournaments": 10,
+            "lo": 66,
+            "playerName": "Mun Taketa",
+            "range": 27
+        },
+        {
+            "hi": 86,
+            "tournaments": 12,
+            "lo": 64,
+            "playerName": "Howard Himeno",
+            "range": 22
+        },
+        {
+            "hi": 91,
+            "tournaments": 10,
+            "lo": 70,
+            "playerName": "Jin Chung",
+            "range": 21
+        },
+        {
+            "hi": 89,
+            "tournaments": 11,
+            "lo": 70,
+            "playerName": "Bruce Kaneshiro",
+            "range": 19
+        },
+        {
+            "hi": 85,
+            "tournaments": 9,
+            "lo": 67,
+            "playerName": "Art Funamori",
+            "range": 18
+        },
+        {
+            "hi": 89,
+            "tournaments": 10,
+            "lo": 71,
+            "playerName": "Ken Yamabe",
+            "range": 18
+        },
+        {
+            "hi": 91,
+            "tournaments": 9,
+            "lo": 74,
+            "playerName": "Terry Aoki",
+            "range": 17
+        },
+        {
+            "hi": 90,
+            "tournaments": 11,
+            "lo": 73,
+            "playerName": "Finch Arakawa",
+            "range": 17
+        },
+        {
+            "hi": 88,
+            "tournaments": 11,
+            "lo": 72,
+            "playerName": "Jeffrey Nakasone",
+            "range": 16
+        },
+        {
+            "hi": 86,
+            "tournaments": 10,
+            "lo": 70,
+            "playerName": "Nate Nouchi",
+            "range": 16
+        },
+        {
+            "hi": 87,
+            "tournaments": 10,
+            "lo": 71,
+            "playerName": "Nate Okinaka",
+            "range": 16
+        },
+        {
+            "hi": 86,
+            "tournaments": 7,
+            "lo": 70,
+            "playerName": "Kiyo Sawa",
+            "range": 16
+        },
+        {
+            "hi": 82,
+            "tournaments": 11,
+            "lo": 68,
+            "playerName": "Mel Asato",
+            "range": 14
+        },
+        {
+            "hi": 80,
+            "tournaments": 11,
+            "lo": 66,
+            "playerName": "Allan Fukuyama",
+            "range": 14
+        },
+        {
+            "hi": 86,
+            "tournaments": 8,
+            "lo": 72,
+            "playerName": "Harry Nishimoto",
+            "range": 14
+        },
+        {
+            "hi": 82,
+            "tournaments": 8,
+            "lo": 68,
+            "playerName": "George Tsukamaki",
+            "range": 14
+        },
+        {
+            "hi": 85,
+            "tournaments": 11,
+            "lo": 72,
+            "playerName": "Scot Ishino",
+            "range": 13
+        },
+        {
+            "hi": 85,
+            "tournaments": 4,
+            "lo": 75,
+            "playerName": "Takashi Tsukamaki",
+            "range": 10
+        },
+        {
+            "hi": 81,
+            "tournaments": 11,
+            "lo": 72,
+            "playerName": "Jeff Ko",
+            "range": 9
+        },
+        {
+            "hi": 75,
+            "tournaments": 2,
+            "lo": 73,
+            "playerName": "Dan Tamashiro",
+            "range": 2
+        }
+    ],
+    "goodBadUgly": {
+        "HighGross": {
+            "score": 114,
+            "rounds": [
+                {
+                    "playerName": "Nate Okinaka",
+                    "playDate": "07-16-2022",
+                    "course": "Avalon S/N"
+                }
+            ]
+        },
+        "HighNet": {
+            "score": 93,
+            "rounds": [
+                {
+                    "playerName": "Mun Taketa",
+                    "playDate": "04-03-2022",
+                    "course": "Oakbrook"
+                }
+            ]
+        },
+        "UglyHole": {
+            "score": 11,
+            "rounds": [
+                {
+                    "playerName": "Nate Okinaka",
+                    "playDate": "09-10-2022",
+                    "course": "Cedarcrest - HOLE 13"
+                }
+            ]
+        },
+        "LowNet": {
+            "score": 64,
+            "rounds": [
+                {
+                    "playerName": "Howard Himeno",
+                    "playDate": "06-25-2022",
+                    "course": "Riverbend"
+                }
+            ]
+        },
+        "LowGross": {
+            "score": 74,
+            "rounds": [
+                {
+                    "playerName": "Allan Fukuyama",
+                    "playDate": "04-23-2022",
+                    "course": "Legion Memorial"
+                },
+                {
+                    "playerName": "Allan Fukuyama",
+                    "playDate": "08-06-2022",
+                    "course": "Snohomish"
+                }
+            ]
+        }
+    }
 }

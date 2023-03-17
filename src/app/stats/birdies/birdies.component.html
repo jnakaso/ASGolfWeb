@@ -21,8 +21,8 @@
           </thead>
           <tbody>
             <tr *ngFor="let entry of data">
-              <td>{{entry.name}}</td>
-              <td class="text-right">{{entry.rounds}}</td>
+              <td>{{entry.playerName}}</td>
+              <td class="text-right">{{entry.tournaments}}</td>
               <td class="text-right">{{entry.scores[-2]}}</td>
               <td class="text-right">{{entry.scores[-1]}}</td>
               <td class="text-right">{{entry.scores[0]}}</td>
@@ -55,8 +55,8 @@
 
           <tbody>
             <tr *ngFor="let entry of data">
-              <td>{{entry.name}}</td>
-              <td class="text-right">{{entry.rounds}}</td>
+              <td>{{entry.playerName}}</td>
+              <td class="text-right">{{entry.tournaments}}</td>
               <td class="text-right">{{entry.adjusted[-4]}}</td>
               <td class="text-right">{{entry.adjusted[-3]}}</td>
               <td class="text-right">{{entry.adjusted[-2]}}</td>

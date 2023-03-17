@@ -13,7 +13,7 @@
         <tbody>
           <tr *ngFor="let entry of getRounds('LowGross')">
             <td>{{data.LowGross.score}}: </td>
-            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+            <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
       </table>
@@ -24,7 +24,7 @@
         <tbody>
           <tr *ngFor="let entry of getRounds('LowNet')">
             <td>{{data.LowNet.score}}: </td>
-            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+            <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
       </table>
@@ -41,7 +41,7 @@
         <tbody>
           <tr *ngFor="let entry of getRounds('HighGross')">
             <td>{{data.HighGross.score}}: </td>
-            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+            <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
       </table>
@@ -51,7 +51,7 @@
         <tbody>
           <tr *ngFor="let entry of getRounds('HighNet')">
             <td>{{data.HighNet.score}}: </td>
-            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+            <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
       </table>
@@ -67,7 +67,7 @@
         <tbody>
           <tr *ngFor="let entry of getRounds('UglyHole')">
             <td>{{data.UglyHole.score}}: </td>
-            <td>{{entry.player}}, {{entry.playDate}}, {{entry.course}}</td>
+            <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
       </table>
