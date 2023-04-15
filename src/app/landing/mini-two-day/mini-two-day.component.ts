@@ -31,6 +31,8 @@ export class MiniTwoDayComponent implements OnInit {
   }
 
   getScores(flt: string) {
-    return this.twoday.scores.filter(s => s.flight == flt);
+    return this.twoday.scores
+      .filter(s => s.flight == flt)
+      .sort((s1, s2) => s1.total - s2.total)
   }
 }

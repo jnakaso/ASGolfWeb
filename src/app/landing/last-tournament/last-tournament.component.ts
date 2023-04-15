@@ -31,6 +31,6 @@ export class LastTournamentComponent implements OnInit {
   }
 
   getWinners(flt: string) {
-    return this.tournament.winners.filter(w => w.flt == flt);
+    return this.tournament.winners.filter(w => w.flight == flt);
   }
 }

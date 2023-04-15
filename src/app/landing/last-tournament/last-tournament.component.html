@@ -1,7 +1,7 @@
 <section class="card" *ngIf="tournament">
     <div class="card-body">
         <h3 class="card-title">Last Tournament:  <a
-                routerLink="/tournament/{{tournament.tournament.seasonID}}/{{tournament.tournament.id}}">{{tournament.tournament.courseName}}
+                routerLink="/tournament/{{tournament.seasonID}}/{{tournament.id}}">{{tournament.courseName}}
             </a>
         </h3>
         <div class="row">
@@ -17,9 +17,9 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let winner of getWinners(flt)">
-                            <td class="text-right">{{winner.place}}</td>
-                            <td>{{winner.player}}</td>
-                            <td class="text-right">{{winner.net}}</td>
+                            <td class="text-right">{{winner.finish}}</td>
+                            <td>{{winner.playerName}}</td>
+                            <td class="text-right">{{winner.totalNet}}</td>
                             <td class="text-right">{{winner.points}}</td>
                             <td class="text-right">{{winner.earnings | currency }}</td>
                         </tr>

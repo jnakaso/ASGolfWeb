@@ -11,8 +11,8 @@
     <div class="col-md-6">
       <table class="table table-striped">
         <tbody>
-          <tr *ngFor="let entry of getRounds('LowGross')">
-            <td>{{data.LowGross.score}}: </td>
+          <tr *ngFor="let entry of getRounds('lowGross')">
+            <td>{{data.lowGross.score}}: </td>
             <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
@@ -22,8 +22,8 @@
 
       <table class="table table-striped">
         <tbody>
-          <tr *ngFor="let entry of getRounds('LowNet')">
-            <td>{{data.LowNet.score}}: </td>
+          <tr *ngFor="let entry of getRounds('lowNet')">
+            <td>{{data.lowNet.score}}: </td>
             <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
@@ -39,8 +39,8 @@
 
       <table class="table table-striped">
         <tbody>
-          <tr *ngFor="let entry of getRounds('HighGross')">
-            <td>{{data.HighGross.score}}: </td>
+          <tr *ngFor="let entry of getRounds('highGross')">
+            <td>{{data.highGross.score}}: </td>
             <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
@@ -49,8 +49,8 @@
     <div class="col-md-6">
       <table class="table table-striped">
         <tbody>
-          <tr *ngFor="let entry of getRounds('HighNet')">
-            <td>{{data.HighNet.score}}: </td>
+          <tr *ngFor="let entry of getRounds('highNet')">
+            <td>{{data.highNet.score}}: </td>
             <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>
@@ -65,8 +65,8 @@
     <div class="col-md-6">
       <table class="table table-striped">
         <tbody>
-          <tr *ngFor="let entry of getRounds('UglyHole')">
-            <td>{{data.UglyHole.score}}: </td>
+          <tr *ngFor="let entry of getRounds('uglyHole')">
+            <td>{{data.uglyHole.score}}: </td>
             <td>{{entry.playerName}}, {{entry.playDate}}, {{entry.course}}</td>
           </tr>
         </tbody>

@@ -1,7 +1,11 @@
-<section style="margin-bottom:1em">
-	<p><strong>Date:</strong> {{getTournamentDate(tournament) | date : 'shortDate' : 'UTC'}} |
-		<strong>Slope:</strong> {{getTournamentSlope(tournament)}} | <strong>Rating:</strong>
-		{{getTournamentRating(tournament)}}
+<section style="margin-bottom:1em" *ngIf="!tournament">
+	<p>Loading</p>
+</section>
+<section style="margin-bottom:1em" *ngIf="tournament" id="tour_{{tournament.id}}-header">
+	<p>
+		<strong>Date:</strong> {{tournament.date | date : 'shortDate' : 'UTC'}} |
+		<strong>Slope:</strong> {{tournament.slope | number: '1.0-0'}} |
+		<strong>Rating:</strong> {{tournament.rating | number: '1.1-1'}}
 	</p>
 
 	<h3 *ngIf="showWinners(tournament)">Winners</h3>
@@ -18,9 +22,9 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let winner of getWinners(flt)">
-						<td>{{winner.place}}</td>
-						<td>{{winner.player}}</td>
-						<td class="text-right">{{winner.net}}</td>
+						<td>{{winner.finish}}</td>
+						<td>{{winner.playerName}}</td>
+						<td class="text-right">{{winner.totalNet}}</td>
 						<td class="text-right">{{winner.points}}</td>
 						<td class="text-right">{{winner.earnings | currency }}</td>
 					</tr>
@@ -39,7 +43,7 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let kp of getKps(flt)">
-						<td>{{kp.player}}</td>
+						<td>{{kp.playerName}}</td>
 						<td class="text-right">{{kp.hole}}</td>
 					</tr>
 				</tbody>
@@ -65,13 +69,13 @@
 			<tbody>
 				<tr *ngFor="let round of getRounds()">
 					<td>{{round.flight}}</td>
-					<td>{{round.player}}</td>
-					<td class="text-right">{{round.hdcp}}</td>
+					<td>{{round.playerName}}</td>
+					<td class="text-right">{{round.handicap}}</td>
 					<td class="text-right">{{round.total}}</td>
 					<td class="text-right">{{round.totalNet}}</td>
-					<td class="text-right" *ngFor="let hole of front">{{round.holes[hole]}}</td>
+					<td class="text-right" *ngFor="let hole of front">{{round.scores[hole]}}</td>
 					<td class="text-right">{{round.front}}</td>
-					<td class="text-right" *ngFor="let hole of back">{{round.holes[hole]}}</td>
+					<td class="text-right" *ngFor="let hole of back">{{round.scores[hole]}}</td>
 					<td class="text-right">{{round.back}}</td>
 					<td class="text-right">{{round.frontNet}}</td>
 					<td class="text-right">{{round.backNet}}</td>

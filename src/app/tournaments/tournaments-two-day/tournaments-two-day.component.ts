@@ -20,13 +20,14 @@ export class TournamentsTwoDayComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.twoDay) {
-      console.log(changes.twoDay)
+//      console.log(changes.twoDay)
     }
   }
 
   twodayScores(flt: string) {
-    return this.twoDay.scores.filter(ss => ss.flight == flt);
+    return this.twoDay.scores
+      .filter(ss => ss.flight == flt)
+      .sort((s1, s2) => s1.total - s2.total);
   }
-
 
 }

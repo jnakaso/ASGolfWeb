@@ -15,7 +15,7 @@ export class MoneyPlayerComponent {
       return [];
     }
     if (this.activeOnly) {
-      return this.data.filter(d => d.active == "true");
+      return this.data.filter(d => d.active);
     } else {
       return this.data;
     }
