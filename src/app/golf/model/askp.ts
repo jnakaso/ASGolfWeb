@@ -5,6 +5,7 @@ export class ASKp {
     player: string;
     hole: number;
     flight: string;
+    distance: string;
 
     constructor (k : any) {
         this.id = k.id;
@@ -12,5 +13,6 @@ export class ASKp {
         this.player = k.player;
         this.hole = k.hole;
         this.flight = k.flight;
+        this.distance = k.distance;
     }
 }

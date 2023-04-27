@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { GolfService } from '../../golf/golf.service';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common'; 
 import { StatsService } from '../../golf/stats.service';
 import { TournamentsService } from '../../golf/tournaments.service';
 import { ASTournament } from '../../golf/astournament';
@@ -18,7 +18,7 @@ export class TournamentsSummaryComponent implements OnInit {
   active = 1;
 
   constructor(
-    private golfService: GolfService,
+    @Inject(DOCUMENT) document: Document,
     private tournamentsService: TournamentsService,
     private statsService: StatsService) {
   }
@@ -43,12 +43,18 @@ export class TournamentsSummaryComponent implements OnInit {
   }
 
   loadData(season: number) {
-    if (this.season) {
-      this.tournamentsService.getTournaments(this.season)
+    if (season) {
+      this.tournamentsService.getTournaments(season)
         .subscribe((tt: ASTournament[]) => this.tournaments = tt.reverse());
-      this.statsService.getStats(this.season)
+      this.statsService.getStats(season)
         .subscribe(ss => this.standings = ss.standings);
     }
   }
 
+  scroll(tournament: ASTournament) {
+    let el = document.getElementById('tour_' + tournament.id + '-header');
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
+ 
 }

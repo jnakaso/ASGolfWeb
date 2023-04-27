@@ -38,13 +38,15 @@
 			<h4>{{flt}}-Flight</h4>
 			<table class="table table-sm table-striped">
 				<thead>
-					<th>Player</th>
 					<th class="text-right">Hole</th>
+					<th>Player</th>
+					<th>Distance</th>
 				</thead>
 				<tbody>
 					<tr *ngFor="let kp of getKps(flt)">
-						<td>{{kp.playerName}}</td>
 						<td class="text-right">{{kp.hole}}</td>
+						<td>{{kp.playerName}}</td>
+						<td class="text-right">{{kp.distance}}</td>
 					</tr>
 				</tbody>
 			</table>

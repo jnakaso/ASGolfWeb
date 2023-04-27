@@ -10,19 +10,24 @@ import { PlayersService } from '../../golf/players.service';
 export class PlayerHistoryComponent implements OnInit, OnChanges {
 
   @Input()
-  player;
+  player: ASPlayer;
 
   seasons = [];
 
-  constructor() { }
+  constructor(private playersService: PlayersService) { }
 
   ngOnInit(): void {
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.player) {
-      this.seasons = this.player.seasonSummaries
-        .sort((s2, s1) => s1.seasonId - s2.seasonId)
-        .slice(0, 10);
+      this.playersService.get(this.player.id)
+        .subscribe(p => {
+          this.seasons = p.seasonSummaries
+            .sort((s2, s1) => s1.seasonId - s2.seasonId)
+            .slice(0, 20);
+        });
+
     }
   }
 }
