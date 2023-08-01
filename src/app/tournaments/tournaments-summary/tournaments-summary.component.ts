@@ -32,12 +32,12 @@ export class TournamentsSummaryComponent implements OnInit {
       this.loadData(changes.season.currentValue);
     }
   }
-  public beforeChange($event: NgbNavChangeEvent) {
-    if ($event.nextId === 'ngb-nav-0') {
+  public beforeChange(event: NgbNavChangeEvent) {
+    if (event.nextId === 'points') {
       this.standings = this.standings.sort((s1, s2) => s2.points - s1.points);
-    } else if ($event.nextId === 'ngb-nav-1') {
+    } else if (event.nextId === 'earnings') {
       this.standings = this.standings.sort((s1, s2) => s2.earnings - s1.earnings);
-    } else if ($event.nextId === 'ngb-nav-2') {
+    } else if (event.nextId === 'kps') {
       this.standings = this.standings.sort((s1, s2) => s2.kps - s1.kps);
     }
   }
@@ -45,9 +45,9 @@ export class TournamentsSummaryComponent implements OnInit {
   loadData(season: number) {
     if (season) {
       this.tournamentsService.getTournaments(season)
-        .subscribe((tt: ASTournament[]) => this.tournaments = tt.reverse());
+        .subscribe((tt: ASTournament[]) => this.tournaments = tt);
       this.statsService.getStats(season)
-        .subscribe(ss => this.standings = ss.standings);
+        .subscribe(ss =>this.standings = ss.standings);
     }
   }
 

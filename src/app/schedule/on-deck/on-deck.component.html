@@ -17,7 +17,7 @@
         <th class="text-right" *ngFor="let tee of courseTees">{{tee.name}}</th>
       </tr>
       <tr>
-        <th class="text-right" *ngFor="let tee of courseTees">{{tee.slope}} / {{tee.rating}}</th>
+        <th class="text-right" *ngFor="let tee of courseTees">{{tee.slope | number: '1.0-0'}} / {{tee.rating | number: '1.1-1'}}</th>
       </tr>
     </thead>
     <tbody>
