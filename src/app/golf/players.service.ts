@@ -29,4 +29,8 @@ export class PlayersService {
     return this.http.get<ASBalance>(`/asgolf-assets/data/${season}/as-balance.js`);
   }
 
+  getPlayerHistories(): Observable<any> {
+    return this.http.get(`/asgolf-assets/data/player-histories.js`);
+  }
+
 }

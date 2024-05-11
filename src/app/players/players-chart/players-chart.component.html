@@ -6,9 +6,11 @@
         [showXAxisLabel]="showXAxisLabel" [xAxisLabel]="xAxisLabel" [xAxis]="xAxis" 
         [showYAxisLabel]="showYAxisLabel"  [yAxisLabel]="yAxisLabel" [yAxis]="yAxis" 
         
-        [timeline]="timeline" [results]="multi"
+        [results]="multi"
 
+        (window:resize)="onResize($event)"
         (select)="onSelect($event)"
-        (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)">
     </ngx-charts-line-chart>
 </section>

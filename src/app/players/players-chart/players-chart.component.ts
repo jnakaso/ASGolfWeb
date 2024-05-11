@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ASPlayer } from '../../golf/asplayer';
+import { Component } from '@angular/core';
 import { PlayersService } from '../../golf/players.service';
 
 @Component({
@@ -10,8 +9,9 @@ import { PlayersService } from '../../golf/players.service';
 export class PlayersChartComponent {
 
   multi: any[] = [];
+  activeEntries: any[] = [];
 
-  view: any[] = [800, 800];
+  view: any[] = [0.90 * window.innerWidth, 800];
 
   // options
   legend: boolean = true;
@@ -24,36 +24,37 @@ export class PlayersChartComponent {
   xAxisLabel: string = 'Year';
   yAxisLabel: string = 'Population';
   timeline: boolean = true;
+
   constructor(
     private playersService: PlayersService) {
   }
 
 
   ngOnInit() {
-    this.playersService.getPlayers()
-      .subscribe(l => this.mapPlayers(l));
+    this.playersService.getPlayerHistories()
+      .subscribe(data => this.mapPlayers(data.handicapHistory));
   }
 
   mapPlayers(players: any[]): void {
-    this.multi = players.filter(p => p.active)
+    this.multi = players
       .map(p => {
         return {
-          name: p.firstName + ' ' + p.lastName,
-          series: p.rounds.slice(0, 10)
-            .reverse()
+          name: p.playerName,
+          series: p.indexes
             .map(r => {
               return {
-                name: r.courseName,
-                value: r.handicap
+                name: new Date(r.playDate),
+                value: r.index
               }
             })
         }
       });
-    console.log(players, this.multi);
+
+      this.activeEntries = this.multi[0];
   }
 
   onSelect(data): void {
-    // console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
   onActivate(data): void {
@@ -63,5 +64,7 @@ export class PlayersChartComponent {
   onDeactivate(data): void {
     // console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
-
+  onResize(event) {
+    this.view = [0.90 * event.target.innerWidth, 800];
+  }
 }

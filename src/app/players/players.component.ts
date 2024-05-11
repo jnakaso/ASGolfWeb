@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
-  sections = ['Balance', 'Handicaps'];
+  sections = ['Balance', 'History', 'Handicaps'];
 
   constructor() { }
 
