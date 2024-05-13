@@ -6,11 +6,11 @@
 			<div *ngIf="selectedCourseTee" ngbDropdown class="d-inline-block">
 				<button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
 					ngbDropdownToggle>{{selectedCourseTee.course.name}}
-					{{selectedCourseTee.tee.slope}}/{{selectedCourseTee.tee.rating}}</button>
+					{{selectedCourseTee.tee.slope}}/{{selectedCourseTee.tee.rating | number:'1.1-1'}}</button>
 				<div ngbDropdownMenu>
 					<button *ngFor="let entry of courseTees" ngbDropdownItem
 						(click)="changeCourse(entry)">{{entry.course.name}}
-						{{entry.tee.slope}}/{{entry.tee.rating}}</button>
+						{{entry.tee.slope}}/{{entry.tee.rating | number:'1.1-1'}}</button>
 				</div>
 			</div>
 		</div>
