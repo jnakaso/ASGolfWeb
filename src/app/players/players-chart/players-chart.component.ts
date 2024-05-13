@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { PlayersService } from '../../golf/players.service';
 
 @Component({
@@ -8,10 +8,12 @@ import { PlayersService } from '../../golf/players.service';
 })
 export class PlayersChartComponent {
 
+  @ViewChild('historycontainer') container: ElementRef;
+
   multi: any[] = [];
   activeEntries: any[] = [];
 
-  view: any[] = [0.90 * window.innerWidth, 800];
+  view: any[] = [window.innerWidth, 800];
 
   // options
   legend: boolean = true;
@@ -22,13 +24,17 @@ export class PlayersChartComponent {
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Year';
-  yAxisLabel: string = 'Population';
-  timeline: boolean = true;
+  yAxisLabel: string = 'Handicap';
+  timeline: boolean = false;
 
   constructor(
     private playersService: PlayersService) {
   }
 
+  ngAfterViewInit() {
+    let width = this.container.nativeElement.offsetWidth;
+    this.view = [width , 800];
+  }
 
   ngOnInit() {
     this.playersService.getPlayerHistories()
@@ -50,7 +56,7 @@ export class PlayersChartComponent {
         }
       });
 
-      this.activeEntries = this.multi[0];
+    this.activeEntries = this.multi;
   }
 
   onSelect(data): void {
@@ -65,6 +71,7 @@ export class PlayersChartComponent {
     // console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
   onResize(event) {
-    this.view = [0.90 * event.target.innerWidth, 800];
+    let width = this.container.nativeElement.offsetWidth;
+    this.view = [width, 800];
   }
 }

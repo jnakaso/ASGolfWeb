@@ -1,4 +1,4 @@
-<section id="History">
+<section id="History" #historycontainer>
     <as-sub-header [title]="'History'"></as-sub-header>
     <ngx-charts-line-chart [view]="view" 
         [legend]="legend"
@@ -7,6 +7,7 @@
         [showYAxisLabel]="showYAxisLabel"  [yAxisLabel]="yAxisLabel" [yAxis]="yAxis" 
         
         [results]="multi"
+        [timeline]="timeline"
 
         (window:resize)="onResize($event)"
         (select)="onSelect($event)"

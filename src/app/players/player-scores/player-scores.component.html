@@ -5,6 +5,7 @@
                 <th>Used</th>
                 <th>Course</th>
                 <th>Date</th>
+                <th class="text-right">HDCP (IDX)</th>
                 <th class="text-right">Tot</th>
                 <th class="text-right">Adj</th>
             </tr>
@@ -14,6 +15,7 @@
                 <td><span title="accepted">{{round.accepted}}</span></td>
                 <td>{{round.courseName}}</td>
                 <td>{{round.date | date : 'shortDate' : 'UTC'}}</td>
+                <td class="text-right">{{round.handicap}} ({{round.handicapIndex | number: '1.1-1'}})</td>
                 <td class="text-right">{{round.total}}</td>
                 <td class="text-right">{{round.adjusted}}</td>
             </tr>
