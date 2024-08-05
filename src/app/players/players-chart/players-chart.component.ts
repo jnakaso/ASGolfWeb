@@ -10,6 +10,8 @@ export class PlayersChartComponent {
 
   @ViewChild('historycontainer') container: ElementRef;
 
+  filter: string = '';
+  histories: any[] = [];
   multi: any[] = [];
   activeEntries: any[] = [];
 
@@ -33,12 +35,26 @@ export class PlayersChartComponent {
 
   ngAfterViewInit() {
     let width = this.container.nativeElement.offsetWidth;
-    this.view = [width , 800];
+    this.view = [width, 800];
   }
 
   ngOnInit() {
     this.playersService.getPlayerHistories()
-      .subscribe(data => this.mapPlayers(data.handicapHistory));
+      .subscribe(data => {
+        this.histories = data.handicapHistory;
+        this.refresh('');
+      });
+  }
+
+  refresh(value): void {
+    const filtered = [];
+    this.histories.forEach(hist => {
+      const clone = Object.assign({}, hist);
+      clone.indexes = value === '' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(value));
+      filtered.push(clone);
+    })
+    this.mapPlayers(filtered);
+    this.filter = value;
   }
 
   mapPlayers(players: any[]): void {

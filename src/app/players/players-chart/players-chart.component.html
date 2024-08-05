@@ -1,17 +1,19 @@
 <section id="History" #historycontainer>
     <as-sub-header [title]="'History'"></as-sub-header>
-    <ngx-charts-line-chart [view]="view" 
-        [legend]="legend"
-
-        [showXAxisLabel]="showXAxisLabel" [xAxisLabel]="xAxisLabel" [xAxis]="xAxis" 
-        [showYAxisLabel]="showYAxisLabel"  [yAxisLabel]="yAxisLabel" [yAxis]="yAxis" 
-        
-        [results]="multi"
-        [timeline]="timeline"
-
-        (window:resize)="onResize($event)"
-        (select)="onSelect($event)"
-        (activate)="onActivate($event)"
-        (deactivate)="onDeactivate($event)">
+    <div class="form-group">
+        <div name="type" class="btn-group btn-group-toggle" ngbRadioGroup [ngModel]="filter">
+            <label ngbButtonLabel>
+                <span style="margin-right: 1rem;"><b>Filter: </b></span>
+                <input ngbButton type="radio" value="" (click)="refresh('')" /> From 2021
+            </label>
+            <label ngbButtonLabel>
+                <input ngbButton type="radio" value="2024" (click)="refresh('2024')" /> 2024 Only
+            </label>
+        </div>
+    </div>
+    <ngx-charts-line-chart [view]="view" [legend]="legend" [showXAxisLabel]="showXAxisLabel" [xAxisLabel]="xAxisLabel"
+        [xAxis]="xAxis" [showYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel" [yAxis]="yAxis" [results]="multi"
+        [timeline]="timeline" (window:resize)="onResize($event)" (select)="onSelect($event)"
+        (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
     </ngx-charts-line-chart>
 </section>
