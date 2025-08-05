@@ -23,7 +23,7 @@ describe('RecordsComponent', () => {
       imports: [
         HttpClientModule,
         BrowserModule,
-        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
+        RouterModule.forRoot([], {}),
         FormsModule,
         NoopAnimationsModule,
         SharedModule,

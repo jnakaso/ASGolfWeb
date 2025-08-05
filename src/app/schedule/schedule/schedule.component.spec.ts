@@ -19,7 +19,7 @@ describe('ScheduleComponent', () => {
       imports: [
         HttpClientModule,
         NoopAnimationsModule,
-        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
+        RouterModule.forRoot([], {}),
         SharedModule,
         GolfModule],
       declarations: [

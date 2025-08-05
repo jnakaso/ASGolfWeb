@@ -41,23 +41,22 @@ export class PlayersChartComponent {
   }
 
   ngOnInit() {
-    this.playersService.getPlayerHistories()
-      .subscribe(data => {
-        this.histories = data.handicapHistory;
-        this.refresh('');
+    this.golfService.getInitValues()
+      .subscribe(init => {
+        this.currentSeason = init.currentSeason
+        this.playersService.getPlayerHistories()
+          .subscribe(data => {
+            this.histories = data.handicapHistory;
+            this.refresh('');
+          });
       });
-    this.golfService.getInitValues().subscribe(
-      init => this.currentSeason = init.currentSeason
-    );
   }
-
-
 
   refresh(value: string): void {
     const filtered = [];
     this.histories.forEach(hist => {
       const clone = Object.assign({}, hist);
-      clone.indexes = value === 'all' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(this.currentSeason.toString));
+      clone.indexes = value === 'all' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(this.currentSeason.toString()));
       filtered.push(clone);
     })
     this.mapPlayers(filtered);

@@ -1,13 +1,13 @@
 <section id="History" #historycontainer>
     <as-sub-header [title]="'History'"></as-sub-header>
     <div class="form-group">
+        <span style="margin-right: 1rem;"><b>Filter: </b></span>
         <div name="type" class="btn-group btn-group-toggle" ngbRadioGroup [ngModel]="filter">
             <label ngbButtonLabel>
-                <span style="margin-right: 1rem;"><b>Filter: </b></span>
-                <input ngbButton type="radio" value="" (click)="refresh('all')" /> From 2021
+                <input ngbButton type="radio" value="all" (click)="refresh('all')" /> From 2021
             </label>
             <label ngbButtonLabel>
-                <input ngbButton type="radio" value="2024" (click)="refresh('2024')" /> Current Season
+                <input ngbButton type="radio" value="" (click)="refresh('')" /> Current Season
             </label>
         </div>
     </div>
