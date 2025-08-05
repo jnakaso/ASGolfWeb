@@ -26,8 +26,11 @@ export class TournamentsTwoDayComponent implements OnChanges {
 
   twodayScores(flt: string) {
     return this.twoDay.scores
-      .filter(ss => ss.flight == flt)
-      .sort((s1, s2) => s1.total - s2.total);
+      .filter(s => s.flight == flt)
+      .map(s => {
+        s.total = s.dayOne + s.dayTwo;
+        return s;
+      })
+      .sort((s1, s2) => s1.total - s2.total)
   }
-
 }

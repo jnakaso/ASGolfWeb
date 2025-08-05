@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { PlayersService } from '../../golf/players.service';
+import { GolfService } from '../../golf/golf.service';
 
 @Component({
   selector: 'as-players-chart',
@@ -14,6 +15,7 @@ export class PlayersChartComponent {
   histories: any[] = [];
   multi: any[] = [];
   activeEntries: any[] = [];
+  currentSeason: number;
 
   view: any[] = [window.innerWidth, 800];
 
@@ -30,8 +32,8 @@ export class PlayersChartComponent {
   timeline: boolean = false;
 
   constructor(
-    private playersService: PlayersService) {
-  }
+    private playersService: PlayersService,
+    private golfService: GolfService) { }
 
   ngAfterViewInit() {
     let width = this.container.nativeElement.offsetWidth;
@@ -44,13 +46,18 @@ export class PlayersChartComponent {
         this.histories = data.handicapHistory;
         this.refresh('');
       });
+    this.golfService.getInitValues().subscribe(
+      init => this.currentSeason = init.currentSeason
+    );
   }
 
-  refresh(value): void {
+
+
+  refresh(value: string): void {
     const filtered = [];
     this.histories.forEach(hist => {
       const clone = Object.assign({}, hist);
-      clone.indexes = value === '' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(value));
+      clone.indexes = value === 'all' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(this.currentSeason.toString));
       filtered.push(clone);
     })
     this.mapPlayers(filtered);

@@ -4,10 +4,10 @@
         <div name="type" class="btn-group btn-group-toggle" ngbRadioGroup [ngModel]="filter">
             <label ngbButtonLabel>
                 <span style="margin-right: 1rem;"><b>Filter: </b></span>
-                <input ngbButton type="radio" value="" (click)="refresh('')" /> From 2021
+                <input ngbButton type="radio" value="" (click)="refresh('all')" /> From 2021
             </label>
             <label ngbButtonLabel>
-                <input ngbButton type="radio" value="2024" (click)="refresh('2024')" /> 2024 Only
+                <input ngbButton type="radio" value="2024" (click)="refresh('2024')" /> Current Season
             </label>
         </div>
     </div>
