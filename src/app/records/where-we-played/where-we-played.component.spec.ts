@@ -16,7 +16,7 @@ describe('WhereWePlayedComponent', () => {
       imports: [
         SharedModule,
         GolfModule,
-        RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
+        RouterModule.forRoot([], {}),
         HttpClientModule
       ],
       declarations: [WhereWePlayedComponent],

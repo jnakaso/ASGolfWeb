@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ASPlayer } from '../../golf/asplayer';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { PlayersService } from '../../golf/players.service';
+import { GolfService } from '../../golf/golf.service';
 
 @Component({
   selector: 'as-players-chart',
@@ -9,9 +9,15 @@ import { PlayersService } from '../../golf/players.service';
 })
 export class PlayersChartComponent {
 
-  multi: any[] = [];
+  @ViewChild('historycontainer') container: ElementRef;
 
-  view: any[] = [800, 800];
+  filter: string = '';
+  histories: any[] = [];
+  multi: any[] = [];
+  activeEntries: any[] = [];
+  currentSeason: number;
+
+  view: any[] = [window.innerWidth, 800];
 
   // options
   legend: boolean = true;
@@ -22,38 +28,61 @@ export class PlayersChartComponent {
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Year';
-  yAxisLabel: string = 'Population';
-  timeline: boolean = true;
+  yAxisLabel: string = 'Handicap';
+  timeline: boolean = false;
+
   constructor(
-    private playersService: PlayersService) {
+    private playersService: PlayersService,
+    private golfService: GolfService) { }
+
+  ngAfterViewInit() {
+    let width = this.container.nativeElement.offsetWidth;
+    this.view = [width, 800];
   }
 
-
   ngOnInit() {
-    this.playersService.getPlayers()
-      .subscribe(l => this.mapPlayers(l));
+    this.golfService.getInitValues()
+      .subscribe(init => {
+        this.currentSeason = init.currentSeason
+        this.playersService.getPlayerHistories()
+          .subscribe(data => {
+            this.histories = data.handicapHistory;
+            this.refresh('');
+          });
+      });
+  }
+
+  refresh(value: string): void {
+    const filtered = [];
+    this.histories.forEach(hist => {
+      const clone = Object.assign({}, hist);
+      clone.indexes = value === 'all' ? hist.indexes : hist.indexes.filter(idx => idx.playDate.startsWith(this.currentSeason.toString()));
+      filtered.push(clone);
+    })
+    this.mapPlayers(filtered);
+    this.filter = value;
   }
 
   mapPlayers(players: any[]): void {
-    this.multi = players.filter(p => p.active)
+    this.multi = players
       .map(p => {
         return {
-          name: p.firstName + ' ' + p.lastName,
-          series: p.rounds.slice(0, 10)
-            .reverse()
+          name: p.playerName,
+          series: p.indexes
             .map(r => {
               return {
-                name: r.courseName,
-                value: r.handicap
+                name: new Date(r.playDate),
+                value: r.index
               }
             })
         }
       });
-    console.log(players, this.multi);
+
+    this.activeEntries = this.multi;
   }
 
   onSelect(data): void {
-    // console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
   onActivate(data): void {
@@ -63,5 +92,8 @@ export class PlayersChartComponent {
   onDeactivate(data): void {
     // console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
-
+  onResize(event) {
+    let width = this.container.nativeElement.offsetWidth;
+    this.view = [width, 800];
+  }
 }

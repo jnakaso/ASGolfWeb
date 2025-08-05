@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { GolfService } from '../../golf/golf.service';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common'; 
 import { StatsService } from '../../golf/stats.service';
 import { TournamentsService } from '../../golf/tournaments.service';
 import { ASTournament } from '../../golf/astournament';
@@ -18,7 +18,7 @@ export class TournamentsSummaryComponent implements OnInit {
   active = 1;
 
   constructor(
-    private golfService: GolfService,
+    @Inject(DOCUMENT) document: Document,
     private tournamentsService: TournamentsService,
     private statsService: StatsService) {
   }
@@ -32,23 +32,29 @@ export class TournamentsSummaryComponent implements OnInit {
       this.loadData(changes.season.currentValue);
     }
   }
-  public beforeChange($event: NgbNavChangeEvent) {
-    if ($event.nextId === 'ngb-nav-0') {
+  public beforeChange(event: NgbNavChangeEvent) {
+    if (event.nextId === 'points') {
       this.standings = this.standings.sort((s1, s2) => s2.points - s1.points);
-    } else if ($event.nextId === 'ngb-nav-1') {
+    } else if (event.nextId === 'earnings') {
       this.standings = this.standings.sort((s1, s2) => s2.earnings - s1.earnings);
-    } else if ($event.nextId === 'ngb-nav-2') {
+    } else if (event.nextId === 'kps') {
       this.standings = this.standings.sort((s1, s2) => s2.kps - s1.kps);
     }
   }
 
   loadData(season: number) {
-    if (this.season) {
-      this.tournamentsService.getTournaments(this.season)
-        .subscribe((tt: ASTournament[]) => this.tournaments = tt.reverse());
-      this.statsService.getStats(this.season)
-        .subscribe(ss => this.standings = ss.standings);
+    if (season) {
+      this.tournamentsService.getTournaments(season)
+        .subscribe((tt: ASTournament[]) => this.tournaments = tt);
+      this.statsService.getStats(season)
+        .subscribe(ss =>this.standings = ss.standings);
     }
   }
 
+  scroll(tournament: ASTournament) {
+    let el = document.getElementById('tour_' + tournament.id + '-header');
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 70;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
+ 
 }

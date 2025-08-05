@@ -1,77 +1,77 @@
 <section style="margin-bottom:1em" id="Summary">
 	<nav ngbNav #nav="ngbNav" class="nav-tabs" (navChange)="beforeChange($event)">
-		<ng-container ngbNavItem>
-			<a ngbNavLink  id="Points" >Points</a>
+		<ng-container ngbNavItem="points">
+			<a ngbNavLink >Points</a>
 			<ng-template ngbNavContent>
 				<table class="table table-sm table-striped">
 					<thead>
 						<tr>
-							<th width="10%">Player</th>
-							<th class="text-right" width="5%">Total</th>
-							<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
-								<a style="cursor:pointer" href="#tour_{{tour.id}}-header"
+							<th width="15%">Player</th>
+							<th width="5%">Total</th>
+							<th width="5%" *ngFor="let tour of tournaments; let ii = index">
+								<span><a style="cursor:pointer" (click)="scroll(tour);" 
 									title="{{tour.courseName}}">{{ii + 1}}</a>
+								</span>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
-							<td class="text-right">{{entry.points}}</td>
-							<td class="text-right" *ngFor="let pts of entry.pointsByTour">
-								<span *ngIf="pts != 0">{{ pts }}</span>
+							<td>{{entry.playerName}}</td>
+							<td>{{entry.points}}</td>
+							<td *ngFor="let pts of entry.pointsByTour">
+								<span>{{ pts }}</span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</ng-template>
 		</ng-container>
-		<ng-container ngbNavItem>
+		<ng-container ngbNavItem="earnings">
 			<a ngbNavLink>Earnings</a>
 			<ng-template ngbNavContent>
 				<table class="table table-sm table-striped">
 					<thead>
 						<tr>
-							<th width="10%">Player</th>
-							<th class="text-right" width="5%">Total</th>
-							<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
-								<a role="button" pageScroll href="#tour_{{tour.id}}" title="{{tour.courseName}}">{{ii +
-									1}}</a>
+							<th width="15%">Player</th>
+							<th width="5%">Total</th>
+							<th width="5%"  *ngFor="let tour of tournaments; let ii = index">
+								<a role="button" (click)="scroll(tour);"  title="{{tour.courseName}}">{{ii + 1}}</a>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
-							<td class="text-right">{{entry.earnings | currency }}</td>
-							<td class="text-right" *ngFor="let pts of entry.earningsByTour">
-								<span *ngIf="pts != 0">{{ pts | currency }}</span>
+							<td>{{entry.playerName}}</td>
+							<td>{{entry.earnings | currency }}</td>
+							<td *ngFor="let earn of entry.earningsByTour">
+								<span *ngIf="earn != 0">{{ earn | currency }}</span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</ng-template>
 		</ng-container>
-		<ng-container ngbNavItem>
+		<ng-container ngbNavItem="kps">
 			<a ngbNavLink>Kps</a>
 			<ng-template ngbNavContent>
 				<table class="table  table-sm  table-striped">
 					<thead>
 						<tr>
-							<th width="10%">Player</th>
-							<th class="text-right" width="5%">Total</th>
-							<th class="text-right" width="5%" *ngFor="let tour of tournaments; let ii = index">
-								<a role="button" pageScroll [href]="'#tour_' + tour.id" title="{{tour.courseName}}">{{ii
+							<th width="15%">Player</th>
+							<th width="5%">Total</th>
+							<th width="5%" *ngFor="let tour of tournaments; let ii = index">
+								<a role="button" (click)="scroll(tour);"  title="{{tour.courseName}}">{{ii
 									+ 1}}</a>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr *ngFor="let entry of standings">
-							<td>{{entry.name}}</td>
-							<td class="text-right">{{entry.kps}}</td>
-							<td class="text-right" *ngFor="let pts of entry.kpsByTour">
-								<span *ngIf="pts != 0">{{ pts }}</span>
+							<td>{{entry.playerName}}</td>
+							<td>{{entry.kps}}</td>
+							<td *ngFor="let kps of entry.kpsByTour">
+								<span *ngIf="kps != 0">{{ kps }}</span>
 							</td>
 						</tr>
 					</tbody>

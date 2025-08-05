@@ -21,12 +21,16 @@ export class PlayersService {
     return this.http.get<ASPlayer[]>(`/asgolf-assets/data/players.js`);
   }
 
-  getPlayerWithRounds(id: number): Observable<ASPlayer> {
+  get(id: number): Observable<ASPlayer> {
     return this.http.get<ASPlayer>(`/asgolf-assets/data/players/${id}.js`);
   }
 
   getBalances(season: number): Observable<ASBalance> {
     return this.http.get<ASBalance>(`/asgolf-assets/data/${season}/as-balance.js`);
+  }
+
+  getPlayerHistories(): Observable<any> {
+    return this.http.get(`/asgolf-assets/data/player-histories.js`);
   }
 
 }

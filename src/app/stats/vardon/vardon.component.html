@@ -14,9 +14,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let entry of data">
-          <td>{{entry.name}}</td>
-          <td class="text-right">{{entry.rounds}}</td>
-          <td class="text-right">{{entry.average}}</td>
+          <td>{{entry.playerName}}</td>
+          <td class="text-right">{{entry.tournaments}}</td>
+          <td class="text-right">{{entry.average | number: '1.2-2'}}</td>
         </tr>
       </tbody>
     </table>

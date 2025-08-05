@@ -6,7 +6,7 @@ export class ASWinner {
     player: string;
     flight: string;
     score: number;
-    place: number;
+    finish: string;
     points: number;
     earnings: number;
  
@@ -17,7 +17,7 @@ export class ASWinner {
         this.player = t.player;
         this.flight = t.flight;
         this.score = t.score;
-        this.place = t.place;
+        this.finish = t.plafinishce;
         this.points = t.points;
         this.earnings = t.earnings;
     }

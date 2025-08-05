@@ -15,15 +15,17 @@
               <th>Course</th>
               <th class="text-right">Hole</th>
               <th class="text-right">Score</th>
+              <th class="text-right">Distance</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let entry of good">
-              <td>{{entry.name}}</td>
+              <td>{{entry.playerName}}</td>
               <td class="text-right">{{entry.playDate}}</td>
               <td>{{entry.course}}</td>
               <td class="text-right">{{entry.hole}}</td>
               <td class="text-right">{{entry.score}}</td>
+              <td class="text-right">{{entry.distance}}</td>
             </tr>
           </tbody>
         </table>
@@ -40,21 +42,22 @@
               <th>Course</th>
               <th class="text-right">Hole</th>
               <th class="text-right">Score</th>
+              <th class="text-right">Distance</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let entry of bad">
-              <td>{{entry.name}}</td>
+              <td>{{entry.playerName}}</td>
               <td class="text-right">{{entry.playDate}}</td>
               <td>{{entry.course}}</td>
               <td class="text-right">{{entry.hole}}</td>
               <td class="text-right">{{entry.score}}</td>
+              <td class="text-right">{{entry.distance}}</td>
             </tr>
           </tbody>
         </table>
       </ng-template>
     </li>
-
   </ul>
   <div [ngbNavOutlet]="navThree"></div>
 </section>

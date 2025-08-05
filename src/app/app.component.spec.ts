@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }), HttpClientModule],
+      imports: [RouterModule.forRoot([], {}), HttpClientModule],
       declarations: [
         AppComponent, NavbarComponent
       ],

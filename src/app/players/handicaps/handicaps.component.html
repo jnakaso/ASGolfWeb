@@ -6,11 +6,11 @@
 			<div *ngIf="selectedCourseTee" ngbDropdown class="d-inline-block">
 				<button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
 					ngbDropdownToggle>{{selectedCourseTee.course.name}}
-					{{selectedCourseTee.tee.slope}}/{{selectedCourseTee.tee.rating}}</button>
+					{{selectedCourseTee.tee.slope}}/{{selectedCourseTee.tee.rating | number:'1.1-1'}}</button>
 				<div ngbDropdownMenu>
 					<button *ngFor="let entry of courseTees" ngbDropdownItem
 						(click)="changeCourse(entry)">{{entry.course.name}}
-						{{entry.tee.slope}}/{{entry.tee.rating}}</button>
+						{{entry.tee.slope}}/{{entry.tee.rating | number:'1.1-1'}}</button>
 				</div>
 			</div>
 		</div>
@@ -48,21 +48,21 @@
 			</button>
 		</div>
 		<div class="modal-body">
-			<ul ngbNav #nav="ngbNav" class="nav-tabs">
-				<li ngbNavItem>
+			<nav ngbNav #navPlayer="ngbNav" class="nav-tabs">
+				<ng-container ngbNavItem>
 					<a ngbNavLink>Scores</a>
 					<ng-template ngbNavContent>
 						<as-player-scores [player]="selectedPlayer"></as-player-scores>
 					</ng-template>
-				</li>
-				<li ngbNavItem>
+				</ng-container>
+				<ng-container ngbNavItem>
 					<a ngbNavLink>History</a>
 					<ng-template ngbNavContent>
 						<as-player-history [player]="selectedPlayer"></as-player-history>
 					</ng-template>
-				</li>
-			</ul>
-			<div [ngbNavOutlet]="nav"></div>
+				</ng-container>
+			</nav>
+			<div [ngbNavOutlet]="navPlayer"></div>
 		</div>
 	</div>
 </ng-template>

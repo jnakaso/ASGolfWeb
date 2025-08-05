@@ -27,14 +27,18 @@ export class TournamentComponent implements OnInit {
   }
 
   ngOnChanges(changes: any) {
-    this.season = changes.season.currentValue;
-    this.loadData();
+    if (changes.season.firstChange && changes.tournamentId.firstChange) {
+      this.season = changes.season.currentValue;
+      this.loadData();
+    }
   }
 
   loadData() {
-    this.tournamentsService
-      .getTournament(this.season, this.tournamentId)
-      .subscribe(tt => this.tournament = tt);
+    if (this.season && this.tournamentId) {
+      this.tournamentsService
+        .getTournament(this.season, this.tournamentId)
+        .subscribe(tt => this.tournament = tt);
+    }
   }
 
   getCourseName() {
@@ -49,7 +53,7 @@ export class TournamentComponent implements OnInit {
 
   getWinners(flt: string): any[] {
     return this.tournament ?
-      this.tournament.winners.filter(kk => kk.flt == flt)
+      this.tournament.winners.filter(kk => kk.flight == flt)
       : [];
   }
 
@@ -63,15 +67,15 @@ export class TournamentComponent implements OnInit {
   }
 
   getTournamentDate(tour: any): string {
-    return tour ? tour.tournament ? tour.tournament.date : null : null;
+    return tour.date;
   }
 
   getTournamentSlope(tour: any): string {
-    return tour ? tour.tournament ? tour.tournament.slope : null : null;
+    return tour.slope;
   }
 
   getTournamentRating(tour: any): string {
-    return tour ? tour.tournament ? tour.tournament.rating : null : null;
+    return tour.rating;
   }
 
   showWinners(tour) {

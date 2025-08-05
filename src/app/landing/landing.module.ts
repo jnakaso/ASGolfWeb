@@ -12,10 +12,12 @@ import { FunniesComponent } from './funnies/funnies.component';
 import { FunniesService } from './funnies/funnies.service';
 import { AnnouncementsComponent } from './announcements/announcements.component';
 import { LastMinutesComponent } from './last-minutes/last-minutes.component';
+import { PlayersModule } from '../players/players.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    PlayersModule,
     RouterModule.forChild([
       {
         path: 'landing',

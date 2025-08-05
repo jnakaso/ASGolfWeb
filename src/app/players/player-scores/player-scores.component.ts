@@ -21,8 +21,11 @@ export class PlayerScoresComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.player) {
-      this.playersService.getPlayerWithRounds(this.player.id)
-        .subscribe(p => this.rounds = p.rounds);
+      this.playersService.get(this.player.id)
+        .subscribe(p => {
+          this.rounds = p.rounds
+            .slice(0, 20);
+        });
     }
   }
 }

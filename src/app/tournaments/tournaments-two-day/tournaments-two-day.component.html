@@ -1,5 +1,5 @@
 <section style="margin-bottom:1em" id="TwoDay">
-  <p><strong>Day One:</strong> {{twoDay.dayoneCourseName}} | <strong>Day Two:</strong> {{twoDay.daytwoCourseName}}
+  <p><strong>Day One:</strong> {{twoDay.dayOneCourseName}} | <strong>Day Two:</strong> {{twoDay.dayTwoCourseName}}
   </p>
   <div *ngFor="let flt of flights">
     <h4>{{flt}}-Flight</h4>
@@ -13,11 +13,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let score of twodayScores(flt)">
-          <td>{{score.player}}</td>
-          <td class="text-right">{{score.handicapOne}} / {{score.handicapTwo}}</td>
-          <td class="text-right">{{score.dayone}} / {{score.dayone - score.handicapOne}}</td>
-          <td class="text-right">{{score.daytwo}} / {{score.daytwo - score.handicapTwo}}</td>
-          <td class="text-right">{{score.total}} / {{score.totalNet}}</td>
+          <td>{{score.playerName}}</td>
+          <td class="text-right">{{score.dayOneHandicap}} / {{score.dayTwoHandicap}}</td>
+          <td class="text-right">{{score.dayOne + score.dayOneHandicap}} / {{score.dayOne}}</td>
+          <td class="text-right">{{score.dayTwo + score.dayTwoHandicap}} / {{score.dayTwo}}</td>
+          <td class="text-right">{{score.total + score.dayOneHandicap + score.dayTwoHandicap}} / {{score.total}}</td>
         </tr>
       </tbody>
     </table>

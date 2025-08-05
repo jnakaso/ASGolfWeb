@@ -7,4 +7,5 @@ export class ASPlayer {
     handicap: number;
     active: boolean;
     rounds: ASRound[];
+    seasonSummaries: any[];
 }

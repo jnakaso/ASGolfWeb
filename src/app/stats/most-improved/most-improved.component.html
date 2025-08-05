@@ -16,10 +16,10 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let entry of data">
-						<td>{{entry.name}}</td>
-						<td class="text-right">{{entry.count}}</td>
-						<td class="text-right">{{entry.change}}</td>
-						<td class="text-right">{{entry.percentChange *100 | number: '1.1-2' }} %</td>
+						<td>{{entry.playerName}}</td>
+						<td class="text-right">{{entry.tournaments}}</td>
+						<td class="text-right">{{entry.change | number: '1.1-2' }}</td>
+						<td class="text-right">{{entry.percentChange | number: '1.1-2' }} %</td>
 					</tr>
 				</tbody>
 			</table>

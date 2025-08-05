@@ -20,7 +20,8 @@ export class AsStandingsComponent implements OnInit {
       .subscribe(ini => {
         this.powerRank = ini.powerRank;
         this.statsService.getStats(ini.powerRank)
-          .subscribe(stats => this.standings = stats.standings)
+          .subscribe(stats => this.standings = stats.standings
+            .sort((s1, s2) => s2.points - s1.points))
       });
   }
 

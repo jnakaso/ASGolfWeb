@@ -30,9 +30,16 @@ import { PlayerScoresComponent } from './player-scores/player-scores.component';
     SharedModule,
     GolfModule
   ],
-  declarations: [PlayersComponent,
-    HandicapsComponent, BalanceComponent, ChartsComponent, PlayersChartComponent,
+  declarations: [
+    PlayersComponent,
+    HandicapsComponent,
+    BalanceComponent,
+    ChartsComponent,
+    PlayersChartComponent,
     PlayerHistoryComponent,
-    PlayerScoresComponent]
+    PlayerScoresComponent],
+  exports: [
+    PlayersChartComponent
+  ]
 })
 export class PlayersModule { }
